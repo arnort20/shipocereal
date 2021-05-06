@@ -1,0 +1,86 @@
+body,html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+div{
+    position: relative;
+}
+
+/*-------------BANNER OF WEBSITE------------*/
+.banner{
+    background-color: #FFDB58;
+    height: 15%;
+    box-shadow: 0 2px 15px #000000;
+}
+
+.banner__column{
+    height: 100%;
+}
+
+.banner__logoBox{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.banner__logoImage{
+    height: 95%;
+    margin-left: 2%;
+    margin-bottom: 2%;
+}
+.banner__logoText{
+    position: absolute;
+    margin-left: 2%;
+    bottom: 5%;
+}
+
+#banner__searchbar{
+    width: 85%;
+    height: 30%;
+    display: inline;
+    position: absolute;
+    bottom: 30%;
+}
+
+.banner__searchicon {
+    position: absolute;
+    top: 42.5%;
+    left: 88%;
+}
+
+#banner__UserOptions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+
+.banner__signin {
+    position: absolute;
+    top: 25%;
+}
+
+.banner__shoppingcart {
+    text-align: center;
+    position: absolute;
+    top: 25%;
+}
+
+.banner__LoginAndCar {
+    text-align: center;
+    position: absolute;
+    top: 65%;
+    padding: 0 25px 0 10px;
+}
+
+.banner__Login {
+    display: flex;
+    justify-content: center;
+}
+
+.banner__Cart {
+    display: flex;
+    justify-content: center;
+}

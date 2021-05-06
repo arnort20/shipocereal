@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>plepleplepelpeleplep</h2>
+    {% for cereal in cereals %}
+        {% if cereal.vegan %}
+            <p>Vegan!</p>
+        {% else %}
+            <p>Not vegan.</p>
+        {% endif %}
+        <h4>{{ cereal.name }}</h4>
+        <p>{{ cereal.price }}</p>
+    {% endfor %}
+{% endblock %}

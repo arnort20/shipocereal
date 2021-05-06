@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+    <html lang="e">
+        <head>
+            <title>Ship O' Cereal</title>
+            <!-- Latest compiled and minified CSS -->
+            <meta charset="UTF-8">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+            <link rel="stylesheet" type="text/css" media="screen" href="RutStylesheet.css" />
+        </head>
+        <body>
+            <div class="row banner">
+                <div class="col-md-5 banner__column banner__logoBox">
+                    <img src="logo3.png" class="banner__logoImage">
+                    <i class="banner__logoText">Mesta úrval morgunkorns á Íslandi</i>
+                </div>
+
+                <div class="col-md-5 banner__column banner__searchColumn">
+                    <input  type="text" id="banner__searchbar" name="searchbar"  value="Leitaðu að þínu uppáhalds morgunkorni hér">
+                    <span class="glyphicon glyphicon-search banner__search_icon"></span>
+                </div>
+
+                <div class="col-md-2 banner__column" id="banner__UserOptions">
+                    <div class="col-md-1 banner__LoginAndCart banner__Login">
+                        <span class="glyphicon glyphicon-user banner__user_icon"></span>
+                        <p>Innskráning</p>
+                    </div>
+
+                    <div class="col-md-1 banner__LoginAndCart banner__Cart">
+                        <span class="glyphicon glyphicon-shopping-cart banner__shopping_cart"></span>
+                        <p>Karfa</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" id="imageContainer">
+                <h1 id="SubCategory">Skálar</h1>
+                <img src="myndir/Bowlimg.jpg" alt="Bowl Image" class="img-fluid openImage">
+            </div>
+
+            <div class="row" id="filters">
+                <div class="col-md-2">
+                    <label for="sortBy">Raða Eftir</label>
+                    <select name="sortBy" id="cars">
+                        <option value="volvo">Volvo</option>
+                        <option value="saab">Saab</option>
+                        < option value="mercedes">Mercedes</option>
+                        <option value="audi">Audi</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <h2>Verð</h2>
+                </div>
+                <div class="col-md-2">
+                    <h2>Tegund</h2>
+                </div>
+                <div class="col-md-2">
+                    <h2>Framleiðandi</h2>
+                </div>
+                <div class="col-md-2">
+                    <h2>Ofnæmisvaldar</h2>
+                </div>
+            </div>
+
+            <div class="row" id="container">
+               <div class="row rowItems" id="topRowItems">
+                    <div class="col-md-3 item">
+                    </div>
+                    <div class="col-md-3 item">
+                    </div>
+                    <div class="col-md-3 item">
+                    </div>
+                    <div class="col-md-3 item">
+                    </div>
+                </div>
+
+                <div class="row rowItems" >
+                    <div class="col-md-3 item">
+                    </div>
+                    <div class="col-md-3 item">
+                    </div>
+                    <div class="col-md-3 item">
+                    </div>
+                    <div class="col-md-3 item">
+                    </div>
+                </div>
+
+            </div>
+
+        </body>
+    </html>

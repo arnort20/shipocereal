@@ -1,0 +1,133 @@
+body,html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+div{
+    position: relative;
+}
+/*-------------BANNER OF WEBSITE------------*/
+.banner{
+    background-color: #FFDB58;
+    height: 15%;
+    box-shadow: 0 2px 15px #000000;
+}
+.banner__column{
+    height: 100%;
+}
+
+.banner__logoBox{
+    display: flex;
+    flex-wrap: wrap;
+}
+.banner__logoImage{
+    height: 95%;
+    margin-left: 2%;
+}
+.banner__logoText{
+    position: absolute;
+    margin-left: 2%;
+    bottom: 5%;
+}
+
+#banner__searchbar{
+    width: 85%;
+    height: 30%;
+    display: inline;
+    position: absolute;
+    bottom: 30%;
+}
+.banner__search_icon{
+    float: right;
+    font-size: 25px;
+    margin-top: 9%;
+}
+#banner__UserOptions{
+    background-color: #FFDB58;
+    height: 100%;
+    border-radius: 0;
+    padding: auto;
+    box-shadow: none;
+}
+.banner__LoginAndCart{
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.banner__user_icon,.banner__shopping_cart{
+    font-size: 50px;
+    margin: auto;
+}
+
+/*-------------OPENING IMAGE------------*/
+#imageContainer{
+    height: 35%;
+    display: flex;
+    justify-content: center;
+    z-index: -1;
+}
+.openImage{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+#SubCategory{
+    font-size: 80px;
+    position: absolute;
+    top: 25%;
+    color: #ffffff;
+    text-shadow: 0 0 10px #000000;
+}
+
+/*-------------FILTERS------------*/
+#filters{
+    height: 10%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+.col-md-2{
+    background-color: #D3D3D3;
+    border-radius: 0.5em;
+    height: 70%;
+    margin:auto;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 0 4px #000000;
+}
+h2{
+    margin: auto;
+    font-size: 25px;
+}
+
+
+/*-------------CONTAINERS------------*/
+#container{
+    background-color: #964040;
+    border-radius: 0.5em;
+    height: 100%;
+    width: 95%;
+    margin:auto;
+}
+.rowItems{
+    height: 40%;
+    display: flex;
+    justify-content: center;
+}
+#topRowItems{
+    margin-top: 1%;
+}
+.item{
+    background-color: #ffffff;
+    border-radius: 0.5em;
+    display: flex;
+    flex-wrap: nowrap;
+    width:20%;
+    height: 95%;
+    margin: auto;
+}
+

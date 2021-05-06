@@ -1,0 +1,140 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.banner {
+    width: 100;
+    background-color: #FFDB16;
+    height: 150px;
+}
+
+.banner__logo {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+
+.banner__urval {
+    position: absolute;
+    bottom: 85%;
+    left: 5%;
+
+}
+
+.button__innskraning {
+    position: absolute;
+    top: 10%;
+    left: 80%;
+    background: red;
+    color: white;
+}
+
+.fas.fa-sign-in-alt {
+    position: absolute;
+    top: 3%;
+    right: 16.5%;
+}
+
+.button__karfa {
+    position: absolute;
+    top: 10%;
+    left: 90%;
+    background: red;
+    color: white;
+}
+
+.fas.fa-shopping-cart {
+    position: absolute;
+    top: 3%;
+    right: 7.5%;
+}
+
+.banner__leit {
+    position: absolute;
+    top: 5%;
+    right: 40%;
+    width: 20%;
+    height: 25px;
+}
+
+.fas.fa-search {
+    position: absolute;
+    top: 5%;
+    right: 37%;
+}
+/* ---------------------------------------------------------- */
+.midja {
+    position: absolute;
+}
+
+.forsidu__mynd {
+    border-radius: 5rem;
+    width: 95%;
+    padding-top: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+/* top,right,bottom,left */
+.takki__allt{
+    font-size: 150%;
+    margin: 25px 25px 25px 35px;
+    height: 75px;
+    width: 30%;
+}
+
+.forsidu__vorur {
+    background-color: #274996;
+    color: white;
+    border-radius: 15px;
+}
+
+.forsidu__varningur {
+    background-color: #274996;
+    color: white;
+    border-radius: 15px;
+}
+
+.forsidu__vinsaelt {
+    background-color: #274996;
+    color: white;
+    border-radius: 15px;
+}
+/* -------------------------------------------------------- */
+
+.botn {
+    position: absolute;
+    top: 80%;
+}
+
+.botn__ofnaemi {
+    position: absolute;
+    border: 1px solid black;
+    padding-left: 500px;
+    padding-top: 300px;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+.ofnaemi--stadsettning {
+    position: absolute;
+}
+
+.botn__bill {
+
+}
+
+
+
+
+/* @media screen and (max-width: 992px) {
+    body { */
+
+
+
+
+
+
+
+
+

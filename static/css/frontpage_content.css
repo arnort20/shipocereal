@@ -1,0 +1,39 @@
+.midja {
+    display: flex;
+    justify-content: center;
+}
+
+.forsidu__mynd {
+    margin: 1% 0 1% 0;
+    border-radius: 20px 20px;
+}
+
+.Forsida__takkar {
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+}
+
+.forsidu--vorur {
+    border-radius: 15px 15px;
+    padding: 25px 0 25px 0;
+    font-size: 25px;
+    background: #274996;
+    color: white;
+}
+
+.forsidu--varningur {
+    border-radius: 15px 15px;
+    padding: 25px 0 25px 0;
+    font-size: 25px;
+    background: #274996;
+    color: white;
+}
+
+.forsidu--vinsaelt {
+    border-radius: 15px 15px;
+    padding: 25px 0 25px 0;
+    font-size: 25px;
+    background: #274996;
+    color: white;
+}
