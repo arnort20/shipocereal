@@ -1,0 +1,38 @@
+body,html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+.div {
+    position: relative;
+}
+.content__vara {
+    border: 2px solid black;
+    background: gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content_frame {
+    width: 25%;
+    height: 100%;
+    border: 2px black solid;
+}
+
+.content__lýsing {
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
