@@ -1,0 +1,516 @@
+insert into ship_o_cereal_products
+    ("productId", name, price, image, stock, "isFood", description)
+    VALUES (
+            DEFAULT,
+            'C3POs',
+            420000,
+            'c3p0.jpg',
+            3,
+            True,
+            'Þetta er limited edtition star wars ' ||
+            'morgunkorn sem var gefið út árið 1978, fullkomið í safn' ||
+            'bæði morgunkorns unnandans og star wars nörda'
+           ),
+           (
+            DEFAULT,
+            'Calbee',
+            540,
+            'calbee.jpg',
+            30,
+            True,
+            'Gott og hollt morgunkorn í endurlokanlegum pakkningum. Influtt frá Japan'
+           ),
+           (
+            DEFAULT,
+            'Dósakorn',
+            370,
+            'cereal_in_a_can.jpg',
+            12,
+            True,
+            'Morgunkorn í dós, tilvalið í útileguna! Innflutt frá Kína'
+           ),
+           (
+            DEFAULT,
+            'Honey stars',
+            310,
+            'chinese_honey_stars.jpg',
+            10,
+            True,
+            'Kornstjörnur með hunangsbragði. Innflutt frá Kína'
+           ),
+           (DEFAULT,
+            'Frosted marshmallows',
+            740,
+            'frosted_marshmallows.jpg',
+            300,
+            True,
+            'Kellogs Frosted flakes með litlum sykurpúðum! Ekki pæla of mikið í innihaldslýsingunni.'),
+           (
+            DEFAULT,
+            'Glacs',
+            399,
+            'glacs.jpg',
+            150,
+            True,
+            'Þetta er alveg eins of Frosted flakes nema ódýrari.'
+           ),
+           (
+            DEFAULT,
+            'Gott Japanskt',
+            499,
+            'japanskt.jpg',
+            400,
+            True,
+            'Við vitum ekki hvað þetta heitir en þetta er alvarlega gott á bragðið! Influtt frá Japan.'
+           ),
+           (
+            DEFAULT,
+            'Strawberry cream crunch',
+            460,
+            'kream_crunch.jpg',
+            20,
+            True,
+            'Morgunkorn með litlum rjómaís molum.'
+           ),
+           (
+            DEFAULT,
+            'Monopoly cereal edition',
+            700,
+            'monopoly_cereal_edition.jpg',
+            10,
+            True,
+            'Þetta var búið til í takmarkaðri framleiðslu, kaupið meðan byrgðir endast!'
+           ),
+           (
+            DEFAULT,
+            'Mud and Bugs',
+            1000000,
+            'mud_bugs.jpg',
+            1,
+            True,
+            'Safngripur fyrir mesta morgunkorns unnandann!' ||
+            'Þetta morgunkorn var endurkallað eftir að kom í ljós' ||
+            'að verksmiðjan sem framleiddi það hafi ekki fylgt neinum heilsustöðlum' ||
+            'og flestir kassarnir innihalda asbest.'
+           ),
+           (
+            DEFAULT,
+            'My kid is crying',
+            999,
+            'my_kid_is_crying.jpg',
+            500,
+            True,
+            'Er krakkinn búinn að vera góður þessa vikuna?' ||
+            'þetta er fullkomna helgarmorgunkornið, en við áföllumst ' ||
+            'þig ekki fyrir að borða þetta á hverjum degi!' ||
+            'Innflutt frá BNA'
+           )
+           ;
+
+
+insert into ship_o_cereal_producttypes
+    ("typeId", type)
+VALUES (
+        DEFAULT,
+        'cereal'
+       );
+
+insert into ship_o_cereal_users
+    ("userId", "userName", "realName", password, banned, email)
+VALUES (
+        DEFAULT,
+        'PrufaS',
+        'Prufa Smith',
+        'prUfa2021',
+        FALSE,
+        'prufa@gmail.com'
+       ),
+       (
+        DEFAULT,
+        'ReyMorg',
+        'Reynir Morgensen',
+        'dReki666',
+        FALSE,
+        'reynir@gmail.com'
+       );
+insert into ship_o_cereal_users
+    ("userId", "userName", "realName", password, banned, email)
+VALUES
+       (
+        DEFAULT,
+        'MAGA',
+        'Donald Trump',
+        'MAGA2020!',
+        True,
+        'donny@aol.com'
+       );
+
+insert into ship_o_cereal_creditcards
+    ("cardId", "cardNumber", month, year, cvc, "userId_id")
+VALUES (
+        DEFAULT,
+        '1111222233334444',
+        11,
+        21,
+        123,
+        3
+       ),
+       (
+        DEFAULT,
+        '2222333344445555',
+        11,
+        22,
+        123,
+        4
+       ),
+       (
+        DEFAULT,
+        '3333444455556666',
+        11,
+        22,
+        123,
+        2
+       );
+
+insert into ship_o_cereal_addresses
+    ("addrId", address, zip, "userId_id")
+VALUES (
+        DEFAULT,
+        'dúfnahólar 10',
+        101,
+        3
+       ),
+       (
+        DEFAULT,
+        'svarthöfði 1',
+        201,
+        4
+       ),
+       (
+        DEFAULT,
+        'hvíta húsið',
+        999,
+        2
+       );
+
+insert into ship_o_cereal_carts
+    ("cartId", "userId_id")
+values (
+        DEFAULT,
+        3
+       ),
+       (
+        DEFAULT,
+        4
+       );
+
+insert into ship_o_cereal_cartrows
+    ("cartRowId", amount, "cartId_id", "productId_id")
+VALUES (
+        DEFAULT,
+        2,
+        2,
+        7
+       ),
+       (
+        DEFAULT,
+        1,
+        2,
+        1
+       ),
+       (
+        DEFAULT,
+        1,
+        2,
+        5
+       ),
+       (
+        DEFAULT,
+        1,
+        3,
+        5
+       ),
+       (
+        DEFAULT,
+        1,
+        3,
+        3
+       ),
+       (
+        DEFAULT,
+        1,
+        1,
+        1
+       );
+
+insert into ship_o_cereal_orders
+    ("cartId_id", date, "addrId_id", "cardId_id")
+VALUES (
+        2,
+        date(now()),
+        1,
+        4
+       ),
+       (
+        3,
+        date(now()),
+        2,
+        5
+       );
+
+insert into ship_o_cereal_comments
+    (id, stars, review, "productId_id", "userId_id")
+VALUES (
+        DEFAULT,
+        5,
+        'gott',
+        5,
+        3
+       ),
+       (
+        DEFAULT,
+        2,
+        'alltof mikill sykur!',
+        5,
+        4
+       ),
+       (
+        DEFAULT,
+        1,
+        'its from CHINA. you want the CHINESE virus?' ||
+        'dont think so. DONT BUY',
+        5,
+        2
+       );
+
+insert into ship_o_cereal_manufacturers
+    ("manId", manufacturer)
+VALUES (
+        DEFAULT,
+        'Kelloggs'
+       ),
+       (
+        DEFAULT,
+        'Kawasaki foods'
+       ),
+       (
+        DEFAULT,
+        'Cao Ni'
+       );
+
+insert into "ship_o_cereal_products_typeId"
+    (id, products_id, producttypes_id)
+VALUES (
+        DEFAULT,
+        1,
+        1
+       ),
+       (
+        DEFAULT,
+        2,
+        1
+       ),
+       (
+        DEFAULT,
+        3,
+        1
+       ),
+       (
+        DEFAULT,
+        4,
+        1
+       ),
+       (
+        DEFAULT,
+        5,
+        1
+       ),
+       (
+        DEFAULT,
+        6,
+        1
+       ),
+       (
+        DEFAULT,
+        7,
+        1
+       ),
+       (
+        DEFAULT,
+        8,
+        1
+       ),
+       (
+        DEFAULT,
+        9,
+        1
+       ),
+       (
+        DEFAULT,
+        10,
+        1
+       ),
+       (
+        DEFAULT,
+        11,
+        1
+       );
+
+insert into "ship_o_cereal_products_manId"
+    (id, products_id, manufacturers_id)
+VALUES (
+        DEFAULT,
+        1,
+        1
+       ),
+       (
+        DEFAULT,
+        2,
+        2
+       ),
+       (
+        DEFAULT,
+        3,
+        3
+       ),
+       (
+        DEFAULT,
+        4,
+        1
+       ),
+       (
+        DEFAULT,
+        5,
+        1
+       ),
+       (
+        DEFAULT,
+        6,
+        3
+       ),
+       (
+        DEFAULT,
+        7,
+        2
+       ),
+       (
+        DEFAULT,
+        8,
+        1
+       ),
+       (
+        DEFAULT,
+        9,
+        1
+       ),
+       (
+        DEFAULT,
+        10,
+        3
+       ),
+       (
+        DEFAULT,
+        11,
+        1
+       );
+
+insert into "ship_o_cereal_comments"
+    (id, stars, review, "productId_id", "userId_id")
+VALUES (
+        DEFAULT,
+        3,
+        'þetta var eldgamalt og óætt!',
+        1,
+        4
+       ),
+       (
+        DEFAULT,
+        4,
+        'frekar basic og gott',
+        2,
+        3
+       ),
+       (
+        DEFAULT,
+        1,
+        'þetta er eitthvað gruggugt...',
+        3,
+        4
+       ),
+       (
+        DEFAULT,
+        4,
+        'frekar gott en bara hunangsbragð af þessu',
+        4,
+        4
+       ),
+       (
+        DEFAULT,
+        3,
+        'alveg eins og frosted flakes',
+        6,
+        3
+       ),
+       (
+        DEFAULT,
+        5,
+        'besta',
+        7,
+        3
+       ),
+       (
+        DEFAULT,
+        5,
+        'klikkar ekki',
+        7,
+        4
+       ),
+       (
+        DEFAULT,
+        1,
+        'bragðast eins og aska!',
+        8,
+        4
+       ),
+       (
+        DEFAULT,
+        3,
+        'bara nákvæmlega eins og lucky charms',
+        9,
+        4
+       ),
+       (
+        DEFAULT,
+        1,
+        'frekar sár í hálsinum eftir að prufa þetta',
+        10,
+        3
+       ),
+       (
+        DEFAULT,
+        5,
+        'krakkarnir eru komnir með sykursýki en þetta ' ||
+        'var algjörlega þess virði!',
+        11,
+        4
+       );
+
+insert into ship_o_cereal_addresses
+    ("addrId", address, zip, "userId_id")
+VALUES (
+        DEFAULT,
+        'viðey 1',
+        104,
+        3
+       );
+
+insert into ship_o_cereal_creditcards
+    ("cardId", "cardNumber", month, year, cvc, "userId_id")
+VALUES (
+        DEFAULT,
+        '1584625913451128',
+        10,
+        21,
+        123,
+        3
+       );

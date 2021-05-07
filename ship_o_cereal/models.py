@@ -125,7 +125,7 @@ class Orders(models.Model):
 
 
 class Comments(models.Model):
-    userId = models.OneToOneField(Users, on_delete=models.CASCADE)
-    productId = models.OneToOneField(Products, on_delete=models.CASCADE)
+    userId = models.ForeignKey(Users, on_delete=models.CASCADE)
+    productId = models.ForeignKey(Products, on_delete=models.CASCADE)
     stars = models.IntegerField()
     review = models.CharField(max_length=500)
