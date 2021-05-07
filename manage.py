@@ -10,11 +10,9 @@ def main():
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
-<<<<<<< HEAD
-=======
         #Eftir síðasta Pull kom error á pyr.raise ImportError( Þegar strokað var
         # Pyr. út hætti hann. Muna það
->>>>>>> 0b53bb2293f18d3f0601ceb0235ea5b1a07339e9
+
         raise ImportError(
             "Couldn't import Django. Are you sure it's installed and "
             "available on your PYTHONPATH environment variable? Did you "
