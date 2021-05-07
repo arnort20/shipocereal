@@ -850,3 +850,131 @@ VALUES (
         False
        );
 
+insert into ship_o_cereal_defaultfilters ("userId_id", "notVegan", gluten, wheat, barley, peanut, soy, sulphites, sesame, rice, mustard, milk, maize, oats, garlic, kiwi, mango, strawberry, banana, avocado, tomato, egg, celery, pineapple, buckwheat)
+VALUES (
+        3,
+        False,
+        False,
+        False,
+        False,
+        False,
+        False,
+        False,
+        False,
+        False,
+        False,
+        False,
+        False,
+        False,
+        False,
+        False,
+        False,
+        False,
+        False,
+        False,
+        False,
+        False,
+        False,
+        False,
+        False
+       ),
+       (
+        4,
+        False,
+        True,
+        False,
+        False,
+        False,
+        False,
+        False,
+        False,
+        False,
+        False,
+        True,
+        True,
+        False,
+        False,
+        False,
+        False,
+        True,
+        True,
+        True,
+        False,
+        True,
+        False,
+        False,
+        True
+       );
+insert into ship_o_cereal_producttypes ("typeId", type)
+VALUES (
+        DEFAULT,
+        'bowl'
+       ),
+       (
+        DEFAULT,
+        'spoon'
+       );
+
+insert into ship_o_cereal_products
+    ("productId", name, description, price, image, stock, "isFood")
+VALUES (
+        DEFAULT,
+        'Harley Quinn skál',
+        'Haley Quinn skálin, 300ml',
+        750,
+        'harley_bowl.jpg',
+        5,
+        False
+       ),
+       (
+        Default,
+        'Kellogs skál',
+        'opinberleg vara frá Kellogs, 200ml',
+        400,
+        'kellogs_bowl.jpg',
+        10,
+        False
+       ),
+       (
+        DEFAULT,
+        'Kellogs skeið',
+        'opinberleg vara frá Kellogs',
+        210,
+        'kellogs_spoon.jpg',
+        100,
+        False
+       );
+
+insert into "ship_o_cereal_products_typeId" (id, products_id, producttypes_id)
+VALUES (
+        DEFAULT,
+        12,
+        2
+       ),
+       (
+        DEFAULT,
+        13,
+        2
+       ),
+       (
+        DEFAULT,
+        14,
+        3
+       );
+
+insert into "ship_o_cereal_products_manId" (id, products_id, manufacturers_id)
+VALUES (
+        DEFAULT,
+        12,
+        3
+       ),
+       (
+        DEFAULT,
+        13,
+        1
+       ),
+       (
+        DEFAULT,
+        14,
+        1
+       );
