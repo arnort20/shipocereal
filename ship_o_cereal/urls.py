@@ -3,5 +3,7 @@ from ship_o_cereal import views
 
 urlpatterns = [
     # http//localhost:8000
-    path('', views.index, name="index"),
+    path('', views.home, name="home"),
+    path('store/', views.prod_view, name="ProductView")
+
 ]
