@@ -1,7 +1,7 @@
 from django.forms import ModelForm, widgets, modelformset_factory
 from django import forms
 
-from .models import Products
+from .models_gamalt import Products
 
 
 
