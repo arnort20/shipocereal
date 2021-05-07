@@ -1,0 +1,71 @@
+html,body{
+    height: 100%;/*TAKA*/
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #FFDB58;
+}
+.col-md-4,.col-md-8{
+    height: 100%;
+    border: 1px solid black;
+}
+
+.login__header{
+    margin-top: 5%;
+    display: flex;
+    text-align: center;
+    background-color: dodgerblue;
+}
+
+.login__header-text{
+    margin: 0;
+    font-size: 1.3vw;
+    color: black;
+}
+
+
+.container{
+    height: 60%;
+    margin: 0;
+    background-color: green;
+}
+
+/*.login__column{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.login__input{
+    width:80%;
+    height: 8%;
+    margin-top:5%;
+    margin-left: 10%;
+}
+
+.login__checkbox{
+    height: 5%;
+    width: 5%;
+}
+
+.login__button{
+    height: 10%;
+    align-content: flex-end;
+}
+
+.login__forgottenPw{
+    height: 10%;
+}
+.amma{
+    height: 25%;
+    background-color: dodgerblue;
+    border: 1px solid black;
+}
+
+.container__header{
+    height: 10%;
+}*/
+
+
+
+

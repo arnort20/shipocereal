@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Ship O' Cereal</title>
+            <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+            <!-- Optional theme -->
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+            <link rel="stylesheet" type="text/css" media="screen" href="subcategory2.css" />
+        </head>
+        <body>
+            <div class="row banner">
+                <div class="col-md-5 banner__column banner__logoBox">
+                    <img src="../Photos/logo3.png" class="banner__logoImage">
+                    <i class="banner__logoText">Mesta úrval morgunkorns á Íslandi</i>
+                </div>
+
+                <div class="col-md-5 banner__column banner__searchColumn">
+                    <input  type="text" id="banner__searchbar" name="searchbar"  placeholder="Leitaðu að þínu uppáhalds morgunkorni hér">
+                    <span class="glyphicon glyphicon-search banner__search_icon"></span>
+                </div>
+
+                <div class="col-md-2 banner__column" id="banner__UserOptions">
+                    <div class="col-md-1 banner__LoginAndCart banner__Login">
+                        <span class="glyphicon glyphicon-user banner__user_icon"></span>
+                        <p>Innskráning</p>
+                    </div>
+
+                    <div class="col-md-1 banner__LoginAndCart banner__Cart">
+                        <span class="glyphicon glyphicon-shopping-cart banner__shopping_cart"></span>
+                        <p>Karfa</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row" id="Image__imageContainer">
+                <h1 id="Image__SubCategoryText">Skálar</h1>
+                <img src="../Photos/Bowlimg.jpg" alt="Bowl Image" class="img-fluid Image__openImage">
+            </div>
+
+            <div class="row" id="filters">
+
+                <div class="col-md-2 filters__dropDownMenus">
+                    <label for="filters__sortBy" class="filters__labels">Raða eftir</label>
+                    <select name="filters__sortBy" id="filters__sortBy" class="filters__select">
+                        <option value="filler">Velja:</option>
+                        <option value="Popular">Vinsælast</option>
+                        <option value="Newest">Nýjast</option>
+                    </select>
+                </div>
+
+                <div class="col-md-2 filters__dropDownMenus">
+                    <label for="filters__price" class="filters__labels">Verð</label>
+                    <select name="filters__price" id="filters__price" class="filters__select">
+                        <option value="filler">Velja:</option>
+                        <option value="HighestToLowest">Hæðsta til Lægsta</option>
+                        <option value="LowestToHighest">Lægsta til Hæðsta</option>
+                        <option value="priceBar">Bæta við verðstilli??</option>
+                    </select>
+                </div>
+
+                <div class="col-md-2 filters__dropDownMenus">
+                    <label for="filters__type" class="filters__labels">Tegund</label>
+                    <select name="filters__type" id="filters__type" class="filters__select">
+                        <option value="filler">Velja:</option>
+                        <option value="Wheat">Hveiti</option>
+                        <option value="Barley">Bigg</option>
+                        <option value="Oats">Hafrar</option>
+                    </select>
+                </div>
+
+                <div class="col-md-2 filters__dropDownMenus">
+                    <label for="filters__manufacturer" class="filters__labels">Frammleiðandi</label>
+                    <select name="filters__manufacturer" id="filters__manufacturer" class="filters__select">
+                        <option value="filler">Velja:</option>
+                        <option value="Cheerios">Cheerios</option>
+                        <option value="Kellogs">Kellogg's</option>
+                        <option value="Nestle">Nestle</option>
+                    </select>
+                </div>
+
+                <div class="col-md-2 filters__dropDownMenus" id="TAKA">
+
+                    <label for="filters__selectAllergence" id="filters__labelAllergence" class="filters__labels">Ofnæmisvaldar</label>
+                    <!-- Single button -->
+                    <!--<div class="btn-group">
+                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Action <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                      </ul>
+                    </div>-->
+                    <form class="filters__formAllergence">
+                      <div class="filters__multiselect">
+                        <div class="selectBox" onclick="showCheckboxes()">
+                          <select name="filters__selectAllergence" id="filters__selectAllergence" class="filters__select">
+                            <option>Sleppa:</option>
+                          </select>
+                          <div class="filters__overSelect"></div> <!--To hide the select pop out-->
+                        </div>
+                        <div id="filters__checkboxes">
+                          <label for="Nuts" class="filters__checkbox_lable"><input type="checkbox" id="Nuts" />&nbsp;Hnetur</label>
+                          <label for="Penuts" class="filters__checkbox_lable"><input type="checkbox" id="Penuts" />&nbsp;Jarðhnetur</label>
+                          <label for="Soya" class="filters__checkbox_lable"><input type="checkbox" id="Soya" />&nbsp;Soya</label>
+                          <label for="Milk" class="filters__checkbox_lable"><input type="checkbox" id="Milk" />&nbsp;Mjólk</label>
+                          <label for="Gluten" class="filters__checkbox_lable"><input type="checkbox" id="Gluten" />&nbsp;Glúten</label>
+                          <label for="Egg" class="filters__checkbox_lable"><input type="checkbox" id="Egg" />&nbsp;Egg</label>
+                          <label for="Sesame" class="filters__checkbox_lable"><input type="checkbox" id="Sesame" />&nbsp;Sesam</label>
+                        </div>
+                      </div>
+                    </form>
+
+                </div>
+            </div>
+
+            <div class="row" id="container">
+               <div class="row container__row" id="container__topRow">
+
+                    <div class="col-md-3 container__item">
+                        <img src="../Photos/skal.jpg" alt="skal" class="container__itemImage">
+                        <div class="contaier__itemDescription">
+                            <p>Harley Quinn Bowl - 2300 ISK</p>
+                        </div>
+                        <button type="button" class="container__itemButton">Setja í körfu</button>
+                    </div>
+
+                    <div class="col-md-3 container__item">
+                        <img src="../Photos/skal_2.jpg" alt="skal" class="container__itemImage">
+                        <div class="contaier__itemDescription">
+                            <p>Joker Bowl - 2000 ISK</p>
+                        </div>
+                        <button type="button" class="container__itemButton">Setja í körfu</button>
+                    </div>
+
+                    <div class="col-md-3 container__item">
+                        <img src="../Photos/skal_3.png" alt="skal" class="container__itemImage">
+                        <div class="contaier__itemDescription">
+                            <p>Tony the Tiger Bowl - 2300 ISK</p>
+                        </div>
+                        <button type="button" class="container__itemButton">Setja í körfu</button>
+                    </div>
+
+                    <div class="col-md-3 container__item">
+                        <img src="" alt="skal" class="container__itemImage">
+                        <div class="contaier__itemDescription">
+                            <p>Vöruheiti - Verð</p>
+                        </div>
+                        <button type="button" class="container__itemButton">Setja í körfu</button>
+                    </div>
+
+                </div>
+
+                <div class="row container__row" >
+
+                    <div class="col-md-3 container__item">
+                        <img src="" alt="skal" class="container__itemImage">
+                        <div class="contaier__itemDescription">
+                            <p>Vöruheiti - Verð</p>
+                        </div>
+                        <button type="button" class="container__itemButton">Setja í körfu</button>
+                    </div>
+
+                    <div class="col-md-3 container__item">
+                        <img src="" alt="skal" class="container__itemImage">
+                        <div class="contaier__itemDescription">
+                            <p>Vöruheiti - Verð</p>
+                        </div>
+                        <button type="button" class="container__itemButton">Setja í körfu</button>
+                    </div>
+
+                    <div class="col-md-3 container__item">
+                        <img src="" alt="skal" class="container__itemImage">
+                        <div class="contaier__itemDescription">
+                            <p>Vöruheiti - Verð</p>
+                        </div>
+                        <button type="button" class="container__itemButton">Setja í körfu</button>
+                    </div>
+
+                    <div class="col-md-3 container__item">
+                        <img src="" alt="skal" class="container__itemImage">
+                        <div class="contaier__itemDescription">
+                            <p>Vöruheiti - Verð</p>
+                        </div>
+                        <button type="button" class="container__itemButton">Setja í körfu</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+            <script src="subcategory2.js"></script>
+
+        </body>
+    </html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Sign Up</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+            <link rel="stylesheet" type="text/css" media="screen" href="signup.css" />
+    </head>
+    <body>
+        <div class="col-md-4 col-md-offset-4 signup__container">
+
+            <div class="row container__logo">
+                <img src="../Photos/logo3.png" alt="Logo" class="logo__img">
+            </div>
+
+            <div class="row container__userInfo">
+                <h1 class="container__title">Þínar upplýsingar</h1>
+                <input type="text" id="newUser-email" class="container__input userInfo__input" placeholder="Netfang">
+                <input type="text" id="newUser-username" class="container__input userInfo__input"  placeholder="Notendanafn">
+                <p class="container__text">ATH! Notendanafni getur ekki verið breytt. veldu nafn þitt vandlega.</p>
+                <input type="text" id="newUser-firstName" class="container__input userInfo__input"  placeholder="Fyrra Nafn">
+                <input type="text" id="newUser-lastName" class="container__input userInfo__input"  placeholder="Eftir Nafn">
+            </div>
+
+            <div class="row container__paymentInfo">
+                <h1 class="container__title">Kreditkorta upplýsingar</h1>
+                <input type="text" class="container__input paymentInfo__input" placeholder="Kortanúmer">
+
+                <div class="row paymentInfo__row">
+                <div class="paymentInfo__column">
+
+                    <label for="month" class="paymentInfo__label">Mán:</label>
+                    <select name="month" id="month" class="paymentInfo__select">
+                        <option value="jan">Jan 01</option>
+                        <option value="feb">Feb 02</option>
+                        <option value="mars">Mard 03</option>
+                        <option value="apr">Apr 04</option>
+                        <option value="may">May 05</option>
+                        <option value="jun">Jun 06</option>
+                        <option value="jul">Jul 07</option>
+                        <option value="aug">Aug 08</option>
+                        <option value="sept">Sep 09</option>
+                        <option value="oct">Oct 10</option>
+                        <option value="nov">Nov 11</option>
+                        <option value="dec">Dec 12</option>
+                    </select>
+
+                </div>
+
+                <div class="paymentInfo__column">
+                    <label for="year" class="paymentInfo__label">Ár:</label>
+                    <select name="year" id="year" class="paymentInfo__select">
+                      <option value="year1">2021</option>
+                      <option value="year2">2022</option>
+                      <option value="year3">2023</option>
+                      <option value="year5">2024</option>
+                      <option value="year6">2025</option>
+                      <option value="year7">2026</option>
+                    </select>
+                </div>
+
+                <div class="paymentInfo__column">
+                    <label for="cvc">CVC:</label>
+                    <input type="text" id="cvc" class="paymentInfo__input-cvc">
+                </div>
+
+                </div>
+            </div>
+
+
+
+            <div class="row container__password">
+                <h1 class="container__title">Lykilorð</h1>
+                <input type="text" class="container__input password__input" id="pw" placeholder="Lykilorð">
+                <input type="text" class="container__input password__input" id="pw2" placeholder="Staðfesta Lykilorð">
+                <p class="container__text">Lykilorð verður að innihalda stóran staf, tölustaf og vera amk 8 stafir í lengd.</p>
+            </div>
+
+            <div class="row container__buttons-row">
+                <div class="col-md-2 buttons__column buttons__column-abort">
+                    <button class="container__buttons button__abort" id="abort">Hætta Við</button>
+                </div>
+
+                <div class="col-md-2 buttons__column buttons__column-confirmed">
+                    <button class="container__buttons button__confirm" id="confirmed">Nýskrá</button>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,109 @@
+
+<!------USER OPTIONS------->
+
+<!--OPTION 1: MY INFO-->
+<div class="row optiondisplay__usesrinfo-header-row">
+    <div class="col-md-10 userinfo__header-col">
+        <h2 class="userinfo__header-title">Mínar Upplýsingar</h2>
+    </div>
+</div>
+
+<div class="row optiondisplay__userinfo-content-row">
+
+    <div class="col-md-4 userinfo__column-profile">
+        <img src="../Photos/profile.jpg" alt="profile pic" class="profile__img">
+        <button class="userinfo__profile-button">Breyta mynd</button>
+    </div>
+
+    <div class="col-md-6 userinfo__myinfo-col">
+        <div class="row myinfo__header-row">
+            <h2 class="myinfo__header-title">Velkominn: <i id="user-username">JonJons</i></h2>
+            <p class="myinfo__header-subtext">Hér geturu breytt öllum þínum upplýsingum</p>
+        </div>
+
+
+        <label for="user-firstname" class="myinfo__label">Fyrra Nafn:</label>
+        <input type="text" id="user-firstname" class="myinfo__input"  value="Jón Jónsson">
+        <label for="user-lastname" class="myinfo__label">Seinna Nafn:</label>
+        <input type="text" id="user-lastname" class="myinfo__input"  value="Jón Jónsson">
+        <label for="user-email" class="myinfo__label">Netfang:</label>
+        <input type="text" id="user-email" class="myinfo__input"  value="jon@jon.is">
+        <button class="myinfo__button">Breyta upplýsingum</button>
+    </div>
+
+</div>
+
+
+<!--OPTION 2: address-->
+<div class="col-md-5 address__content-col">
+    <div class="col-md-8 address__content-text-col">
+        <h2 class="address__text address__text-top">Dúfnahólar 10</h2>
+        <h2 class="address__text">101</h2>
+        <h2 class="address__text">Reykjavík</h2>
+        <h2 class="address__text address__text-bottom">Ísland</h2>
+        <i class="address__subtext">Þetta er aðal heimilsfangið þitt</i>
+
+    </div>
+        <div class="col-md-4 address__button-col">
+            <button class="address__button button__red">Eyða heimilsfangi</button>
+            <button class="address__button button__blue address__button-lower">Breyta heimilsfangi</button>
+        </div>
+    </div>
+
+    <div class="col-md-5 address__content-col">
+
+        <div class="col-md-8 address__content-text-col">
+            <h2 class="address__text address__text-top">Dúfnahólar 10</h2>
+            <h2 class="address__text">101</h2>
+            <h2 class="address__text">Reykjavík</h2>
+            <h2 class="address__text address__text-bottom">Ísland</h2>
+            <button class="address__mainAddress-button">Gera að aðal Heimilsfangi</button>
+        </div>
+
+        <div class="col-md-4 address__button-col">
+            <button class="address__button button__red">Eyða heimilsfangi</button>
+            <button class="address__button button__blue address__button-lower">Breyta heimilsfangi</button>
+        </div>
+</div>
+
+
+<!--OPTION 3: Korta Upplýsing-->
+<div class="col-md-5 cardinfo__content-col">
+    <div class="col-md-9 cardinfo__content-top-col">
+        <label for="cardnum" class="cardinfo__label">Kort:</label>
+        <p class="cardinfo__text" id="cardnum">Visa(4598)</p>
+
+        <label for="expdate" class="cardinfo__label">Gildistími:</label>
+        <p class="cardinfo__text" id="expdate">01/22</p>
+
+        <label for="namecard" class="cardinfo__label">Nafn á korti:</label>
+        <p class="cardinfo__text cardinfo__text-bottom" id="namecard">Jón Jósson</p>
+
+        <i class="cardinfo__subtext">Þetta er aðal greiðlsumátinn þitt</i>
+    </div>
+
+    <div class="col-md-3 cardinfo__content-middle-col">
+        <button class="cardinfo__button-delete button__red">Eyða korti</button>
+    </div>
+
+    <div class="col-md-12 cardinfo__content-bottom-col">
+        <button class="cardinfo__button-add button__green">Bæta við Greiðlsumáta</button>
+    </div>
+</div>
+
+
+<!--OPTION 4: CHANGE PASSWORD-->
+<div class="col-md-5 passwordchange__content-col">
+    <div class="row passwordchange__content-top-row">
+        <label for="oldpw" class="passwordchange__label">Gamla Lykilorð</label>
+        <input type="text" class="passwordchange__input" placeholder="******************">
+
+        <label for="oldpw" class="passwordchange__label">Nýja Lykilorð</label>
+        <input type="text" class="passwordchange__input" placeholder="******************">
+    </div>
+
+    <div class="row passwordchange__content-bottom-row">
+        <button class="passwordchange__button button__green">Breyta Lykilorði</button>
+    </div>
+
+</div>

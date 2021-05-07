@@ -1,0 +1,160 @@
+html,body{
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #FFDB58;
+}
+.row{
+    margin: 0;
+}
+/*-------LOGO----------*/
+.logo{
+    height: 20%
+}
+.logo__container{
+    text-align: center;
+    height: 100%;
+    margin-top: 5%;
+}
+.logo__img{
+    height: 60%;
+    margin: 2% auto auto 5%;
+}
+.logo__text{
+    margin: 0;
+    font-size: 1.3vw;
+    color: black;
+}
+
+
+
+/*--------------------USERINFO---------------------*/
+.userInfo__container{
+    height: 50%;
+    background-color: transparent;
+}
+.container__login-column,
+.container__signup-column{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    height: 100%;
+}
+
+.container__signup-column{
+    justify-content: flex-end;
+    text-align: center;
+    border-left: 2px solid black;
+}
+
+
+.login__row-input,.login__row-forgottenPw,
+.login__row-submit,.signup__row{
+    width: 95%;
+    background-color: rgb(216, 212, 212,0.76);
+}
+.signup__row{
+    height: 60%;
+}
+
+
+/*--------LOGIN-------*/
+
+/*INPUT FIELDS*/
+.login__row-input{
+    height: 65%;
+    text-align: center;
+    color: black;
+    margin: 0;
+}
+.login__input-text{
+    margin: 8% 5% 2% 5%;
+}
+.login__input{
+    width: 90%;
+    height: 20%;
+    margin: 5% 0 5% 0;
+}
+
+/*SUBMIT*/
+.login__row-submit{
+    height: 15%;
+    padding: 0 5% 0 5%;
+    margin: 0;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.login__submit-column{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/*CHECKBOX FORMAT*/
+.login__column-checkbox{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.login__checkbox{
+    width: 13%;
+    height: 60%;
+}
+
+.login__checkbox-text{
+    color: black;
+    font-size: 1vw;
+    margin: 2% 0 0 5%;
+}
+
+/*LOGIN BUTTON FORMAT*/
+.login__column-button{
+    justify-content: flex-end;
+    padding: 0;
+}
+
+.login__button{
+    width: 80%;
+    height: 70%;
+    display: inline;
+    background-color: #3B8905;
+    border: none;
+    color: white;
+}
+
+/*FORGOTTEN PASSWORD BUTTON*/
+.login__row-forgottenPw{
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+.login__button-forgottenPw{
+    background-color: transparent;
+    border: 0;
+}
+
+/*--------SIGNUP-------*/
+
+.signup__title{
+    margin: 8% 5% 2% 5%;
+    color: black;
+}
+
+.signup__button{
+    width:60%;
+    height:20%;
+    margin-top: 2%;
+    background-color: #274996;
+    border: 0;
+    border-radius: 2px;
+    color: white;
+}
+
+
+
+

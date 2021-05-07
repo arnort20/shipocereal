@@ -1,0 +1,156 @@
+html,body{
+    height: 100%;
+    width:100%;
+    margin:0;
+    padding: 0;
+    background-color: #FFDB58;
+}
+button{
+    border: 0;
+    border-radius: 3%;
+    color: white;
+    font-size: 1vw;
+}
+.button__red{
+    background-color: #CC4A4A;
+}
+.button__blue{
+    background-color: #274996;
+}
+.button__green{
+    background-color: #3B8905;
+}
+
+/*CONTAINER FOR THE SITE*/
+.user__container{
+    width: 90%;
+    margin: 2% 0 0 5%;
+    padding: 0;
+    height: 90%;
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+
+/*CONTAINER HEADER*/
+.container__header{
+    height: 15%;
+    width: 100%;
+    margin: 0;
+}
+.header__column{
+    height: 100%;
+    border-bottom: 1px solid black;
+}
+.header__column-logo{
+    display: flex;
+    align-items: center;
+}
+
+.header__logo{
+    width: 100%;
+}
+.header__title{
+    font-size: 4vw;
+    color: black;
+    margin-left: 15%;
+}
+.header__column-title{
+    text-align: center;
+}
+
+.header__column-button{
+    display: flex;
+    justify-content: flex-end;
+}
+.header__button{
+    height: 50%;
+    font-size: 1.3vw;
+    margin: auto 2% auto auto;
+}
+
+
+/*CONTAINER FOR USER OPTIONS*/
+.container__useroptions{
+    height: 85%;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+/*MENUBAR*/
+.useroptions__menubar-col{
+    height: 90%;
+    border-radius: 5px;
+    margin: auto;
+    padding: 0;
+}
+
+.useroptions__menubar-nav{
+    height: 100%;
+    margin: 0;
+    display: flex;
+
+}
+.menubar__ul{
+    height: 100%;
+    font-size: 2vw;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
+}
+.menubar__li{
+    height: 15%;
+    width: 100%;
+    list-style-type: none;
+    padding: 4% 0 0 3%;
+    border: 1px solid black;
+    border-radius: 2%;
+    background-color: #FFF7DF;
+
+}
+.menubar__topli{
+    margin-top:0;
+}
+
+.menubar__arrow{
+    color: black;
+    font-size: 2.5vw;
+    display: inline;
+    margin:0 0 0 5%;
+}
+
+
+/*OPTION DISPLAY COTAINER*/
+.useroptions__optiondisplay-col{
+    height: 90%;
+    background-color: #FFF7DF;
+    border: 1px solid black;
+    border-radius: 1%;
+    margin: auto;
+}
+/*OPTION DISPLAY HEADER*/
+.optiondisplay__header-row{
+    height: 15%;
+    text-align: center;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+.optiondisplay__header-col{
+    height: 100%;
+    border-bottom:1px solid black;
+}
+.optiondisplay__header-title{
+    font-size: 2.5vw;
+}
+
+
+
+
+
+

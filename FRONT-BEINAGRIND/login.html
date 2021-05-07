@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Login</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" media="screen" href="login.css" />
+    </head>
+    <body>
+
+        <div class="row logo">
+           <div class="col-md-8 col-md-offset-2 logo__container">
+               <img src="../Photos/logo3.png" alt="Logo" class="logo__img">
+               <p class="logo__text">Velkomin á innskráningarvef Ship O' Cereal</p>
+           </div>
+        </div>
+
+        <div class="row userInfo__container">
+            <div class="col-md-4 col-md-offset-2 container__login-column">
+
+                <div class="row login__row-input">
+                    <h1 class="login__input-text">Skráðu þig inn</h1>
+                    <input type="text" id="username" class="login__input">
+                    <input type="text" id="pw" class="login__input">
+                </div>
+
+                <div class="row login__row-submit">
+                    <div class="col-md-2 login__submit-column login__column-checkbox">
+                        <input type="checkbox" id="rememberLogin" class="login__checkbox">
+                        <label for="rememberLogin" class="login__checkbox-text">Muna eftir mér</label>
+                    </div>
+
+                    <div class="col-md-2 login__submit-column login__column-button">
+                        <button id="loginButton" class="login__button">Innskrá</button>
+                    </div>
+                </div>
+
+                <div class="row login__row-forgottenPw">
+                    <button id="forgottenPw" class="login__button-forgottenPw"><i>Gleymt Lykilorð? Ýttu hér til að fá nýtt</i></button>
+                </div>
+
+            </div>
+
+            <div class="col-md-4 container__signup-column">
+
+                <div class="row signup__row">
+                    <h1 class="signup__title">Búa til Aðgang</h1>
+                    <p>Ertu að versla í fyrsta skiptið? Búðu þá til aðgang</p>
+                    <button id="newUser" class="signup__button">Nýr Aðgangur</button>
+                </div>
+
+            </div>
+        </div>
+
+    </body>
+</html>
