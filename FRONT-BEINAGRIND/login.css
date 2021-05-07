@@ -1,18 +1,14 @@
 html,body{
-    height: 100%;
-    width: 100%;
-    padding: 0;
-    margin: 0;
     background-color: #FFDB58;
 }
 .row{
     margin: 0;
 }
 /*-------LOGO----------*/
-.logo{
+.container__logo-row{
     height: 20%
 }
-.logo__container{
+.logo__container-col{
     text-align: center;
     height: 100%;
     margin-top: 5%;

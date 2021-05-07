@@ -1,15 +1,23 @@
 html,body{
-    height: 100%;
-    width:100%;
-    margin:0;
-    padding: 0;
     display: flex;
     justify-content: center;
 }
-.bold__text{
-    font-weight: bold;
+.container__checkout{
+    height: 200%;
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
-.column__all-left{
+.checkout_row{
+    margin: 0;
+    padding: 0;
+    height: 28.3%;
+    display: flex;
+    justify-content: center;
+}
+
+.checkout__column{
     margin: 0;
     padding: 0;
     display: flex;
@@ -22,20 +30,7 @@ html,body{
 .column__month{
     justify-content: flex-end;
 }
-.checkout__container{
-    height: 200%;
-    margin-top: 3%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-.checkout_row-left{
-    margin: 0;
-    padding: 0;
-    height: 28.3%;
-    display: flex;
-    justify-content: center;
-}
+
 .checkout__title{
     margin:2% 0 0 5%;
 }
@@ -115,7 +110,7 @@ html,body{
     margin: 0 0 10% 10%;
 }
 
-.container__leftcol{
+.checkout__leftcol{
     height: 100%;
     margin: auto;
     padding: 0;
@@ -123,7 +118,7 @@ html,body{
     flex-wrap: wrap;
     justify-content: flex-start;
 }
-.leftcol__row{
+.checkout__leftcol-row{
     height: 30%;
     width: 100%;
     margin: 0;
@@ -148,14 +143,6 @@ html,body{
     margin: 0 auto auto auto;
     padding: 0;
     border: 1px solid black;
-}
-
-.checkout__row-right{
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
 }
 .row__header-right{
     padding: 0 0 2% 0;

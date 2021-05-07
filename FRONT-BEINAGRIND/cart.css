@@ -1,36 +1,15 @@
-body,html{
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
+html,body{
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
 }
-
-button{
-    border: 0;
-    border-radius: 5px;
-    color: white;
-}
-.button__red{
-    background-color: #CC4A4A;
-}
-.button__blue{
-    background-color: #274996;
-}
-.button__green{
-    background-color: #3B8905;
-}
-
-.container__left-col{
+.container__cart-left-col{
     margin: 5% auto auto auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.container__left-row{
+.cart__left-row{
     margin:0;
     padding: 0;
     width: 100%;
@@ -38,7 +17,7 @@ button{
     border-radius: 3px;
     background-color: #E7E3E3;
 }
-.header__row{
+.cart__header-row{
     margin-bottom: 5%;
 }
 
@@ -95,7 +74,7 @@ button{
     margin-bottom: 10%;
 }
 
-.container__right-col{
+.container__cart-right-col{
     margin: 5% auto auto auto;
     display: flex;
     flex-wrap: wrap;
