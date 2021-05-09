@@ -26,6 +26,15 @@ button{
     background-color: #3B8905;
 }
 
+.h2__text{
+    font-size: 1.5vw;
+}
+.p__text{
+    font-size: 1vw;
+}
+.h1__text{
+    font-size: 2vw;
+}
 
 .product-text{
     font-size: 1.2vw;

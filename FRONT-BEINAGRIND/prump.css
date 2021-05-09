@@ -1,71 +1,78 @@
-html,body{
-    height: 100%;/*TAKA*/
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    background-color: #FFDB58;
+body,html{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
 }
-.col-md-4,.col-md-8{
-    height: 100%;
+.content__frame{
+    width: 90%;
+    /*height: 90%;*/
+    margin:auto;
+}
+.content__product{
+    margin: auto;
+    border:1px solid black;
+}
+.product__row{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+.product__column{
+    padding: 1% 1% 3% 1%;
+}
+
+.product__description,
+.product__ingredients,
+.product__nutritions{
+    margin-left: 5%;
+}
+.product__subitem{
+    margin-left: 5%;
+}
+
+
+.product__nutritions-table{
     border: 1px solid black;
 }
-
-.login__header{
-    margin-top: 5%;
-    display: flex;
+.table__space{
+    padding: 2%;
+}
+.product__nutritions-th{
+    font-size: 1.2vw;
+    padding: 2% 5% 2% 1%;
+    border-bottom: 1px solid black;
+}
+.product__nutritions-td{
+    font-size: 1vw;
     text-align: center;
-    background-color: dodgerblue;
 }
-
-.login__header-text{
-    margin: 0;
-    font-size: 1.3vw;
-    color: black;
+.content__price{
+    margin: auto;
 }
-
-
-.container{
-    height: 60%;
-    margin: 0;
-    background-color: green;
-}
-
-/*.login__column{
+.product__row-price{
     display: flex;
     flex-wrap: wrap;
-    align-content: flex-start;
-}
-
-.login__input{
-    width:80%;
-    height: 8%;
-    margin-top:5%;
-    margin-left: 10%;
-}
-
-.login__checkbox{
-    height: 5%;
-    width: 5%;
-}
-
-.login__button{
-    height: 10%;
-    align-content: flex-end;
-}
-
-.login__forgottenPw{
-    height: 10%;
-}
-.amma{
-    height: 25%;
-    background-color: dodgerblue;
+    margin: 0 0 10% 0;
+    padding: 5%;
     border: 1px solid black;
 }
+.price__text{
+    margin-left: 15%;
+}
+.product__button{
+    padding: 2% 0 2% 0;
+    margin:5% 0 0 15%;
+}
 
-.container__header{
-    height: 10%;
-}*/
-
-
-
-
+.product__row-review{
+    padding: 5%;
+    margin: 0;
+    text-align: center;
+    border:1px solid black;
+}
+.product__input{
+    padding: 2%;
+    margin: 1% 0 1% 0;
+}
