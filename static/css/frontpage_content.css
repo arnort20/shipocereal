@@ -19,9 +19,8 @@
     border-radius: 15px 15px;
     padding: 25px 0 25px 0;
     font-size: 25px;
-    background: #274996;
 }
-/* unvisited link */
+
 .links:link,
 .links:active,
 .links:visited{

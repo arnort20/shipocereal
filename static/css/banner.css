@@ -68,7 +68,7 @@ div{
     top: 25%;
 }
 
-.banner__LoginAndCar {
+.banner__LoginAndCar{
     text-align: center;
     position: absolute;
     top: 65%;
@@ -83,4 +83,9 @@ div{
 .banner__Cart {
     display: flex;
     justify-content: center;
+}
+.banner__button{
+    background-color: transparent;
+    border:0;
+    color: black;
 }

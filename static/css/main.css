@@ -18,12 +18,15 @@ button{
 }
 .button__red{
     background-color: #CC4A4A;
+    border: 1px solid #802D2D;
 }
 .button__blue{
     background-color: #274996;
+    border: 1px solid #1c356e;
 }
 .button__green{
     background-color: #3B8905;
+    border: 1px solid #1b3f02;
 }
 
 .h2__text{

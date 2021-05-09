@@ -1,0 +1,154 @@
+html,body{
+    background-color: #FFDB58;
+    display: flex;
+    justify-content: center;
+}
+
+.signup__container{
+    height: 95%;
+    padding: 0;
+    margin-top: 1%;
+    background-color: rgb(216, 212, 212,0.76);
+}
+.container__input{
+    color: #EEEEEE;
+    border: 1px solid black;
+    width: 80%;
+    margin: 1% 1% 1% 10%;
+}
+.container__title{
+    font-size: 2vw;
+    margin: 1% 1% 1% 5%;
+}
+.container__text{
+    font-size: 0.8vw;
+    margin-left: 10%;
+}
+
+
+.container__userInfo,.container__paymentInfo,
+.container__password,.container__buttons{
+    width: 100%;
+    margin: 0;
+}
+
+/*----LOGO TOP ROW------*/
+.container__logo{
+    height: 13%;
+    margin: 0;
+    padding: 0;
+    background-color: #FFDB58;
+}
+.logo__img{
+    width: 100%;
+    object-fit: contain;
+}
+
+/*----USER INFO----*/
+.container__userInfo{
+    height: 35%;
+}
+.userInfo__input{
+    height: 13%;
+}
+
+
+
+
+
+
+
+.container__paymentInfo{
+    height: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+}
+.paymentInfo__row{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    height: 20%;
+    width: 80%;
+    margin: 0 0 0 10%;
+}
+
+.paymentInfo__column{
+    height: 100%;
+    width: 35%;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    justify-content: center;
+}
+.paymentInfo__select,.paymentInfo__input-cvc{
+    width:60%;
+    height: 100%;
+}
+.paymentInfo__label{
+    font-size: 1.2vw;
+    margin-left: 2%;
+}
+
+.paymentInfo__input{
+    margin: 0 0 0  10%;
+    height: 25%;
+}
+
+.container__password{
+    height: 18%;
+}
+.password__input{
+    height: 25%;
+}
+
+
+.container__buttons-row{
+    height: 6%;
+    width: 80%;
+    margin:8% 0 0 10%;
+}
+.buttons__column{
+    width: 50%;
+    height: 100%;
+    text-align: center;
+}
+.container__buttons{
+    height: 90%;
+    width: 80%;
+}
+.buttons__column-abort{
+    display: flex;
+    padding: 0;
+}
+.button__abort{
+    background-color: #CC4A4A;
+    border: 0;
+    border-radius: 2px;
+    color: white;
+}
+
+.buttons__column-confirmed{
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+}
+.button__confirm{
+    background-color: #3B8905;
+    border: 0;
+    border-radius: 2px;
+    color: white;
+}
+/*.container__input{
+    padding: 0;
+    width: 80%;
+    height: 15%;
+    margin:2% 0 0 5%;
+}*/
+
+
+
+
+
+
