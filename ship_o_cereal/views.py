@@ -2,11 +2,6 @@ from django.shortcuts import render
 from ship_o_cereal.models import *
 
 
-
-def home(request):
-    return render(request, 'homepage/home.html')
-
-
 def prod_view(request):
     # allProducts = Products.objects.all()
     honeyStars = {'product': Products.objects.get(pk=1)}
