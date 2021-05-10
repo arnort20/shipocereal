@@ -111,7 +111,12 @@ button{
     border: 1px solid black;
     border-radius: 2%;
     background-color: #FFF7DF;
-
+}
+.menubar__li:hover{
+    background-color: orange;
+}
+.active__menubar{
+    background-color: orange;
 }
 .menubar__topli{
     margin-top:0;
@@ -146,11 +151,26 @@ button{
     border-bottom:1px solid black;
 }
 .optiondisplay__header-title{
+    margin-top:2%;
     font-size: 2.5vw;
 }
 
+.arrow{
+    float: right;
+    margin-right: 5%;
+    font-weight: bold;
+}
 
+.div__myinfo,
+.div__address,
+.div__cardinfo,
+.div__changepw,
+.div__wishlist,
+.div__myorders{
+    display: none;
+}
 
-
-
+.active__option{
+    display: flex;
+}
 
