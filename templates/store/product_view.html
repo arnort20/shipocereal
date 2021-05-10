@@ -15,16 +15,15 @@
         <div class="col-md-8 content__product" >
             <div class="row product__row">
                 <div class="col-md-4 product__column image__container">
-                    <img class="col-md-10 product__image" src="{% static 'productPictures/gluten_free.jpg' %}" alt="MYND">
+                    <img class="col-md-10 product__image" src="{% static 'productPictures/'%}{{ product.image }}" alt="MYND">
                 </div>
 
                 <div class="col-md-7 product__column">
-                    <h1 class="col-md-12 h1__text" >Glúteinfrítt Special-K</h1>
+                    <h1 class="col-md-12 h1__text" >{{ product.name }}</h1>
 
                     <div class="product__description ">
                         <h2 class="h2__text">Lýsing:</h2>
-                        <p class="p__text product__subitem">Heilbrigt og klassíska morgunkornið er núna til Glúteinfrítt <br>
-                        Tilvalið fyrir þá sem vilja byrja daginn full af orku</p>
+                        <p class="p__text product__subitem">{{ product.description }}</p>
                     </div>
 
                     <div class="product__ingredients">
@@ -64,7 +63,7 @@
         <div class="col-md-3 content__price">
             <div class="row product__row-price">
                 <h1 class="col-md-4 h1__text font__bold price__text a" >Verð:</h1>
-                <h1 class="col-md-5 h1__text a">2100ISK</h1>
+                <h1 class="col-md-5 h1__text a">{{ product.price }}</h1>
                 <button class="col-md-9 product__button button__green">Setja í körfu</button>
             </div>
 
