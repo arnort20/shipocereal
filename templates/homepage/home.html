@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
+    <link rel="stylesheet" href="{% static '/css/frontpage_content.css' %}">
+    <link rel="stylesheet" href="{% static '/css/frontpage_endblock.css' %}">
     {% include 'homepage/frontpage_content.html' %}
     {% include 'homepage/frontpage_endblock.html' %}
 {% endblock %}
