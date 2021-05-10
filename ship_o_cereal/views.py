@@ -9,8 +9,8 @@ def home(request):
 
 def prod_view(request):
     # allProducts = Products.objects.all()
-    honeyStars = {'product': Products.objects.get(pk=1)}
-    return render(request, 'store/product_view.html', context=honeyStars)
+    allProducts = {'products': Products.objects.all()}
+    return render(request, 'store/store.html', context=allProducts)
 
 
 def prod_by_id(request, productId):
