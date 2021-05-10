@@ -1,6 +1,11 @@
 
+const arrowContainer = document.createElement("div");
+arrowContainer.className = "col-md-10"
+arrowContainer.className += " arrow__container"
+
 const arrowTag = document.createElement("i");
 arrowTag.className = "arrow";
+arrowTag.className += " col-md-2";
 
 const arrowText = document.createTextNode("\u2192");
 arrowTag.appendChild(arrowText);

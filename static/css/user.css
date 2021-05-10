@@ -27,16 +27,21 @@ button{
     margin: 2% 0 0 5%;
     padding: 0;
     height: 90%;
-    background-color: #ffffff;
+    background-color: rgba(216,212,212,0.76);
     border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 
 /*CONTAINER HEADER*/
 .container__header{
     height: 15%;
-    width: 100%;
+    width: 96%;
     margin: 0;
+    display: flex;
+    justify-content: center;
 }
 .header__column{
     height: 100%;
@@ -46,6 +51,11 @@ button{
     display: flex;
     align-items: center;
 }
+.header__column-title{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .header__logo{
     width: 100%;
@@ -53,7 +63,6 @@ button{
 .header__title{
     font-size: 4vw;
     color: black;
-    margin-left: 15%;
 }
 .header__column-title{
     text-align: center;
@@ -77,6 +86,7 @@ button{
     margin: 0;
     display: flex;
     justify-content: center;
+    color:#2D2D2D;
 }
 
 /*MENUBAR*/
@@ -107,40 +117,60 @@ button{
     height: 15%;
     width: 100%;
     list-style-type: none;
-    padding: 4% 0 0 3%;
-    border: 1px solid black;
+    padding-left:3%;
+    box-shadow: 0 0 6px #000000;
+    border: 1px solid #4c4c4c;
     border-radius: 2%;
-    background-color: #FFF7DF;
-}
-.menubar__li:hover{
-    background-color: orange;
-}
-.active__menubar{
-    background-color: orange;
-}
-.menubar__topli{
-    margin-top:0;
+    background-color: white;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
 }
 
-.menubar__arrow{
+.menubar__p{
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+.menubar__li:hover,
+.active__menubar{
+    background-color: #dfdfdf;
+}
+.active__menubar:hover{
+    background-color: #d3d3d3;
+}
+
+.arrow{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-weight: bold;
     color: black;
     font-size: 2.5vw;
-    display: inline;
-    margin:0 0 0 5%;
 }
+
 
 
 /*OPTION DISPLAY COTAINER*/
 .useroptions__optiondisplay-col{
     height: 90%;
-    background-color: #FFF7DF;
-    border: 1px solid black;
+    background-color: white;
+    box-shadow: 0 0 6px #000000;
+    border: 1px solid #4c4c4c;
     border-radius: 1%;
     margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 /*OPTION DISPLAY HEADER*/
 .optiondisplay__header-row{
     height: 15%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
     text-align: center;
     display: flex;
     flex-wrap: nowrap;
@@ -149,17 +179,15 @@ button{
 .optiondisplay__header-col{
     height: 100%;
     border-bottom:1px solid black;
+    text-align: center;
+    margin: 0;
 }
 .optiondisplay__header-title{
     margin-top:2%;
     font-size: 2.5vw;
 }
 
-.arrow{
-    float: right;
-    margin-right: 5%;
-    font-weight: bold;
-}
+
 
 .div__myinfo,
 .div__address,
@@ -168,9 +196,11 @@ button{
 .div__wishlist,
 .div__myorders{
     display: none;
+    height: 85%;
 }
 
 .active__option{
     display: flex;
+    align-items: flex-start;
 }
 

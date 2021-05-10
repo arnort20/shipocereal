@@ -29,20 +29,32 @@
                 <div class="col-md-3 useroptions__menubar-col">
                     <nav class="useroptions__menubar-nav">
                         <ul class="menubar__ul">
-                            <li class="menubar__li menubar__topli active__menubar" onclick="ChangeUserOptions(this.id)" id="myinfo" value="myinfo">Mínar Upplýsingar</li>
-                            <li class="menubar__li" onclick="ChangeUserOptions(this.id)" id="address" value="address">Heimilisfang</li>
-                            <li class="menubar__li" onclick="ChangeUserOptions(this.id)" id="cardinfo" value="cardinfo">Korta Upplýsingar</li>
-                            <li class="menubar__li" onclick="ChangeUserOptions(this.id)" id="changepw" value="changepw">Breyta um Lykilorð</li>
-                            <li class="menubar__li" onclick="ChangeUserOptions(this.id)" id="wishlist" value="wishlist">Óskalistinn Minn</li>
-                            <li class="menubar__li" onclick="ChangeUserOptions(this.id)" id="myorders" value="myorders">Mínar Pantanir</li>
+                            <li class="menubar__li menubar__topli active__menubar" onclick="ChangeUserOptions(this.id)" id="myinfo" value="myinfo">
+                                <p class="col-md-10 menubar__p">Mínar Upplýsingar</p>
+                            </li>
+                            <li class="menubar__li" onclick="ChangeUserOptions(this.id)" id="address" value="address">
+                                <p class="col-md-10 menubar__p">Heimilisfang</p>
+                            </li>
+                            <li class="menubar__li" onclick="ChangeUserOptions(this.id)" id="cardinfo" value="cardinfo">
+                                <p class="col-md-10 menubar__p">Korta Upplýsingar</p>
+                            </li>
+                            <li class="menubar__li" onclick="ChangeUserOptions(this.id)" id="changepw" value="changepw">
+                                <p class="col-md-10 menubar__p">Breyta um Lykilorð</p>
+                            </li>
+                            <li class="menubar__li" onclick="ChangeUserOptions(this.id)" id="wishlist" value="wishlist">
+                                <p class="col-md-10 menubar__p">Óskalistinn Minn</p>
+                            </li>
+                            <li class="menubar__li" onclick="ChangeUserOptions(this.id)" id="myorders" value="myorders">
+                                <p class="col-md-10 menubar__p">Mínar Pantanir</p>
+                            </li>
                         </ul>
                     </nav>
                 </div>
 
 
                 <div class="col-md-8 useroptions__optiondisplay-col">
-                    <div class="row optiondisplay__usesrinfo-header-row">
-                        <div class="col-md-10 userinfo__header-col">
+                    <div class="row optiondisplay__header-row">
+                        <div class="col-md-10 optiondisplay__header-col">
                             <h2 class="optiondisplay__header-title">Mínar Upplýsingar</h2>
                         </div>
                     </div>
@@ -56,7 +68,7 @@
                             <button class="userinfo__profile-button button__blue">Breyta mynd</button>
                         </div>
 
-                        <div class="col-md-6 userinfo__myinfo-col">
+                        <div class="col-md-6 userinfo__col">
                             <div class="row myinfo__header-row">
                                 <h2 class="myinfo__header-title">Notendanafn: <i id="user-username">JonJons</i></h2>
                                 <p class="myinfo__header-subtext">Hér geturu breytt öllum þínum upplýsingum</p>
@@ -84,28 +96,27 @@
                             <h2 class="address__text">Reykjavík</h2>
                             <h2 class="address__text address__text-bottom">Ísland</h2>
                             <i class="address__subtext">Þetta er aðal heimilsfangið þitt</i>
-
                         </div>
-                            <div class="col-md-4 address__button-col">
-                                <button class="address__button button__red">Eyða heimilsfangi</button>
-                                <button class="address__button button__blue address__button-lower">Breyta heimilsfangi</button>
-                            </div>
+                        <div class="col-md-4 address__button-col">
+                            <button class="address__button button__red">Eyða heimilsfangi</button>
+                            <button class="address__button button__blue address__button-lower">Breyta heimilsfangi</button>
+                        </div>
+                    </div>
+
+                    <div class="col-md-5 address__content-col">
+
+                        <div class="col-md-8 address__content-text-col">
+                            <h2 class="address__text address__text-top">Dúfnahólar 10</h2>
+                            <h2 class="address__text">101</h2>
+                            <h2 class="address__text">Reykjavík</h2>
+                            <h2 class="address__text address__text-bottom">Ísland</h2>
+                            <button class="address__mainAddress-button">Gera að aðal Heimilsfangi</button>
                         </div>
 
-                        <div class="col-md-5 address__content-col">
-
-                            <div class="col-md-8 address__content-text-col">
-                                <h2 class="address__text address__text-top">Dúfnahólar 10</h2>
-                                <h2 class="address__text">101</h2>
-                                <h2 class="address__text">Reykjavík</h2>
-                                <h2 class="address__text address__text-bottom">Ísland</h2>
-                                <button class="address__mainAddress-button">Gera að aðal Heimilsfangi</button>
-                            </div>
-
-                            <div class="col-md-4 address__button-col">
-                                <button class="address__button button__red">Eyða heimilsfangi</button>
-                                <button class="address__button button__blue address__button-lower">Breyta heimilsfangi</button>
-                            </div>
+                        <div class="col-md-4 address__button-col">
+                            <button class="address__button button__red">Eyða heimilsfangi</button>
+                            <button class="address__button button__blue address__button-lower">Breyta heimilsfangi</button>
+                        </div>
                     </div>
                     </div>
 
