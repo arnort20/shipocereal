@@ -2,8 +2,6 @@ from django.urls import path, re_path
 from ship_o_cereal import views
 
 urlpatterns = [
-    # http//localhost:8000
-    path('', views.home, name="home"),
     path('store/', views.prod_view, name="ProductView"),
     path('store/<int:productId>', views.prod_by_id, name="ProductPage"),
     path('merch/',views.merch_view,name="MerchView"),

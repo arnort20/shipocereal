@@ -2,6 +2,7 @@ from django.shortcuts import render
 from ship_o_cereal.models import *
 
 
+
 def home(request):
     return render(request, 'homepage/home.html')
 
