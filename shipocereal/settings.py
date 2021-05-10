@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ship_o_cereal.apps.ShipOCerealConfig',
     'homepage.apps.HomepageConfig',
+    'user.apps.UserConfig'
 ]
 
 MIDDLEWARE = [
