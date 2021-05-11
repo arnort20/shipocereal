@@ -5,27 +5,27 @@ from user.models import Profile
 
 
 def cart_view(request):
-    return render(request, 'store/cart.html')
+    return render(request, 'user/cart.html')
 
 
 def checkout_view(request):
-    return render(request, 'store/checkout.html')
+    return render(request, 'user/checkout.html')
 
 
 def login_view(request):
-    return render(request, 'store/login.html')
+    return render(request, 'user/login.html')
 
 
 def signup_view(request):
-    return render(request, 'store/signup.html')
+    return render(request, 'user/signup.html')
 
 
 def user_view(request):
-    return render(request, 'store/user.html')
+    return render(request, 'user/user.html')
 
 
 def login(request):
-    return render(request, 'store/login.html')
+    return render(request, 'user/login.html')
 
 
 def register(request):

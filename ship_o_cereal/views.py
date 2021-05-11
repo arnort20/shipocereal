@@ -22,23 +22,23 @@ def bowl_view(request):
 
 
 def cart_view(request):
-    return render(request, 'store/cart.html')
+    return render(request, 'store/../templates/user/cart.html')
 
 
 def checkout_view(request):
-    return render(request, 'store/checkout.html')
+    return render(request, 'store/../templates/user/checkout.html')
 
 
 def login_view(request):
-    return render(request, 'store/login.html')
+    return render(request, 'store/../templates/user/login.html')
 
 
 def signup_view(request):
-    return render(request, 'store/signup.html')
+    return render(request, 'store/../templates/user/signup.html')
 
 
 def user_view(request):
-    return render(request, 'store/user.html')
+    return render(request, 'store/../templates/user/user.html')
 
 
 def frontPage(request):
