@@ -1,167 +1,157 @@
+{% extends 'base.html' %}
 {% load static %}
+{% block content %}
+        <title>Ship O' Cereal</title>
+        <link rel="stylesheet" href=" {% static 'css/subcategory.css' %} ">
 
-<!DOCTYPE html>
-    <html>
-        <head>
-            <meta charset="UTF-8">
-            <title>Ship O' Cereal</title>
-            <!-- Latest compiled and minified CSS -->
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+        <div class="row" id="Image__imageContainer">
+            <h1 id="Image__SubCategoryText">Skálar</h1>
+            <img src="{% static 'productPictures/rut_Bowlimg.jpg' %} " alt="Bowl Image" class="img-fluid Image__openImage">
+        </div>
 
-            <link rel="stylesheet" href=" {% static 'css/main.css' %} ">
-            <link rel="stylesheet" href=" {% static 'css/subcategory.css' %} ">
-        </head>
-        <body>
+        <div class="row" id="filters">
 
-            <div class="row" id="Image__imageContainer">
-                <h1 id="Image__SubCategoryText">Skálar</h1>
-                <img src="{% static 'productPictures/rut_Bowlimg.jpg' %} " alt="Bowl Image" class="img-fluid Image__openImage">
+            <div class="col-md-2 filters__dropDownMenus">
+                <label for="filters__sortBy" class="filters__labels">Raða eftir</label>
+                <select name="filters__sortBy" id="filters__sortBy" class="filters__select">
+                    <option value="filler">Velja:</option>
+                    <option value="Popular">Vinsælast</option>
+                    <option value="Newest">Nýjast</option>
+                </select>
             </div>
 
-            <div class="row" id="filters">
+            <div class="col-md-2 filters__dropDownMenus">
+                <label for="filters__price" class="filters__labels">Verð</label>
+                <select name="filters__price" id="filters__price" class="filters__select">
+                    <option value="filler">Velja:</option>
+                    <option value="HighestToLowest">Hæðsta til Lægsta</option>
+                    <option value="LowestToHighest">Lægsta til Hæðsta</option>
+                    <option value="priceBar">Bæta við verðstilli??</option>
+                </select>
+            </div>
 
-                <div class="col-md-2 filters__dropDownMenus">
-                    <label for="filters__sortBy" class="filters__labels">Raða eftir</label>
-                    <select name="filters__sortBy" id="filters__sortBy" class="filters__select">
-                        <option value="filler">Velja:</option>
-                        <option value="Popular">Vinsælast</option>
-                        <option value="Newest">Nýjast</option>
-                    </select>
+            <div class="col-md-2 filters__dropDownMenus">
+                <label for="filters__type" class="filters__labels">Tegund</label>
+                <select name="filters__type" id="filters__type" class="filters__select">
+                    <option value="filler">Velja:</option>
+                    <option value="Wheat">Hveiti</option>
+                    <option value="Barley">Bigg</option>
+                    <option value="Oats">Hafrar</option>
+                </select>
+            </div>
+
+            <div class="col-md-2 filters__dropDownMenus">
+                <label for="filters__manufacturer" class="filters__labels">Frammleiðandi</label>
+                <select name="filters__manufacturer" id="filters__manufacturer" class="filters__select">
+                    <option value="filler">Velja:</option>
+                    <option value="Cheerios">Cheerios</option>
+                    <option value="Kellogs">Kellogg's</option>
+                    <option value="Nestle">Nestle</option>
+                </select>
+            </div>
+
+            <div class="col-md-2 filters__dropDownMenus" id="TAKA">
+
+                <label for="filters__selectAllergence" id="filters__labelAllergence" class="filters__labels">Ofnæmisvaldar</label>
+
+                <form class="filters__formAllergence">
+                  <div class="filters__multiselect">
+                    <div class="selectBox" onclick="showCheckboxes()">
+                      <select name="filters__selectAllergence" id="filters__selectAllergence" class="filters__select">
+                        <option>Sleppa:</option>
+                      </select>
+                      <div class="filters__overSelect"></div> <!--To hide the select pop out-->
+                    </div>
+                    <div id="filters__checkboxes">
+                      <label for="Nuts" class="filters__checkbox_lable"><input type="checkbox" id="Nuts" />&nbsp;Hnetur</label>
+                      <label for="Penuts" class="filters__checkbox_lable"><input type="checkbox" id="Penuts" />&nbsp;Jarðhnetur</label>
+                      <label for="Soya" class="filters__checkbox_lable"><input type="checkbox" id="Soya" />&nbsp;Soya</label>
+                      <label for="Milk" class="filters__checkbox_lable"><input type="checkbox" id="Milk" />&nbsp;Mjólk</label>
+                      <label for="Gluten" class="filters__checkbox_lable"><input type="checkbox" id="Gluten" />&nbsp;Glúten</label>
+                      <label for="Egg" class="filters__checkbox_lable"><input type="checkbox" id="Egg" />&nbsp;Egg</label>
+                      <label for="Sesame" class="filters__checkbox_lable"><input type="checkbox" id="Sesame" />&nbsp;Sesam</label>
+                    </div>
+                  </div>
+                </form>
+
+            </div>
+        </div>
+
+        <div class="row" id="container">
+            <div class="row container__row" id="container__topRow">
+                <div class="col-md-3 container__item">
+                    <img src="{% static 'productPictures/rut_skal.jpg' %} " alt="skal" class="container__itemImage">
+                    <div class="contaier__itemDescription">
+                        <p>Harley Quinn Bowl - 2300 ISK</p>
+                    </div>
+                    <button type="button" class="container__itemButton button__red">Setja í körfu</button>
                 </div>
 
-                <div class="col-md-2 filters__dropDownMenus">
-                    <label for="filters__price" class="filters__labels">Verð</label>
-                    <select name="filters__price" id="filters__price" class="filters__select">
-                        <option value="filler">Velja:</option>
-                        <option value="HighestToLowest">Hæðsta til Lægsta</option>
-                        <option value="LowestToHighest">Lægsta til Hæðsta</option>
-                        <option value="priceBar">Bæta við verðstilli??</option>
-                    </select>
+                <div class="col-md-3 container__item">
+                    <img src="{% static 'productPictures/rut_skal_2.jpg' %}" alt="skal" class="container__itemImage">
+                    <div class="contaier__itemDescription">
+                        <p>Joker Bowl - 2000 ISK</p>
+                    </div>
+                    <button type="button" class="container__itemButton button__red">Setja í körfu</button>
                 </div>
 
-                <div class="col-md-2 filters__dropDownMenus">
-                    <label for="filters__type" class="filters__labels">Tegund</label>
-                    <select name="filters__type" id="filters__type" class="filters__select">
-                        <option value="filler">Velja:</option>
-                        <option value="Wheat">Hveiti</option>
-                        <option value="Barley">Bigg</option>
-                        <option value="Oats">Hafrar</option>
-                    </select>
+                <div class="col-md-3 container__item">
+                    <img src="{% static 'productPictures/rut_skal_3.png' %}" alt="skal" class="container__itemImage">
+                    <div class="contaier__itemDescription">
+                        <p>Tony the Tiger Bowl - 2300 ISK</p>
+                    </div>
+                    <button type="button" class="container__itemButton button__red">Setja í körfu</button>
                 </div>
 
-                <div class="col-md-2 filters__dropDownMenus">
-                    <label for="filters__manufacturer" class="filters__labels">Frammleiðandi</label>
-                    <select name="filters__manufacturer" id="filters__manufacturer" class="filters__select">
-                        <option value="filler">Velja:</option>
-                        <option value="Cheerios">Cheerios</option>
-                        <option value="Kellogs">Kellogg's</option>
-                        <option value="Nestle">Nestle</option>
-                    </select>
-                </div>
-
-                <div class="col-md-2 filters__dropDownMenus" id="TAKA">
-
-                    <label for="filters__selectAllergence" id="filters__labelAllergence" class="filters__labels">Ofnæmisvaldar</label>
-
-                    <form class="filters__formAllergence">
-                      <div class="filters__multiselect">
-                        <div class="selectBox" onclick="showCheckboxes()">
-                          <select name="filters__selectAllergence" id="filters__selectAllergence" class="filters__select">
-                            <option>Sleppa:</option>
-                          </select>
-                          <div class="filters__overSelect"></div> <!--To hide the select pop out-->
-                        </div>
-                        <div id="filters__checkboxes">
-                          <label for="Nuts" class="filters__checkbox_lable"><input type="checkbox" id="Nuts" />&nbsp;Hnetur</label>
-                          <label for="Penuts" class="filters__checkbox_lable"><input type="checkbox" id="Penuts" />&nbsp;Jarðhnetur</label>
-                          <label for="Soya" class="filters__checkbox_lable"><input type="checkbox" id="Soya" />&nbsp;Soya</label>
-                          <label for="Milk" class="filters__checkbox_lable"><input type="checkbox" id="Milk" />&nbsp;Mjólk</label>
-                          <label for="Gluten" class="filters__checkbox_lable"><input type="checkbox" id="Gluten" />&nbsp;Glúten</label>
-                          <label for="Egg" class="filters__checkbox_lable"><input type="checkbox" id="Egg" />&nbsp;Egg</label>
-                          <label for="Sesame" class="filters__checkbox_lable"><input type="checkbox" id="Sesame" />&nbsp;Sesam</label>
-                        </div>
-                      </div>
-                    </form>
-
+                <div class="col-md-3 container__item">
+                    <img src="" alt="skal" class="container__itemImage">
+                    <div class="contaier__itemDescription">
+                        <p>Vöruheiti - Verð</p>
+                    </div>
+                    <button type="button" class="container__itemButton button__red">Setja í körfu</button>
                 </div>
             </div>
 
-            <div class="row" id="container">
-                <div class="row container__row" id="container__topRow">
-                    <div class="col-md-3 container__item">
-                        <img src="{% static 'productPictures/rut_skal.jpg' %} " alt="skal" class="container__itemImage">
-                        <div class="contaier__itemDescription">
-                            <p>Harley Quinn Bowl - 2300 ISK</p>
-                        </div>
-                        <button type="button" class="container__itemButton button__red">Setja í körfu</button>
-                    </div>
 
-                    <div class="col-md-3 container__item">
-                        <img src="{% static 'productPictures/rut_skal_2.jpg' %}" alt="skal" class="container__itemImage">
-                        <div class="contaier__itemDescription">
-                            <p>Joker Bowl - 2000 ISK</p>
-                        </div>
-                        <button type="button" class="container__itemButton button__red">Setja í körfu</button>
+            <div class="row container__row" >
+                <div class="col-md-3 container__item amma" onclick="location.href=location.href='{% url 'ProductView' %}'">
+                    <img src="" alt="skal" class="container__itemImage">
+                    <div class="contaier__itemDescription">
+                        <p>Vöruheiti - Verð</p>
                     </div>
-
-                    <div class="col-md-3 container__item">
-                        <img src="{% static 'productPictures/rut_skal_3.png' %}" alt="skal" class="container__itemImage">
-                        <div class="contaier__itemDescription">
-                            <p>Tony the Tiger Bowl - 2300 ISK</p>
-                        </div>
-                        <button type="button" class="container__itemButton button__red">Setja í körfu</button>
-                    </div>
-
-                    <div class="col-md-3 container__item">
-                        <img src="" alt="skal" class="container__itemImage">
-                        <div class="contaier__itemDescription">
-                            <p>Vöruheiti - Verð</p>
-                        </div>
-                        <button type="button" class="container__itemButton button__red">Setja í körfu</button>
-                    </div>
+                    <button type="button" class="container__itemButton button__red">Setja í körfu</button>
                 </div>
 
-
-                <div class="row container__row" >
-                    <div class="col-md-3 container__item amma" onclick="location.href=location.href='{% url 'ProductView' %}'">
-                        <img src="" alt="skal" class="container__itemImage">
-                        <div class="contaier__itemDescription">
-                            <p>Vöruheiti - Verð</p>
-                        </div>
-                        <button type="button" class="container__itemButton button__red">Setja í körfu</button>
+                <div class="col-md-3 container__item">
+                    <img src="" alt="skal" class="container__itemImage">
+                    <div class="contaier__itemDescription">
+                        <p>Vöruheiti - Verð</p>
                     </div>
-
-                    <div class="col-md-3 container__item">
-                        <img src="" alt="skal" class="container__itemImage">
-                        <div class="contaier__itemDescription">
-                            <p>Vöruheiti - Verð</p>
-                        </div>
-                        <button type="button" class="container__itemButton button__red">Setja í körfu</button>
-                    </div>
-
-                    <div class="col-md-3 container__item">
-                        <img src="" alt="skal" class="container__itemImage">
-                        <div class="contaier__itemDescription">
-                            <p>Vöruheiti - Verð</p>
-                        </div>
-                        <button type="button" class="container__itemButton button__red">Setja í körfu</button>
-                    </div>
-
-                    <div class="col-md-3 container__item">
-                        <img src="" alt="skal" class="container__itemImage">
-                        <div class="contaier__itemDescription">
-                            <p>Vöruheiti - Verð</p>
-                        </div>
-                        <button type="button" class="container__itemButton button__red">Setja í körfu</button>
-                    </div>
+                    <button type="button" class="container__itemButton button__red">Setja í körfu</button>
                 </div>
 
+                <div class="col-md-3 container__item">
+                    <img src="" alt="skal" class="container__itemImage">
+                    <div class="contaier__itemDescription">
+                        <p>Vöruheiti - Verð</p>
+                    </div>
+                    <button type="button" class="container__itemButton button__red">Setja í körfu</button>
+                </div>
+
+                <div class="col-md-3 container__item">
+                    <img src="" alt="skal" class="container__itemImage">
+                    <div class="contaier__itemDescription">
+                        <p>Vöruheiti - Verð</p>
+                    </div>
+                    <button type="button" class="container__itemButton button__red">Setja í körfu</button>
+                </div>
             </div>
 
-            <!-- Latest compiled and minified JavaScript -->
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+        </div>
 
-            <script src="{% static 'js/subcategory.js' %}"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 
-        </body>
-    </html>
+        <script src="{% static 'js/subcategory.js' %}"></script>
+
+   {% endblock %}
