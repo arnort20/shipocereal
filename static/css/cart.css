@@ -1,7 +1,12 @@
+/*
 html,body{
     display: flex;
     justify-content: center;
+
+
 }
+
+ */
 .container__cart-left-col{
     margin: 5% auto auto auto;
     display: flex;
