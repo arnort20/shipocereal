@@ -9,6 +9,7 @@ urlpatterns = [
     path('checkout/',views.checkout_view,name="CheckoutView"),
     path('login/',views.login_view,name="LoginView"),
     path('signup/',views.signup_view,name="SignupView"),
-    path('user/',views.user_view,name="UserView")
+    path('user/',views.user_view,name="UserView"),
+    path('creditcard/',views.creditcard,name="CerditcardView")
     # path('profile/')
 ]
