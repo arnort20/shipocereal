@@ -45,8 +45,6 @@ def register(request):
     })
 
 
-<<<<<<< HEAD
-=======
 def address(request):
     if request.method == 'POST':
         form = address_form.AddressCreateForm(data=request.POST)
@@ -81,7 +79,7 @@ def creditcard(request):
     else:
         form = credit_card_form.CreditcardCreateForm()
     return render(request, 'user/creditcard.html', {'form': form})
->>>>>>> 28560918b52009b3f3f2bbaa2b2cee02990cdf44
+
 #
 #
 # def profile(request):
