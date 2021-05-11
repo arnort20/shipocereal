@@ -11,7 +11,6 @@ html,body{
     background-color: rgb(216, 212, 212,0.76);
 }
 .container__input{
-    color: #EEEEEE;
     border: 1px solid black;
     width: 80%;
     margin: 1% 1% 1% 10%;
@@ -51,11 +50,6 @@ html,body{
 .userInfo__input{
     height: 13%;
 }
-
-
-
-
-
 
 
 .container__paymentInfo{

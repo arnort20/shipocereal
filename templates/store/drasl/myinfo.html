@@ -1,0 +1,32 @@
+{% load static %}
+
+<div class="row optiondisplay__usesrinfo-header-row">
+    <div class="col-md-10 userinfo__header-col">
+        <h2 class="userinfo__header-title">Mínar Upplýsingar</h2>
+    </div>
+</div>
+
+<div class="row optiondisplay__userinfo-content-row">
+
+    <div class="col-md-4 userinfo__column-profile">
+        <img src="{% static 'layoutPictures/bolur.png' %}" alt="profile pic" class="profile__img">
+        <button class="userinfo__profile-button button__blue">Breyta mynd</button>
+    </div>
+
+    <div class="col-md-6 userinfo__myinfo-col">
+        <div class="row myinfo__header-row">
+            <h2 class="myinfo__header-title">Notendanafn: <i id="user-username">JonJons</i></h2>
+            <p class="myinfo__header-subtext">Hér geturu breytt öllum þínum upplýsingum</p>
+        </div>
+
+
+        <label for="user-firstname" class="myinfo__label">Fyrra Nafn:</label>
+        <input type="text" id="user-firstname" class="myinfo__input"  value="Jón Jónsson">
+        <label for="user-lastname" class="myinfo__label">Seinna Nafn:</label>
+        <input type="text" id="user-lastname" class="myinfo__input"  value="Jón Jónsson">
+        <label for="user-email" class="myinfo__label">Netfang:</label>
+        <input type="text" id="user-email" class="myinfo__input"  value="jon@jon.is">
+        <button class="myinfo__button button__blue">Breyta upplýsingum</button>
+    </div>
+
+</div>
