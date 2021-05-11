@@ -27,8 +27,8 @@ def user_view(request):
 
 
 def login(request):
-    # if request.method == 'POST':
-    #     form =
+    #if request.method == 'POST':
+    #    form =
     return render(request, 'user/login.html')
 
 
