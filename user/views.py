@@ -1,6 +1,6 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
-from user.forms import credit_card_form
+from user.forms import credit_card_form, address_form
 from django.contrib.auth import get_user_model
 from ship_o_cereal.models import Carts, Addresses, CartRows, Orders, Creditcards, Comments
 from user.models import Profile
@@ -43,14 +43,36 @@ def register(request):
     })
 
 
+def address(request):
+    if request.method == 'POST':
+        form = address_form.AddressCreateForm(data=request.POST)
+        if form.is_valid:
+            addr = form.save(commit=False)
+            addr.userId_id = request.user.id
+            addr = form.save()
+            return redirect('UserView')
+    else:
+        form = address_form.AddressCreateForm()
+    return render(request, 'user/address.html', {'form': form})
+
+
+def addToCart(request, productId, amount):
+    userId = request.user.id
+    if userId:
+        currentCart = Carts.objects.get(userId_id=userId)
+        if currentCart:
+
+
+
+
+
+
 def creditcard(request):
     if request.method == 'POST':
         form = credit_card_form.CreditcardCreateForm(data=request.POST)
         if form.is_valid:
             card = form.save(commit=False)
             card.userId_id = request.user.id
-            print(card)
-            print(request.user.id)
             card = form.save()
     else:
         form = credit_card_form.CreditcardCreateForm()

@@ -10,6 +10,7 @@ urlpatterns = [
     path('login/',views.login_view,name="LoginView"),
     path('signup/',views.signup_view,name="SignupView"),
     path('user/',views.user_view,name="UserView"),
-    path('creditcard/',views.creditcard,name="CerditcardView")
+    path('creditcard/',views.creditcard,name="CreditcardView"),
+    path('address/', views.address, name="AddressView")
     # path('profile/')
 ]
