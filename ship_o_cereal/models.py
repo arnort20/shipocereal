@@ -2,17 +2,17 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-class Users(models.Model):
-    userId = models.BigAutoField(primary_key=True)
-    userName = models.CharField(max_length=255)
-    realName = models.CharField(max_length=500)
-    email = models.CharField(max_length=500)
-    password = models.CharField(max_length=255)
-    banned = models.BooleanField()
+# class Users(models.Model):
+#     userId = models.BigAutoField(primary_key=True)
+#     userName = models.CharField(max_length=255)
+#     realName = models.CharField(max_length=500)
+#     email = models.CharField(max_length=500)
+#     password = models.CharField(max_length=255)
+#     banned = models.BooleanField()
 
 
 class DefaultFilters(models.Model):
-    userId = models.OneToOneField(Users, on_delete=models.CASCADE, primary_key=True)
+    userId = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     notVegan = models.BooleanField(default=False)
     gluten = models.BooleanField(default=False)
     wheat = models.BooleanField(default=False)
@@ -91,7 +91,7 @@ class Nutrients(models.Model):
 
 
 class Creditcards(models.Model):
-    userId = models.ForeignKey(Users, on_delete=models.CASCADE)
+    userId = models.ForeignKey(User, on_delete=models.CASCADE)
     cardId = models.BigAutoField(primary_key=True)
     cardNumber = models.CharField(max_length=16)
     month = models.IntegerField()
@@ -100,7 +100,7 @@ class Creditcards(models.Model):
 
 
 class Addresses(models.Model):
-    userId = models.ForeignKey(Users, on_delete=models.CASCADE)
+    userId = models.ForeignKey(User, on_delete=models.CASCADE)
     addrId = models.BigAutoField(primary_key=True)
     address = models.CharField(max_length=255)
     zip = models.IntegerField()
@@ -108,7 +108,7 @@ class Addresses(models.Model):
 
 class Carts(models.Model):
     cartId = models.BigAutoField(primary_key=True)
-    userId = models.ForeignKey(Users, on_delete=models.CASCADE, null=True)
+    userId = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
 
 class CartRows(models.Model):
@@ -126,7 +126,7 @@ class Orders(models.Model):
 
 
 class Comments(models.Model):
-    userId = models.ForeignKey(Users, on_delete=models.CASCADE)
+    userId = models.ForeignKey(User, on_delete=models.CASCADE)
     productId = models.ForeignKey(Products, on_delete=models.CASCADE)
     stars = models.IntegerField()
     review = models.CharField(max_length=500)
