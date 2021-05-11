@@ -1,0 +1,206 @@
+html,body{
+    height: 100%;
+    width:100%;
+    margin:0;
+    padding: 0;
+    background-color: #FFDB58;
+}
+button{
+    border: 0;
+    border-radius: 3%;
+    color: white;
+    font-size: 1vw;
+}
+.button__red{
+    background-color: #CC4A4A;
+}
+.button__blue{
+    background-color: #274996;
+}
+.button__green{
+    background-color: #3B8905;
+}
+
+/*CONTAINER FOR THE SITE*/
+.user__container{
+    width: 90%;
+    margin: 2% 0 0 5%;
+    padding: 0;
+    height: 90%;
+    background-color: rgba(216,212,212,0.76);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+/*CONTAINER HEADER*/
+.container__header{
+    height: 15%;
+    width: 96%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+.header__column{
+    height: 100%;
+    border-bottom: 1px solid black;
+}
+.header__column-logo{
+    display: flex;
+    align-items: center;
+}
+.header__column-title{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__logo{
+    width: 100%;
+}
+.header__title{
+    font-size: 4vw;
+    color: black;
+}
+.header__column-title{
+    text-align: center;
+}
+
+.header__column-button{
+    display: flex;
+    justify-content: flex-end;
+}
+.header__button{
+    height: 50%;
+    font-size: 1.3vw;
+    margin: auto 2% auto auto;
+}
+
+
+/*CONTAINER FOR USER OPTIONS*/
+.container__useroptions{
+    height: 85%;
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    color:#2D2D2D;
+}
+
+/*MENUBAR*/
+.useroptions__menubar-col{
+    height: 90%;
+    border-radius: 5px;
+    margin: auto;
+    padding: 0;
+}
+
+.useroptions__menubar-nav{
+    height: 100%;
+    margin: 0;
+    display: flex;
+
+}
+.menubar__ul{
+    height: 100%;
+    font-size: 2vw;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
+}
+.menubar__li{
+    height: 15%;
+    width: 100%;
+    list-style-type: none;
+    padding-left:3%;
+    box-shadow: 0 0 6px #000000;
+    border: 1px solid #4c4c4c;
+    border-radius: 2%;
+    background-color: white;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.menubar__p{
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+.menubar__li:hover,
+.active__menubar{
+    background-color: #dfdfdf;
+}
+.active__menubar:hover{
+    background-color: #d3d3d3;
+}
+
+.arrow{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-weight: bold;
+    color: black;
+    font-size: 2.5vw;
+}
+
+
+
+/*OPTION DISPLAY COTAINER*/
+.useroptions__optiondisplay-col{
+    height: 90%;
+    background-color: white;
+    box-shadow: 0 0 6px #000000;
+    border: 1px solid #4c4c4c;
+    border-radius: 1%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+/*OPTION DISPLAY HEADER*/
+.optiondisplay__header-row{
+    height: 15%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+.optiondisplay__header-col{
+    height: 100%;
+    border-bottom:1px solid black;
+    text-align: center;
+    margin: 0;
+}
+.optiondisplay__header-title{
+    margin-top:2%;
+    font-size: 2.5vw;
+}
+
+
+
+.div__myinfo,
+.div__address,
+.div__cardinfo,
+.div__changepw,
+.div__wishlist,
+.div__myorders{
+    display: none;
+    height: 85%;
+}
+
+.active__option{
+    display: flex;
+    align-items: flex-start;
+}
+

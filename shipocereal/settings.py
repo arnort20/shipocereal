@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ship_o_cereal.apps.ShipOCerealConfig',
+    'homepage.apps.HomepageConfig',
+    'user.apps.UserConfig'
 ]
 
 MIDDLEWARE = [
@@ -121,6 +123,7 @@ USE_L10N = True
 USE_TZ = True
 
 
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
@@ -130,5 +133,8 @@ STATICFILES_DIRS = [
 ]
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
+
+LOGIN_URL = '/user/login'
+LOGIN_REDIRECT_URL = '/user/profile'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

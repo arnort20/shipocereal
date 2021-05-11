@@ -12,7 +12,6 @@ def main():
     except ImportError as exc:
         #Eftir síðasta Pull kom error á pyr.raise ImportError( Þegar strokað var
         # Pyr. út hætti hann. Muna það
-
         raise ImportError(
             "Couldn't import Django. Are you sure it's installed and "
             "available on your PYTHONPATH environment variable? Did you "

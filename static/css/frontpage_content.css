@@ -13,8 +13,26 @@
     justify-content: center;
     justify-content: space-around;
 }
+.forsidu--vorur,
+.forsidu--varningur,
+.forsidu--vinsaelt{
+    border-radius: 15px 15px;
+    padding: 25px 0 25px 0;
+    font-size: 25px;
+}
 
-.forsidu--vorur {
+.links:link,
+.links:active,
+.links:visited{
+    color: white;
+    text-decoration: none;
+}
+.links:hover {
+  color: #d3d3d3;
+}
+
+
+/*.forsidu--vorur{
     border-radius: 15px 15px;
     padding: 25px 0 25px 0;
     font-size: 25px;
@@ -22,13 +40,7 @@
     color: white;
 }
 
-.forsidu--varningur {
-    border-radius: 15px 15px;
-    padding: 25px 0 25px 0;
-    font-size: 25px;
-    background: #274996;
-    color: white;
-}
+
 
 .forsidu--vinsaelt {
     border-radius: 15px 15px;
@@ -36,4 +48,4 @@
     font-size: 25px;
     background: #274996;
     color: white;
-}
+}*/

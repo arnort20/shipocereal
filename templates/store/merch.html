@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+    <link rel="stylesheet" href="{% static '/css/merch.css' %}">
+    <!--<link rel="stylesheet" type="text/css" media="screen" href="subcategory1.css" >-->
+
+    <title>Varningur</title>
+
+        <div class="row img__container">
+
+            <div class="col-md-4 img__column" >
+                <img src="{% static '/productPictures/rut_spoon_blue.png'%}" class="img__spoons" id="img__blueSpoon">
+            </div>
+
+            <div class="col-md-4 img__column">
+                <h1 class="img_title">Varningur</h1>
+                <h2 class="img_subTitle">Skálar - Bollar - Skeiðar - Bolir - Mjólkurvörur</h2>
+            </div>
+
+            <div class="col-md-4 img__column">
+                <img src="{% static '/productPictures/rut_spoon_yellow.png'%}" class="img__spoons" id="img__yellowSpoon">
+            </div>
+
+        </div>
+
+        <div class="row container">
+            <div class="row container__header">
+
+                <div class="col-md-6 container__header-column">
+                    <h2 class="container__header-text">Skálar</h2>
+                </div>
+
+                <div class="col-md-6 container__header-column">
+                    <button class="container__header-button" onclick="location.href='{% url 'BowlView' %}'">Skoða Meira</button>
+                </div>
+
+            </div>
+
+            <div class="row container__items-row">
+                <div class="col-md-2 container__items-column">
+                    <img src="{% static '/productPictures/rut_skal.jpg'%}" alt="skal" class="container__item-image">
+                    <div class="container__item-description">
+                        <p>Vöruheiti - Verð</p>
+                    </div>
+                </div>
+
+                <div class="col-md-2 container__items-column">
+                    <img src="{% static '/productPictures/rut_skal_2.jpg'%}" alt="skal" class="container__item-image">
+                    <div class="container__item-description">
+                        <p>Vöruheiti - Verð</p>
+                    </div>
+                </div>
+
+                <div class="col-md-2 container__items-column">
+                    <img src="{% static '/productPictures/rut_skal_3.png'%}" alt="skal" class="container__item-image">
+                    <div class="container__item-description">
+                        <p>Vöruheiti - Verð</p>
+                    </div>
+                </div>
+
+                <div class="col-md-2 container__items-column">
+                    <img src="{% static '/productPictures/rut_skal.jpg'%}" alt="skal" class="container__item-image">
+                    <div class="container__item-description">
+                        <p>Vöruheiti - Verð</p>
+                    </div>
+                </div>
+
+                <div class="col-md-2 container__items-column">
+                    <img src="{% static '/productPictures/rut_skal.jpg'%}" alt="skal" class="container__item-image">
+                    <div class="container__item-description">
+                        <p>Vöruheiti - Verð</p>
+                    </div>
+                </div>
+
+                <div class="col-md-1 container__items-column container__items-arrow">
+                    <i class="fas fa-angle-right">&rarr;</i>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row container">
+            <div class="row container__header">
+
+                <div class="col-md-6 container__header-column">
+                    <h2 class="container__header-text">Bollar</h2>
+                </div>
+
+                <div class="col-md-6 container__header-column">
+                    <button class="container__header-button">Skoða Meira</button>
+                </div>
+
+            </div>
+
+
+            <div class="row container__items-row">
+                <div class="col-md-2 container__items-column">
+                    <img src="{% static '/productPictures/rut_kaffi_bolli.jpg'%}" alt="Bolli" class="container__item-image">
+                    <div class="container__item-description">
+                        <p>Vöruheiti - Verð</p>
+                    </div>
+                </div>
+
+                <div class="col-md-2 container__items-column">
+                    <img src="{% static '/productPictures/rut_kaffi_bolli.jpg'%}" alt="Bolli" class="container__item-image">
+                    <div class="container__item-description">
+                        <p>Vöruheiti - Verð</p>
+                    </div>
+                </div>
+
+                <div class="col-md-2 container__items-column">
+                    <img src="{% static '/productPictures/rut_kaffi_bolli.jpg'%}" alt="Bolli" class="container__item-image">
+                    <div class="container__item-description">
+                        <p>Vöruheiti - Verð</p>
+                    </div>
+                </div>
+
+                <div class="col-md-2 container__items-column">
+                    <img src="{% static '/productPictures/rut_kaffi_bolli.jpg'%}" alt="Bolli" class="container__item-image">
+                    <div class="container__item-description">
+                        <p>Vöruheiti - Verð</p>
+                    </div>
+                </div>
+
+                <div class="col-md-2 container__items-column">
+                    <img src="{% static '/productPictures/rut_kaffi_bolli.jpg'%}" alt="Bolli" class="container__item-image">
+                    <div class="container__item-description">
+                        <p>Vöruheiti - Verð</p>
+                    </div>
+                </div>
+
+                <div class="col-md-1 container__items-column container__items-arrow">
+                    <i class="fas fa-angle-right">&rarr;</i>
+                </div>
+
+            </div>
+        </div>
+    {% endblock %}
+
