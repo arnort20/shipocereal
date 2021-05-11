@@ -60,10 +60,27 @@ def address(request):
 
 
 def addToCart(request, productId, amount):
+    form = add_to_cart.AddToCart(data=request.POST)
     userId = request.user.id
     if userId:
         currentCart = Carts.objects.get(userId_id=userId)
-        if currentCart:
+        if not currentCart:
+            newCart(request, userId)
+            currentCart = Carts.objects.get(userId_id=userId)
+        cartRow = form.save(commit=False)
+        cartRow.amount = amount
+        cartRow.productId_id = productId
+        cartRow.cartId_id = currentCart.cartId
+        cartRow = form.save()
+
+
+def newCart(request, userId):
+    form = add_to_cart.AddCart(data=request.POST)
+    cart = form.save(commit=False)
+    cart.userId_id = userId
+    cart = form.save()
+
+>>>>>>> 1242c794eadf6b4b5d46d1075602bb611ac7193d
 
 
 def creditcard(request):

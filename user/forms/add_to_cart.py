@@ -12,6 +12,4 @@ class AddToCart(ModelForm):
     class Meta:
         model = CartRows
         exclude = ['cartRowId']
-        widgets = {
-            widgets.NumberInput(attrs={'class': 'form-control'})
-        }
+
