@@ -2,13 +2,14 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-# class Users(models.Model):
-#     userId = models.BigAutoField(primary_key=True)
-#     userName = models.CharField(max_length=255)
-#     realName = models.CharField(max_length=500)
-#     email = models.CharField(max_length=500)
-#     password = models.CharField(max_length=255)
-#     banned = models.BooleanField()
+'''class Users(models.Model):
+     userId = models.BigAutoField(primary_key=True)
+     first_name = models.CharField(max_length=255)
+     last_name = models.CharField(max_length=255)
+     realName = models.CharField(max_length=500)
+     email = models.CharField(max_length=500)
+     password = models.CharField(max_length=255)
+     banned = models.BooleanField()'''
 
 
 class DefaultFilters(models.Model):

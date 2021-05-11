@@ -1,17 +1,28 @@
-from django.forms import ModelForm, widgets
 from django import forms
+from django.forms import ModelForm, widgets
+from django.contrib.auth.forms import UserCreationForm
 from ship_o_cereal.models import User
 
-class UserCreateForm(forms.Form):
-    class Meta:
+
+class SignupForm(UserCreationForm):
+    class Meta(UserCreationForm.Meta):
         model = User
-        exclude= {'id'}
-        widgets ={
-            'username': widgets.TextInput(attrs={'class':'form-control'}),
-            'first_name': widgets.TextInput(attrs={'class': 'form-control'}),
-            'last_name': widgets.TextInput(attrs={'class': 'form-control'}),
-            'email': widgets.TextInput(attrs={'class': 'form-control'}),
-            'password': widgets.TextInput(attrs={'class': 'form-control'}),
-            'confirm_password': widgets.TextInput(attrs={'class': 'form-control'})
+        exclude = {'id'}
+        fields = UserCreationForm.Meta.fields + ('first_name', 'last_name', 'email',)
+        widgets = {
+            'username' :widgets.TextInput(attrs={'class': 'form-control signup__input','placeholder':'Notendanafn'}),
+            'first_name': widgets.TextInput(attrs={'class': 'form-control signup__input','placeholder':'Fyrra Nafn'}),
+            'last_name': widgets.TextInput(attrs={'class': 'form-control signup__input','placeholder':'Eftir Nafn'}),
+            'email': widgets.TextInput(attrs={'class': 'form-control signup__input','placeholder':'Netfang'}),
+            'password1': widgets.TextInput(attrs={'class': 'form-control signup__input','placeholder':'Lykilorð'}),
+            'password2': widgets.TextInput(attrs={'class': 'form-control signup__input','placeholder':'Staðfesta lykilorð'})
         }
-    #your_name = forms.CharField(label='Your name', max_length=100)
+
+
+"""
+Required. 150 characters or fewer. Letters, digits and @/./+/-/_
+Your password can’t be too similar to your other personal information.
+Your password must contain at least 8 characters.
+Your password can’t be a commonly used password.
+Your password can’t be entirely numeric.
+Enter the same password as before, for verification. """

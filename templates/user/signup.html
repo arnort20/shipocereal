@@ -1,21 +1,20 @@
 {% load static %}
         <link rel="stylesheet" href="{% static '/css/signup.css' %}">
-
-        <div class="col-md-4 col-md-offset-4 signup__container">
+        <div class="col-md-4 signup__container">
              <div class="row container__logo">
                 <img src="{% static '/layoutPictures/Logo_3.png' %}" alt="Logo" class="logo__img">
             </div>
 
             <div class="row container__userInfo">
-                <h1 class="container__title">Þínar upplýsingar</h1>
+                <!--<h1 class="container__title">Þínar upplýsingar</h1>
                 <input type="text" id="newUser-email" class="container__input userInfo__input" placeholder="Netfang">
                 <input type="text" id="newUser-username" class="container__input userInfo__input"  placeholder="Notendanafn">
                 <p class="container__text">ATH! Notendanafni getur ekki verið breytt. veldu nafn þitt vandlega.</p>
                 <input type="text" id="newUser-firstName" class="container__input userInfo__input"  placeholder="Fyrra Nafn">
-                <input type="text" id="newUser-lastName" class="container__input userInfo__input"  placeholder="Eftir Nafn">
+                <input type="text" id="newUser-lastName" class="container__input userInfo__input"  placeholder="Eftir Nafn">->
             </div>
 
-            <div class="row container__password">
+           <!-- <div class="row container__password">
                 <h1 class="container__title">Lykilorð</h1>
                 <input type="text" class="container__input password__input" id="pw" placeholder="Lykilorð">
                 <input type="text" class="container__input password__input" id="pw2" placeholder="Staðfesta Lykilorð">
@@ -30,5 +29,5 @@
                 <div class="col-md-2 buttons__column buttons__column-confirmed">
                     <button class="signup__buttons button__confirm button__green" id="confirmed" onclick="location.href='{% url 'UserView' %}'">Nýskrá</button>
                 </div>
-            </div>
+            </div>-->
         </div>
