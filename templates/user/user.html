@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -60,7 +59,7 @@
                     </div>
 
 
-                    <div class="div__myinfo active__option">
+                    <div class="div__myinfo">
                     <div class="row optiondisplay__userinfo-content-row">
 
                         <div class="col-md-4 userinfo__column-profile">
@@ -120,27 +119,40 @@
                     </div>
                     </div>
 
-                    <div class="div__cardinfo">
-                    <div class="col-md-5 cardinfo__content-col">
-                        <div class="col-md-9 cardinfo__content-top-col">
-                            <label for="cardnum" class="cardinfo__label">Kort:</label>
-                            <p class="cardinfo__text" id="cardnum">Visa(4598)</p>
 
-                            <label for="expdate" class="cardinfo__label">Gildistími:</label>
-                            <p class="cardinfo__text" id="expdate">01/22</p>
-
-                            <label for="namecard" class="cardinfo__label">Nafn á korti:</label>
-                            <p class="cardinfo__text cardinfo__text-bottom" id="namecard">Jón Jósson</p>
-
-                            <i class="cardinfo__subtext">Þetta er aðal greiðlsumátinn þitt</i>
+                    <div class="col-md-12 div__cardinfo cardinfo__content-col active__option">
+                        <div class="col-md-6 add_card">
+                            <h2 class="card__info-title">Add credit card</h2>
+                            <form class="form form-horizontal cardinfo__content-form" method="post">
+                                {% csrf_token %}
+                                {{ form }}
+                                <input type="submit" class="btn btn-primary" value="add card">
+                            </form>
                         </div>
 
-                        <div class="col-md-3 cardinfo__content-middle-col">
-                            <button class="cardinfo__button-delete button__red">Eyða korti</button>
-                        </div>
+                        <div class="col-md-6 existing_cards-col">
+                            <div class="row amma" id="nei"></div>
+                            <div class="row amma"></div>
+                            <!--<div class="col-md-9 cardinfo__content-top-col">
+                                <label for="cardnum" class="cardinfo__label">Kort:</label>
+                                <p class="cardinfo__text" id="cardnum">Visa(4598)</p>
 
-                        <div class="col-md-12 cardinfo__content-bottom-col">
-                            <button class="cardinfo__button-add button__green">Bæta við Greiðlsumáta</button>
+                                <label for="expdate" class="cardinfo__label">Gildistími:</label>
+                                <p class="cardinfo__text" id="expdate">01/22</p>
+
+                                <label for="namecard" class="cardinfo__label">Nafn á korti:</label>
+                                <p class="cardinfo__text cardinfo__text-bottom" id="namecard">Jón Jósson</p>
+
+                                <i class="cardinfo__subtext">Þetta er aðal greiðlsumátinn þitt</i>
+                            </div>
+
+                            <div class="col-md-3 cardinfo__content-middle-col">
+                                <button class="cardinfo__button-delete button__red">Eyða korti</button>
+                            </div>
+
+                            <div class="col-md-12 cardinfo__content-bottom-col">
+                                <button class="cardinfo__button-add button__green">Bæta við Greiðlsumáta</button>
+                            </div>-->
                         </div>
                     </div>
                     </div>
@@ -161,7 +173,7 @@
                         </div>
 
                     </div>
-                    </div>
+
 
                     <div class="div__wishlist">ÓSKALISTINN MINN</div>
                     <div class="div__myorders">MÍNAR PANTANIR</div>
@@ -171,5 +183,6 @@
         </div>
 
         <script src="{% static 'js/user.js' %}"></script>
+
     </body>
 </html>

@@ -25,7 +25,7 @@ def signup_view(request):
 
 
 def user_view(request):
-    return render(request, 'user/user.html')
+    return render(request, 'user/../templates/store/user.html')
 
 
 def login(request):
@@ -59,11 +59,11 @@ def address(request):
     return render(request, 'user/address.html', {'form': form})
 
 
-#def addToCart(request, productId, amount):
-#    userId = request.user.id
-#    if userId:
-#        currentCart = Carts.objects.get(userId_id=userId)
-#        if currentCart:
+def addToCart(request, productId, amount):
+    userId = request.user.id
+    if userId:
+        currentCart = Carts.objects.get(userId_id=userId)
+        if currentCart:
 
 
 def creditcard(request):
