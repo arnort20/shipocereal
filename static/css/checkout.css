@@ -1,7 +1,4 @@
-html,body{
-    display: flex;
-    justify-content: center;
-}
+
 .container__checkout{
     height: 200%;
     margin-top: 3%;
