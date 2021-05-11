@@ -21,25 +21,5 @@ def bowl_view(request):
     return render(request, 'store/subcategory.html')
 
 
-def cart_view(request):
-    return render(request, 'store/../templates/user/cart.html')
-
-
-def checkout_view(request):
-    return render(request, 'store/../templates/user/checkout.html')
-
-
-def login_view(request):
-    return render(request, 'store/../templates/user/login.html')
-
-
-def signup_view(request):
-    return render(request, 'store/../templates/user/signup.html')
-
-
-def user_view(request):
-    return render(request, 'store/../templates/user/user.html')
-
-
 def frontPage(request):
     return render(request, '')
