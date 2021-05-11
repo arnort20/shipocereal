@@ -2,8 +2,10 @@
 {% block content %}
     <h2>plepleplepelpeleplep</h2>
     {% for product in products %}
+        <a href="/store/store/{{ product.productId }}">
         <h3>{{ product.name }}</h3>
         <h4>{{ product.description }}</h4>
         <p>{{ product.price }}</p>
+        </a>
     {% endfor %}
 {% endblock %}
