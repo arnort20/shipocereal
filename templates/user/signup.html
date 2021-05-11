@@ -1,15 +1,6 @@
 {% load static %}
-
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Sign Up</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
         <link rel="stylesheet" href="{% static '/css/signup.css' %}">
-        <link rel="stylesheet" href="{% static '/css/main.css' %}">
-    </head>
-    <body>
+
         <div class="col-md-4 col-md-offset-4 signup__container">
 
             <div class="row container__logo">
@@ -25,53 +16,6 @@
                 <input type="text" id="newUser-lastName" class="container__input userInfo__input"  placeholder="Eftir Nafn">
             </div>
 
-            <div class="row container__paymentInfo">
-                <h1 class="container__title">Kreditkorta upplýsingar</h1>
-                <input type="text" class="container__input paymentInfo__input" placeholder="Kortanúmer">
-
-                <div class="row paymentInfo__row">
-                <div class="paymentInfo__column">
-
-                    <label for="month" class="paymentInfo__label">Mán:</label>
-                    <select name="month" id="month" class="paymentInfo__select">
-                        <option value="jan">Jan 01</option>
-                        <option value="feb">Feb 02</option>
-                        <option value="mars">Mard 03</option>
-                        <option value="apr">Apr 04</option>
-                        <option value="may">May 05</option>
-                        <option value="jun">Jun 06</option>
-                        <option value="jul">Jul 07</option>
-                        <option value="aug">Aug 08</option>
-                        <option value="sept">Sep 09</option>
-                        <option value="oct">Oct 10</option>
-                        <option value="nov">Nov 11</option>
-                        <option value="dec">Dec 12</option>
-                    </select>
-
-                </div>
-
-                <div class="paymentInfo__column">
-                    <label for="year" class="paymentInfo__label">Ár:</label>
-                    <select name="year" id="year" class="paymentInfo__select">
-                      <option value="year1">2021</option>
-                      <option value="year2">2022</option>
-                      <option value="year3">2023</option>
-                      <option value="year5">2024</option>
-                      <option value="year6">2025</option>
-                      <option value="year7">2026</option>
-                    </select>
-                </div>
-
-                <div class="paymentInfo__column">
-                    <label for="cvc">CVC:</label>
-                    <input type="text" id="cvc" class="paymentInfo__input-cvc">
-                </div>
-
-                </div>
-            </div>
-
-
-
             <div class="row container__password">
                 <h1 class="container__title">Lykilorð</h1>
                 <input type="text" class="container__input password__input" id="pw" placeholder="Lykilorð">
@@ -80,15 +24,12 @@
             </div>
 
             <div class="row container__buttons-row">
-                <div class="col-md-2 buttons__column buttons__column-abort">
-                    <button class="container__buttons button__abort button__red" id="abort" onclick="location.href='{% url 'home' %}'">Hætta Við</button>
+                <div class="col-md-2 buttons__column">
+                    <button class="signup__buttons button__abort button__red" id="abort" onclick="location.href='{% url 'home' %}'">Hætta Við</button>
                 </div>
 
                 <div class="col-md-2 buttons__column buttons__column-confirmed">
-                    <button class="container__buttons button__confirm button__green" id="confirmed" onclick="location.href='{% url 'UserView' %}'">Nýskrá</button>
+                    <button class="signup__buttons button__confirm button__green" id="confirmed" onclick="location.href='{% url 'UserView' %}'">Nýskrá</button>
                 </div>
             </div>
-
         </div>
-    </body>
-</html>
