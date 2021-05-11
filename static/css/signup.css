@@ -4,15 +4,68 @@ html,body{
     justify-content: center;
 }
 .signup__container{
-    height: 80%;
+    max-height: 90%;
     padding: 0;
-    margin-top: 1%;
     background-color: rgb(216, 212, 212,0.76);
+}
+/*----LOGO TOP ROW------*/
+.container__logo{
+    height: 13%;
+    margin: 0;
+    padding: 0;
+    background-color: #FFDB58;
+}
+.logo__img{
+    width: 100%;
+    object-fit: contain;
+}
+
+form{
+    height: 85%;
+    margin: auto;
+    padding: 0;
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
+    justify-content: flex-start;
 }
-.container__input{
+span{
+    margin: 0;
+    padding: 0;
+}
+label{
+    font-size: 1.3vw;
+    margin: 2% 0 0 0;
+    padding: 0;
+}
+.signup__input,input{
+    height: 6%;
+    margin: 0;
+    padding: 2%;
+    width: 100%;
+}
+span{
+    margin: 0;
+    padding: 0;
+}
+.helptext{
+    color: gray;
+    font-size: 0.8vw;
+    font-style: italic;
+    width: 100%;
+    margin: 0;
+}
+.signup__button{
+    width:50%;
+    margin: 2% 0 0 25%;
+    padding: 0;
+}
+.signup__button:hover{
+    background-color: #1b3f02;
+    border: 0;
+}
+
+/*.container__input{
     border: 1px solid black;
     width: 80%;
     margin: 1% 1% 1% 10%;
@@ -30,32 +83,21 @@ html,body{
 .container__userInfo,
 .container__password,
 .container__buttons-row{
-    width: 100%;
     margin: 0;
     padding: 0;
 }
 
-/*----LOGO TOP ROW------*/
-.container__logo{
-    height: 15%;
-    margin: 0;
-    padding: 0;
-    background-color: #FFDB58;
-}
-.logo__img{
-    width: 100%;
-    object-fit: contain;
-}
 
-/*----USER INFO----*/
+
+----USER INFO----
 .container__userInfo{
     height: 45%;
 }
 .userInfo__input{
     height: 15%;
-}
+}*/
 
-/*PASSWORD ROW*/
+/*PASSWORD ROW
 .container__password{
     height: 30%;
 }
@@ -63,7 +105,7 @@ html,body{
     height: 25%;
 }
 
-/*BUTTONS ROW*/
+BUTTONS ROW
 .container__buttons-row{
     height: 10%;
 }
@@ -73,11 +115,7 @@ html,body{
     display: flex;
     justify-content: center;
 }
-.signup__buttons{
-    width:50%;
-    height:80%;
-    margin-top: 2%;
-}
+*/
 
 
 
