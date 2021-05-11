@@ -1,6 +1,6 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
-from user.forms import credit_card_form, address_form
+from user.forms import credit_card_form, address_form, add_to_cart
 from django.contrib.auth import get_user_model
 from ship_o_cereal.models import Carts, Addresses, CartRows, Orders, Creditcards, Comments
 from user.models import Profile
@@ -57,10 +57,16 @@ def address(request):
 
 
 def addToCart(request, productId, amount):
+    form = add_to_cart.AddToCart
     userId = request.user.id
     if userId:
         currentCart = Carts.objects.get(userId_id=userId)
         if currentCart:
+            if form.is_valid():
+                cartRow = form.save(commit=False)
+                cartRow.amount = amount
+                cartRow.productId_id = productId
+                cartRow.cartId_id = currentCart.cartId
 
 
 
