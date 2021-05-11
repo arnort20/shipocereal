@@ -1,6 +1,8 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 from user.forms import credit_card_form, address_form
+from user.forms import *
+from user.forms.user_create_form import SignupForm
 from django.contrib.auth import get_user_model
 from ship_o_cereal.models import Carts, Addresses, CartRows, Orders, Creditcards, Comments
 from user.models import Profile
