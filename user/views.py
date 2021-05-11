@@ -1,7 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
-from 
-from user.forms.profile_form import ProfileForm
+from user.forms import *
+from ship_o_cereal.models import Carts, Addresses, CartRows, Orders, Creditcards, Comments
 from user.models import Profile
 
 
@@ -26,8 +26,8 @@ def user_view(request):
 
 
 def login(request):
-    if request.method == 'POST':
-        form =
+    # if request.method == 'POST':
+    #     form =
     return render(request, 'user/login.html')
 
 
