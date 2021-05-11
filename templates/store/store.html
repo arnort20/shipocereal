@@ -1,11 +1,25 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
-    <h2>plepleplepelpeleplep</h2>
+    <link rel="stylesheet" href=" {% static 'css/allitems.css' %} ">
+
     {% for product in products %}
         <a href="/store/{{ product.productId }}">
-        <h3>{{ product.name }}</h3>
-        <h4>{{ product.description }}</h4>
-        <p>{{ product.price }}</p>
+            <div class="card">
+                <div class="middle"> <img src="{% static 'productPictures/'%}{{ product.image }}" width="300" height="300">
+                    <h5>{{ product.name}}</h5>
+                </div>
+                <div class="bottom d-flex flex-row justify-content-center">
+                    <div class="input-group mb-3"> <span class="input-group-text">+</span> <input type="text" class="form-control" value="1"> <span class="input-group-text">-</span> </div> <button class="btn btn-success btn-sm add">Setja í körfu <b>{{ product.price }}</b></button>
+                </div>
+            </div>
         </a>
     {% endfor %}
+
 {% endblock %}
+
+
+
+
+
+
