@@ -59,11 +59,25 @@
 
                     <div class="col-md-12 div__cardinfo cardinfo__content-col active__option">
                         <div class="col-md-6 add_card">
-                            <h2 class="card__info-title">Add credit card</h2>
+                            <h2 class="card__info-title col-md-11">Add credit card</h2>
                             <form class="form form-horizontal cardinfo__content-form" method="post">
+                                <label class="cardinfo__label" for="id_cardName">Name on Card</label>
+                                <input type="text" class="form-control cardinfo__input" id="id_cardName">
                                 {% csrf_token %}
-                                {{ form }}
-                                <input type="submit" class="btn btn-primary" value="add card">
+                                {% for field in form %}
+                                    {% if field.auto_id == "id_cardNumber" %}
+                                        <label class="cardinfo__label" for="{{ field.auto_id }}">{{ field.label }}</label>
+                                    {% elif field.auto_id == "id_month"%}
+                                        <div class="cardinfo__select-labels">
+                                            <p class="col-md-4 select__label">Month</p>
+                                            <p class="col-md-4 select__label">Year</p>
+                                            <p class="col-md-4 select__label">CVC</p>
+                                        </div>
+                                    {% endif %}
+
+                                    {{ field }}
+                                {% endfor %}
+                                <input type="submit" class="btn btn-primary cardinfo__button button__blue" value="Bæta við Greiðslumáta">
                             </form>
                         </div>
 

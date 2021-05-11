@@ -139,29 +139,68 @@
     flex-wrap: nowrap;
     border: 1px solid black;
 }
+.cardinfo__content-form{
+    height: 90%;
+    margin: 0;
+    padding-top: 2%;
+}
 .add_card,.existing_cards-col{
     height: 100%;
     border: 1px solid black;
 }
+
+.add_card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card__info-title{
+    height: 10%;
+    margin: 0;
+    padding-top: 1%;
+    font-size: 2vw;
+    border-bottom: 1px solid black;
+}
+
 .existing_cards-row{
+    width: 100%;
     height: 50%;
     border:1px solid black;
     background-color: orange;
     margin: 0;
     padding: 0;
 }
-#nei{
-    height: 50%;
-    border:1px solid black;
-    background-color: orange;
-    margin: 0;
-    padding: 0;
+/*#label__id_cardName,*/
+.cardinfo__label{
+    font-size: 1.2vw;
+    margin:0 0 0 10%;
 }
-/*input{
-    font-size: 1.3vw;
-    margin:0 0 0 5%;
-    width: 50%;
-}*/
+.select__label{
+    height: 100%;
+}
+.cardinfo__select-labels{
+    width: 80%;
+    height: 6%;
+    margin-left: 10%;
+    display: flex;
+    font-size: 1.2vw;
+}
+.cardinfo__input{
+    width: 80%;
+    margin: auto auto 3% auto;
+}
+.cardinfo__select{
+    width: 26%;
+    margin: auto auto 2% auto;
+    display: inline;
+}
+.cardinfo__month{
+    margin-left: 10%;
+}
+.cardinfo__button{
+    width: 60%;
+    margin: 2% auto 2% 20%;
+}
 /*.cardinfo__content-form{
     width: 100%;
     background-color: orange;
@@ -218,7 +257,7 @@
 
 
 /*OPTION 4: CHANGE PASSWORD*/
-.passwordchange__content-col{
+/*.passwordchange__content-col{
     height: 50%;
     display: flex;
     flex-wrap: wrap;
@@ -256,4 +295,4 @@
 .passwordchange__button{
     width: 70%;
     height: 60%;
-}
+}*/

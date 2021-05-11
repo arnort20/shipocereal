@@ -80,7 +80,6 @@ def newCart(request, userId):
     cart.userId_id = userId
     cart = form.save()
 
->>>>>>> 1242c794eadf6b4b5d46d1075602bb611ac7193d
 
 
 def creditcard(request):
