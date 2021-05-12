@@ -24,3 +24,13 @@ def bowl_view(request):
 def frontPage(request):
     return render(request, '')
 
+
+def searchbar(request):
+    if request.method == 'POST':
+        searched = request.POST['searched']
+        products = Products.objects.filter(name__contains=searched)
+        return render(request, 'SearchSite.html', {'searched': searched, 'products': products})
+    else:
+        return render(request, 'SearchSite.html')
+
+

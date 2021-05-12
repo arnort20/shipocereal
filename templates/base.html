@@ -18,8 +18,11 @@
         </div>
 
         <div class="col-md-6 banner__column banner__searchColumn">
-            <input class="col-md-4" type="text" id="banner__searchbar" name="searchbar"  placeholder="Leitaðu að þínu uppáhalds morgunkorni hér">
+            <form method="POST" action="{% url 'SearchBar' %}">
+            {% csrf_token %}
+            <input class="col-md-4" type="text" id="banner__searchbar" name="searched"  placeholder="Leitaðu að þínu uppáhalds morgunkorni hér">
             <i type="button" class="col-md-2 banner__searchicon fas fa-search fa-2x"></i>
+            </form>
         </div>
 
         <div class="col-md-2 banner__column" id="banner__UserOptions">
