@@ -25,7 +25,7 @@
                             <li class="menubar__li menubar__topli active__menubar" onclick="ChangeUserOptions(this.id)" id="myinfo" value="myinfo">
                                 <p class="col-md-10 menubar__p">Mínar Upplýsingar</p>
                             </li>
-                            <li class="menubar__li" onclick="ChangeUserOptions(this.id)" id="address" value="address">
+                            <li class="menubar__li " onclick="ChangeUserOptions(this.id)" id="address" value="address">
                                 <p class="col-md-10 menubar__p">Heimilisfang</p>
                             </li>
                             <li class="menubar__li" onclick="ChangeUserOptions(this.id)" id="cardinfo" value="cardinfo">
@@ -42,6 +42,7 @@
                             </li>
                         </ul>
                     </nav>
+
                 </div>
 
 
@@ -51,7 +52,6 @@
                             <h2 class="optiondisplay__header-title">Mínar Upplýsingar</h2>
                         </div>
                     </div>
-
 
                     <div class="div__myinfo active__option">
                     <div class="row optiondisplay__userinfo-content-row">
@@ -63,8 +63,7 @@
 
                         <div class="col-md-6 userinfo__col">
                             <div class="row myinfo__header-row">
-                                <!--<h2 class="myinfo__header-title">Notendanafn:</h2>-->
-                                <h2 class="myinfo__header-title font__italic"id="username">JonJons</h2>
+                                <h2 class="myinfo__header-title">Notendanafn: <i id="user-username">JonJons</i></h2>
                                 <p class="myinfo__header-subtext">Hér geturu breytt öllum þínum upplýsingum</p>
                             </div>
 
@@ -83,65 +82,14 @@
 
 
 
-
-                    <div class="div__address">
-                    <div class="col-md-5 address__content-col">
-                        <div class="col-md-8 address__content-text-col">
-                            <h2 class="address__text address__text-top">Dúfnahólar 10</h2>
-                            <h2 class="address__text">101</h2>
-                            <h2 class="address__text">Reykjavík</h2>
-                            <h2 class="address__text address__text-bottom">Ísland</h2>
-                            <i class="address__subtext">Þetta er aðal heimilsfangið þitt</i>
-                        </div>
-                        <div class="col-md-4 address__button-col">
-                            <button class="address__button button__red">Eyða heimilsfangi</button>
-                            <button class="address__button button__blue address__button-lower">Breyta heimilsfangi</button>
-                        </div>
-                    </div>
-
-                    <div class="col-md-5 address__content-col">
-
-                        <div class="col-md-8 address__content-text-col">
-                            <h2 class="address__text address__text-top">Dúfnahólar 10</h2>
-                            <h2 class="address__text">101</h2>
-                            <h2 class="address__text">Reykjavík</h2>
-                            <h2 class="address__text address__text-bottom">Ísland</h2>
-                            <button class="address__mainAddress-button">Gera að aðal Heimilsfangi</button>
-                        </div>
-
-                        <div class="col-md-4 address__button-col">
-                            <button class="address__button button__red">Eyða heimilsfangi</button>
-                            <button class="address__button button__blue address__button-lower">Breyta heimilsfangi</button>
-                        </div>
-                    </div>
+                    <!--<div class="col-md-12 div__address">
+                        {% include 'user/address.html' %}
                     </div>
 
 
                     <div class="col-md-12 div__cardinfo">
                         {% include 'user/creditcard.html' %}
-                    </div>
-
-
-                    <!--LAGA-->
-                    <!--<div class="div__changepw">
-                    <div class="col-md-5 passwordchange__content-col">
-                        <div class="row passwordchange__content-top-row">
-                            <label for="oldpw" class="passwordchange__label">Gamla Lykilorð</label>
-                            <input type="text" class="passwordchange__input" placeholder="******************">
-
-                            <label for="oldpw" class="passwordchange__label">Nýja Lykilorð</label>
-                            <input type="text" class="passwordchange__input" placeholder="******************">
-                        </div>
-
-                        <div class="row passwordchange__content-bottom-row">
-                            <button class="passwordchange__button button__green">Breyta Lykilorði</button>
-                        </div>
-                    </div>
                     </div>-->
-
-                    <div class="div__changepw">CHANGE PW</div>
-                    <div class="div__wishlist">ÓSKALISTINN MINN</div>
-                    <div class="div__myorders">MÍNAR PANTANIR</div>
 
                 </div>
             </div>
