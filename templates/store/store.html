@@ -74,13 +74,14 @@
         </div>
     {% for product in products %}
         <a href="/store/{{ product.productId }}">
-            <div class="card col-sm-4">
+            <div class="card col-sm-4" id="{{ product.productId }}">
                 <div class="middle"> <img src="{% static 'productPictures/'%}{{ product.image }}" width="300" height="300">
                     <h5>{{ product.name}}</h5>
                 </div>
-                </a>
-            <form method="post">
+        </a>
+            <form method="post" >
             {% csrf_token %}
+
                 <div class="bottom d-flex flex-row justify-content-center">
                     <div class="input-group mb-3">
                         <span class="input-group-text">+</span> <input type="text" class="form-control" value="1"><span class="input-group-text">-</span></div><button class="btn btn-success btn-sm add" type="submit">Setja í körfu {{ product.price }}</button>
