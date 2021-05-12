@@ -7,9 +7,9 @@ body {
 .card {
     width: 350px;
     border-radius: 5px;
-    display: flex;
-    flex-wrap: nowrap;
+    display: inline-block;
     border: black 2px solid;
+    margin: 50px;
 }
 
 .middle {
