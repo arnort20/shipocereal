@@ -28,7 +28,7 @@ def frontPage(request):
 def searchbar(request):
     if request.method == 'POST':
         searched = request.POST['searched']
-        products = Products.objects.filter(name__contains=searched)
+        products = Products.objects.filter(name__icontains=searched)
         return render(request, 'SearchSite.html', {'searched': searched, 'products': products})
     else:
         return render(request, 'SearchSite.html')
