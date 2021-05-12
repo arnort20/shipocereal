@@ -9,7 +9,7 @@
             <img src="{% static '/layoutPictures/Logo_3.png' %}" alt="Logo" class="logo__img">
         </div>
 
-        <form class="form form-horizontal register__form" method="post">
+        <form class="form form-horizontal register__form" method="post" action="{% url 'userprofielView' %}">
             {% csrf_token %}
             {{ form }}
             <input type="submit" class="btn btn-primary button__green signup__button" value="Nýskrá">

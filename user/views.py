@@ -17,10 +17,14 @@ def new_cart_test(request):
         print(1)
         form = add_to_cart_test.FolioCreateForm(data=request.POST)
         if form.is_valid():
-            form.save()
+            cart = form.save(commit=False)
+            cart.userId_id = request.user.id
+            cart.productId_id = request.productId
+            cart = form.save()
     print(2)
-    return render(request, 'user/new_cart_test.html', {
+    return render_to_response(request, 'user/new_cart_test.html', {
         'form': add_to_cart_test.FolioCreateForm()
+
     })
 
 

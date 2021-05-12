@@ -8,4 +8,5 @@ urlpatterns = [
     path('bowl/',views.bowl_view,name="BowlView"),
     path('search/',views.searchbar,name="SearchBar"),
 
+
 ]
