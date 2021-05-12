@@ -7,6 +7,7 @@ urlpatterns = [
     path('merch/',views.merch_view,name="MerchView"),
     path('bowl/',views.bowl_view,name="BowlView"),
     path('search/',views.searchbar,name="SearchBar"),
+    path('<int:productId>/addtocart/', views.new_cart_test, name="addToCart")
 
 
 ]

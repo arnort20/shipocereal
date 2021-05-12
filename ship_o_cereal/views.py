@@ -1,5 +1,25 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from ship_o_cereal.models import *
+
+
+def new_cart_test(request, productId):
+    if not request.user.is_authenticated:
+        return redirect('Logi')
+    cartRelation = CartFolio.objects.filter(productId=Products.objects.filter(pk=productId).first(), userId=request.user)
+
+    if not cartRelation:
+        cart = CartFolio()
+        cart.productId = Products.objects.filter(pk=productId).first()
+        cart.userId = request.user
+        cart.amount = 1
+        cart.save()
+    else:
+        theCart = cartRelation.first()
+        theCart.amount += 1
+        theCart.save()
+    return redirect('ProductView')
+
+
 
 
 def prod_view(request):
