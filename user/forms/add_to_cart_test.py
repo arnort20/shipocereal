@@ -7,7 +7,7 @@ class FolioCreateForm(ModelForm):
         model = CartFolio
         exclude = ['folioId']
         widgets = {
-            'userId': widgets.NumberInput(attrs={'class': 'form-control'}),
-            # 'productId': widgets.NumberInput(attrs={'class': 'form-control'}),
-            # 'amount': widgets.NumberInput(attrs={'class': 'form-control'})
+            'userId': widgets.NumberInput(attrs={'class': 'form-control' 'def'}),
+            'productId': widgets.NumberInput(attrs={'class': 'form-control'}),
+            'amount': widgets.NumberInput(attrs={'class': 'form-control'})
         }
