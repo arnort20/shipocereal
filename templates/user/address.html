@@ -55,25 +55,26 @@
 
                     <div class="div__address address__content-col col-md-11">
                         <div class="col-md-6 add_address">
-                            <h1 class="address__info-title col-md-11">Add address</h1>
+                            {% csrf_token %}
+                            {% for x in allCountries %}
+                                <h1>{{ x.country}}</h1>
+                            {% endfor %}
+                            <!--<h1 class="address__info-title col-md-11">Add address</h1>
                             <form class="form form-horizontal address__form col-md-11" method="post">
                                 {% csrf_token %}
                                 {% for field in form %}
-                                    {% if field.auto_id == "id_address" %}
-                                        <label class="address__label" for="{{ field.auto_id }}">Street:</label>
-                                        {{ field }}
+                                    {% if field.auto_id == "id_street" or field.auto_id == "id_country"%}
+                                        <label class="address__label" for="{{ field.auto_id }}">{{ field.label}}</label>
+                                    {% elif  field.auto_id == "id_apt_num"%}
+                                        <div class="div__label">
+                                            <p class="address__p col-md-7">Aparment number</p>
+                                            <p class="address__p col-md-5">Zip</p>
+                                        </div>
                                     {% endif %}
-                                    {% if field.auto_id == "id_zip" %}
-                                        <label class="address__label" for="apt_num">Apartment number:</label>
-                                        <label class="address__label" for="{{ field.auto_id }}">{{ field.label }}:</label>
-                                        <input type="text" class="form-control address__input-small" id="apt_num">
-                                        {{ field }}
-                                        <label class="address__label" for="apt_num">Country:</label>
-                                        <input type="text" class="form-control address__input" id="apt_num">
-                                    {% endif %}
+                                    {{ field }}
                                 {% endfor %}
                                 <input type="submit" class="btn btn-primary button__blue address__button" value="add address">
-                            </form>
+                            </form>-->
                         </div>
 
                         <div class="col-md-6 existing_address-col">

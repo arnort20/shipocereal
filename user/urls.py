@@ -13,5 +13,5 @@ urlpatterns = [
     path('creditcard/',views.creditcard,name="CreditcardView"),
     path('address/', views.address, name="AddressView"),
     path('profile/',views.user_profile,name="userprofielView"),
-    path('carttest/', views.new_cart_test,name="CartTest")
+    path('carttest/', views.new_cart_test,name="CartTest"),
 ]

@@ -7,6 +7,7 @@ class CreditcardCreateForm(ModelForm):
         model = Creditcards
         exclude = ['cardId', 'userId']
         widgets = {
+            'cardname': widgets.TextInput(attrs={'class': 'form-control cardinfo__input'}),
             'cardNumber': widgets.TextInput(attrs={'class': 'form-control cardinfo__input'}),
             'month': widgets.NumberInput(attrs={'class': 'form-control cardinfo__select cardinfo__month'}),
             'year': widgets.NumberInput(attrs={'class': 'form-control cardinfo__select'}),

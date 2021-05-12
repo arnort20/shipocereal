@@ -111,6 +111,16 @@
     height: 100%;
     margin-top: 2%;
 }
+.div__label{
+    margin-left: 10%;
+    width: 80%;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.address__p{
+    font-size: 1vw;
+    margin: 0;
+}
 .address__label{
     font-size: 1vw;
     margin-left:10%;
@@ -124,6 +134,8 @@
     display: inline;
     margin-left: 10%;
 }
+
+
 .address__button{
     width: 60%;
     margin: 2% auto 2% 20%;

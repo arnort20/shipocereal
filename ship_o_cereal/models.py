@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 '''class Users(models.Model):
@@ -94,16 +95,21 @@ class Nutrients(models.Model):
 class Creditcards(models.Model):
     userId = models.ForeignKey(User, on_delete=models.CASCADE)
     cardId = models.BigAutoField(primary_key=True)
+    cardname = models.CharField(max_length=255)
     cardNumber = models.CharField(max_length=16)
     month = models.IntegerField()
     year = models.IntegerField()
     cvc = models.IntegerField()
 
+class Countries(models.Model):
+    countyId = models.BigAutoField(primary_key=True)
+    country = models.CharField(max_length=255)
 
 class Addresses(models.Model):
-    userId = models.ForeignKey(User, on_delete=models.CASCADE)
     addrId = models.BigAutoField(primary_key=True)
-    address = models.CharField(max_length=255)
+    userId = models.ForeignKey(User, on_delete=models.CASCADE)
+    street = models.CharField(max_length=255)
+    apt_num = models.IntegerField()
     zip = models.IntegerField()
 
 
