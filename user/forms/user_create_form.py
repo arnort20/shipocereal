@@ -10,7 +10,7 @@ class SignupForm(UserCreationForm):
         exclude = {'id'}
         fields = UserCreationForm.Meta.fields + ('first_name', 'last_name', 'email',)
         widgets = {
-            'username' :widgets.TextInput(attrs={'class': 'form-control signup__input','placeholder':'Notendanafn'}),
+            'username':widgets.TextInput(attrs={'class': 'form-control signup__input','placeholder':'Notendanafn'}),
             'first_name': widgets.TextInput(attrs={'class': 'form-control signup__input','placeholder':'Fyrra Nafn'}),
             'last_name': widgets.TextInput(attrs={'class': 'form-control signup__input','placeholder':'Eftir Nafn'}),
             'email': widgets.TextInput(attrs={'class': 'form-control signup__input','placeholder':'Netfang'}),

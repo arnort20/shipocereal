@@ -3,6 +3,6 @@
     <form method="POST" action="">
         {% csrf_token %}
         {{ form }}
-        <button class="btn btn-success btn-sm add" type="submit">Add to cart</button>
+        <button class="btn btn-success btn-sm add" name="CartTest" type="submit">Add to cart</button>
     </form>
 {% endblock %}

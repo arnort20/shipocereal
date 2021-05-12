@@ -34,3 +34,5 @@ def searchbar(request):
         return render(request, 'SearchSite.html')
 
 
+
+
