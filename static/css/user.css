@@ -198,9 +198,12 @@ button{
     height: 85%;
     display: none;
 }
-
 .active__option{
     display: flex;
     align-items: flex-start;
+}
+.optiondisplay__container{
+    height: 85%;
+    background-color: #3B8905;
 }
 

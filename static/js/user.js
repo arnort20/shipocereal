@@ -8,7 +8,7 @@ arrowTag.className += " col-md-2";
 
 const arrowText = document.createTextNode("\u2192");
 arrowTag.appendChild(arrowText);
-const first_placement = document.getElementById("myinfo");
+const first_placement = document.getElementById("address");
 first_placement.appendChild(arrowTag);
 
 const container_activeOption = document.getElementsByClassName("useroptions__optiondisplay-col");
