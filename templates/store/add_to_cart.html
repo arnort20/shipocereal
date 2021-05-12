@@ -1,0 +1,11 @@
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <button class="btn btn-success btn-sm add" type="submit">
+        Setja í körfu
+        <b>{{ product.price }}</b>
+    </button>
+</form>
+{% endblock %}

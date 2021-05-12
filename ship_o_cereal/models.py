@@ -119,6 +119,13 @@ class CartRows(models.Model):
     amount = models.IntegerField()
 
 
+class CartFolio(models.Model):
+    folioId = models.BigAutoField(primary_key=True)
+    userId = models.ForeignKey(User, on_delete=models.CASCADE)
+    productId = models.ForeignKey(Products, on_delete=models.CASCADE)
+    amount = models.IntegerField()
+
+
 class Orders(models.Model):
     cartId = models.OneToOneField(Carts, on_delete=models.CASCADE, primary_key=True)
     date = models.DateField()

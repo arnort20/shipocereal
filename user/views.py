@@ -1,11 +1,23 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
-from user.forms import credit_card_form, address_form, add_to_cart
+from user.forms import credit_card_form, address_form, add_to_cart, add_to_cart_test
 from user.forms import *
 from user.forms.user_create_form import SignupForm
 from django.contrib.auth import get_user_model
 from ship_o_cereal.models import Carts, Addresses, CartRows, Orders, Creditcards, Comments
 from user.models import Profile
+
+
+def new_cart_test(request):
+    if request.method == 'POST':
+        form = add_to_cart_test.FolioCreateForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+
+    return render(request, 'user/new_cart_test.html', {
+        'form': add_to_cart_test.FolioCreateForm()
+    })
+
 
 
 def cart_view(request):
@@ -51,16 +63,20 @@ def address(request):
 def addToCart(request, productId, amount):
     form = add_to_cart.AddToCart(data=request.POST)
     userId = request.user.id
+    print(userId)
     if userId:
         currentCart = Carts.objects.get(userId_id=userId)
         if not currentCart:
             newCart(request, userId)
             currentCart = Carts.objects.get(userId_id=userId)
+        print(cart_view(currentCart))
         cartRow = form.save(commit=False)
         cartRow.amount = amount
         cartRow.productId_id = productId
         cartRow.cartId_id = currentCart.cartId
         cartRow = form.save()
+    print(productId)
+    return render(request, 'store/add_to_cart.html', {'form': form})
 
 
 def newCart(request, userId):
