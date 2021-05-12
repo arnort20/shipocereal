@@ -178,7 +178,6 @@ button{
 }
 .optiondisplay__header-col{
     height: 100%;
-    border-bottom:1px solid black;
     text-align: center;
     margin: 0;
 }
@@ -189,7 +188,7 @@ button{
 
 
 
-.div__myinfo,
+/*.div__myinfo,
 .div__address,
 .div__cardinfo,
 .div__changepw,
@@ -201,9 +200,15 @@ button{
 .active__option{
     display: flex;
     align-items: flex-start;
-}
+}*/
 .optiondisplay__container{
     height: 85%;
     background-color: #3B8905;
+}
+.TAKA,.TAKA:hover{
+    background-color: transparent;
+    box-shadow: none;
+    border: 0;
+    color: transparent;
 }
 

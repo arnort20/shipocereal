@@ -33,10 +33,10 @@ function ChangeUserOptions(id){
 
 
     /*CHANGES THE CONTENT IN THE USER OPTIONS*/
-    var activeOption = document.getElementsByClassName(id_prefix+id);
+    /*var activeOption = document.getElementsByClassName(id_prefix+id);
 
     var previouslyActive = document.getElementsByClassName(" active__option");
     previouslyActive[0].className = previouslyActive[0].className.replace(" active__option","");
-    activeOption[0].className += " active__option";
+    activeOption[0].className += " active__option";*/
 }
 

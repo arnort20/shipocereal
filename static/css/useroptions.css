@@ -4,11 +4,14 @@
 
 /*------OPTION 1: USER INFO-------*/
 .optiondisplay__userinfo-content-row{
+    height: 85%;
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
     margin: 0;
     padding: 0;
+    border-top: 1px solid black;
+    width: 90%;
 }
 
 .userinfo__column-profile{
@@ -86,9 +89,9 @@
     height: 85%;
     margin: 0;
     padding: 0;
-    border: 1px solid black;
     display: flex;
     flex-wrap: wrap;
+    border-top: 1px solid black;
 }
 .address__form{
     height: 90%;
@@ -106,6 +109,7 @@
     flex-wrap: wrap;
     justify-content: center;
     height: 100%;
+    margin-top: 2%;
 }
 .address__label{
     font-size: 1vw;
@@ -134,7 +138,6 @@
     flex-wrap: wrap;
 }
 .existing_address-row{
-    background-color: orange;
     border: 1px solid black;
     height: 50%;
     width: 100%;
@@ -189,8 +192,7 @@
     padding:0;
     display: flex;
     flex-wrap: nowrap;
-    border: 1px solid black;
-    background-color: orange;
+    border-top: 1px solid black;
 }
 .cardinfo__content-form{
     height: 90%;
@@ -200,13 +202,13 @@
 }
 .add_card,.existing_cards-col{
     height: 100%;
-    border: 1px solid black;
 }
 
 .add_card{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 2%;
 }
 .card__info-title{
     height: 10%;
