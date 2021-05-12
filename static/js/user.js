@@ -1,4 +1,3 @@
-
 const arrowContainer = document.createElement("div");
 arrowContainer.className = "col-md-10"
 arrowContainer.className += " arrow__container"
@@ -18,7 +17,6 @@ const id_prefix = "div__"
 
 
 function ChangeUserOptions(id){
-
     /*MOVES THE ARROW AROUND IN THE MENUBAR*/
     var menubar__container = document.getElementById(id);
     menubar__container.appendChild(arrowTag);
@@ -37,7 +35,7 @@ function ChangeUserOptions(id){
     /*CHANGES THE CONTENT IN THE USER OPTIONS*/
     var activeOption = document.getElementsByClassName(id_prefix+id);
 
-    var previouslyActive = document.getElementsByClassName("active__option");
+    var previouslyActive = document.getElementsByClassName(" active__option");
     previouslyActive[0].className = previouslyActive[0].className.replace(" active__option","");
     activeOption[0].className += " active__option";
 }

@@ -3,7 +3,7 @@
 
 
 /*------OPTION 1: USER INFO-------*/
-/*.optiondisplay__userinfo-content-row{
+.optiondisplay__userinfo-content-row{
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
@@ -78,19 +78,70 @@
     height: 10%;
     width: 40%;
     margin:0 0 0 30%;
-}*/
+}
 
 
 /*OPTION 2: ADDRESS*/
-/*.address__content-col{
-    height: 40%;
-    margin: 0 0 0 5%;
+.address__content-col{
+    height: 85%;
+    margin: 0;
     padding: 0;
     border: 1px solid black;
     display: flex;
     flex-wrap: wrap;
 }
-.address__content-text-col{
+.address__form{
+    height: 90%;
+    padding-top: 2%;
+}
+.address__info-title{
+    height: 10%;
+    margin: 0;
+    padding-top: 1%;
+    font-size: 2vw;
+    border-bottom: 1px solid black;
+}
+.add_address{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 100%;
+}
+.address__label{
+    font-size: 1vw;
+    margin-left:10%;
+}
+.address__input{
+    width: 80%;
+    margin: auto auto 3% auto;
+}
+.address__input-small{
+    width: 35%;
+    display: inline;
+    margin-left: 10%;
+}
+.address__button{
+    width: 60%;
+    margin: 2% auto 2% 20%;
+}
+.address__button:hover{
+    border: 0;
+    background-color: #1c356e;
+}
+.existing_address-col{
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.existing_address-row{
+    background-color: orange;
+    border: 1px solid black;
+    height: 50%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+/*.address__content-text-col{
     height: 100%;
 }
 .address__text{
@@ -132,8 +183,9 @@
 
 
 /*OPTION 3: CARD INFO*/
+
 .cardinfo__content-col{
-    height: 80%;
+    height: 85%;
     padding:0;
     display: flex;
     flex-wrap: nowrap;
@@ -141,8 +193,10 @@
 }
 .cardinfo__content-form{
     height: 90%;
+    width: 100%;
     margin: 0;
     padding-top: 2%;
+    background-color: pink;
 }
 .add_card,.existing_cards-col{
     height: 100%;
@@ -170,7 +224,6 @@
     margin: 0;
     padding: 0;
 }
-/*#label__id_cardName,*/
 .cardinfo__label{
     font-size: 1.2vw;
     margin:0 0 0 10%;

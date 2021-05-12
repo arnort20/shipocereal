@@ -15,23 +15,12 @@ def cart_view(request):
 def checkout_view(request):
     return render(request, 'user/checkout.html')
 
-
-def login_view(request):
-    return render(request, 'user/login.html')
-
-
 def signup_view(request):
     return render(request, 'user/signup.html')
 
 
 def user_view(request):
     return render(request, 'user/../templates/store/user.html')
-
-
-def login(request):
-    #if request.method == 'POST':
-    #    form =
-    return render(request, 'user/login.html')
 
 
 def register(request):
@@ -93,6 +82,8 @@ def creditcard(request):
         form = credit_card_form.CreditcardCreateForm()
     return render(request, 'user/creditcard.html', {'form': form})
 
+def user_profile(request):
+    return render(request, 'user/profile.html')
 #
 #
 # def profile(request):

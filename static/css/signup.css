@@ -20,7 +20,7 @@ html,body{
     object-fit: contain;
 }
 
-form{
+.register__form{
     height: 85%;
     margin: auto;
     padding: 0;

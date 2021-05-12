@@ -23,3 +23,4 @@ def bowl_view(request):
 
 def frontPage(request):
     return render(request, '')
+

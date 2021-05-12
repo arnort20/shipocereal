@@ -1,9 +1,50 @@
-{% extends 'base.html' %}
-{%  block content %}
-    <h1>Add address card</h1>
-    <form class="form form-horizontal" method="post">
-        {% csrf_token %}
-        {{ form }}
-        <input type="submit" class="btn btn-primary" value="add address">
-    </form>
-{% endblock %}
+<div class="div__address address__content-col col-md-11">
+    <div class="col-md-6 add_address">
+        <h1 class="address__info-title col-md-11">Add address</h1>
+        <form class="form form-horizontal address__form col-md-11" method="post">
+            {% csrf_token %}
+            {% for field in form %}
+                {% if field.auto_id == "id_address" %}
+                    <label class="address__label" for="{{ field.auto_id }}">Street:</label>
+                    {{ field }}
+                {% endif %}
+                {% if field.auto_id == "id_zip" %}
+                    <label class="address__label" for="apt_num">Apartment number:</label>
+                    <label class="address__label" for="{{ field.auto_id }}">{{ field.label }}:</label>
+                    <input type="text" class="form-control address__input-small" id="apt_num">
+                    {{ field }}
+                    <label class="address__label" for="apt_num">Country:</label>
+                    <input type="text" class="form-control address__input" id="apt_num">
+                {% endif %}
+            {% endfor %}
+            <input type="submit" class="btn btn-primary button__blue address__button" value="add address">
+        </form>
+    </div>
+    <div class="col-md-6 existing_address-col">
+        <div class="row existing_address-row"></div>
+        <div class="row existing_address-row"></div>
+    </div>
+                        <!--<div class="col-md-5 address__content-col">
+                            <div class="col-md-8 address__content-text-col">
+                                <h2 class="address__text address__text-top">Dúfnahólar 10</h2>
+                                <h2 class="address__text">101</h2>
+                                <h2 class="address__text">Reykjavík</h2>
+                                <h2 class="address__text address__text-bottom">Ísland</h2>
+                                <i class="address__subtext">Þetta er aðal heimilsfangið þitt</i>
+                            </div>
+                            <div class="col-md-4 address__button-col">
+                                <button class="address__button button__red">Eyða heimilsfangi</button>
+                                <button class="address__button button__blue address__button-lower">Breyta heimilsfangi</button>
+                            </div>
+                        </div>-->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <script src="{% static 'js/user.js' %}"></script>
+
+    </body>
+</html>
+

@@ -1,33 +1,16 @@
+{% extends 'base_no_banner.html' %}
 {% load static %}
+{% block content %}
         <link rel="stylesheet" href="{% static '/css/signup.css' %}">
+
         <div class="col-md-4 signup__container">
              <div class="row container__logo">
                 <img src="{% static '/layoutPictures/Logo_3.png' %}" alt="Logo" class="logo__img">
             </div>
-
-            <div class="row container__userInfo">
-                <!--<h1 class="container__title">Þínar upplýsingar</h1>
-                <input type="text" id="newUser-email" class="container__input userInfo__input" placeholder="Netfang">
-                <input type="text" id="newUser-username" class="container__input userInfo__input"  placeholder="Notendanafn">
-                <p class="container__text">ATH! Notendanafni getur ekki verið breytt. veldu nafn þitt vandlega.</p>
-                <input type="text" id="newUser-firstName" class="container__input userInfo__input"  placeholder="Fyrra Nafn">
-                <input type="text" id="newUser-lastName" class="container__input userInfo__input"  placeholder="Eftir Nafn">->
-            </div>
-
-           <!-- <div class="row container__password">
-                <h1 class="container__title">Lykilorð</h1>
-                <input type="text" class="container__input password__input" id="pw" placeholder="Lykilorð">
-                <input type="text" class="container__input password__input" id="pw2" placeholder="Staðfesta Lykilorð">
-                <p class="container__text">Lykilorð verður að innihalda stóran staf, tölustaf og vera amk 8 stafir í lengd.</p>
-            </div>
-
-            <div class="row container__buttons-row">
-                <div class="col-md-2 buttons__column">
-                    <button class="signup__buttons button__abort button__red" id="abort" onclick="location.href='{% url 'home' %}'">Hætta Við</button>
-                </div>
-
-                <div class="col-md-2 buttons__column buttons__column-confirmed">
-                    <button class="signup__buttons button__confirm button__green" id="confirmed" onclick="location.href='{% url 'UserView' %}'">Nýskrá</button>
-                </div>
-            </div>-->
+            <form class="form form-horizontal register__form" method="post">
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" class="btn btn-primary button__green signup__button" value="Sign up">
+            </form>
         </div>
+{% endblock %}

@@ -3,7 +3,7 @@
 
 
 /*------OPTION 1: USER INFO-------*/
-.optiondisplay__userinfo-content-row{
+/*.optiondisplay__userinfo-content-row{
     height: 85%;
     display: flex;
     flex-wrap: nowrap;
@@ -76,18 +76,37 @@
     height: 10%;
     width: 40%;
     margin:0 0 0 30%;
-}
+}*/
 
 
 /*OPTION 2: ADDRESS*/
-.optiondisplay__address-content-row{
+/*.optiondisplay__address-content-row{
     width: 100%;
     height: 85%;
     padding: 0;
     display: flex;
-
+    background-color: #1b3f02;
+}*/
+.address__form{
+    background-color: #8bbafe;
 }
-.address__content-col{
+.div__address{
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+    background-color: #1c356e;
+}
+.add_address,
+.existing_address-col{
+    border: 1px solid black;
+    background-color: #1b3f02;
+    height: 100%;
+}
+
+
+/*.address__content-col{
     height: 40%;
     margin: 0 0 0 5%;
     padding: 0;
@@ -133,7 +152,7 @@
 }
 .address__button-lower{
     margin-top: 45%;
-}
+}*/
 
 
 /*OPTION 3: CARD INFO*/
@@ -203,6 +222,7 @@
     width: 80%;
     height: 90%;
 }
+.amma
 
 
 /*OPTION 4: CHANGE PASSWORD*/
