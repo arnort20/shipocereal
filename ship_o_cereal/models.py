@@ -109,8 +109,9 @@ class Addresses(models.Model):
     addrId = models.BigAutoField(primary_key=True)
     userId = models.ForeignKey(User, on_delete=models.CASCADE)
     street = models.CharField(max_length=255)
-    apt_num = models.IntegerField()
+    apt_num = models.IntegerField(null=True)
     zip = models.IntegerField()
+    countryId = models.ForeignKey(Countries, on_delete=models.CASCADE)
 
 
 class Carts(models.Model):
