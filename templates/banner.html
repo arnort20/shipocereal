@@ -18,7 +18,7 @@
             <i class="col-md-12 banner__logoText">Mesta úrval morgunkorns á Íslandi</i>
         </div>
 
-        <div class="col-md-6 banner__column banner__searchColumn">
+        <div class="col-md-5 banner__column banner__searchColumn">
         <form method="POST" action="{% url 'SearchBar' %}">
             {% csrf_token %}
             <input class="col-md-4" type="text" id="banner__searchbar" name="searched"  placeholder="Leitaðu að þínu uppáhalds morgunkorni hér">
@@ -26,16 +26,36 @@
         </form>
         </div>
 
-        <div class="col-md-2 banner__column" id="banner__UserOptions">
-            <div class="col-md-6 banner__LoginAndCart banner__Login">
-                <i class="col-md-6 banner__signin fas fa-sign-in-alt fa-3x"></i>
-                <button class=" banner__LoginAndCar banner__button" type="button" onclick="location.href='{% url 'login' %}'">Innskráning</button>
-            </div>
+        <div class="col-md-3 banner__column" id="banner__UserOptions">
+            {% if user.is_authenticated %}
+                <div class="col-md-4 banner__LoginAndCart banner__Login">
+                    <i class="col-md-6 banner__signin fas fa-sign-in-alt fa-3x"></i>
+                    <button class=" banner__LoginAndCar banner__button" type="button" onclick="location.href='{% url 'logout' %}'">Útskráning</button>
+                </div>
 
-            <div class="col-md-6 banner__LoginAndCart banner__Cart">
-                <i class="col-md-6 banner__shoppingcart fas fa-shopping-cart fa-3x"></i>
-                <button class=" col-md-6 banner__LoginAndCar banner__button" type="button" onclick="location.href='{% url 'CartView' %}'">Karfa</button>
-            </div>
+                <div class="col-md-4 banner__LoginAndCart banner__Login">
+                    <i class="fas fa-user fa-3x banner__signin"></i>
+                    <button class=" banner__LoginAndCar banner__button banner__user-button" type="button" onclick="location.href='{% url 'userprofielView' %}'">Mínar Síður</button>
+                </div>
+
+                <div class="col-md-4 banner__LoginAndCart banner__Cart">
+                    <i class="col-md-6 banner__shoppingcart fas fa-shopping-cart fa-3x"></i>
+                    <button class=" col-md-6 banner__LoginAndCar banner__button" type="button" onclick="location.href='{% url 'CartView' %}'">Karfa</button>
+                </div>
+            {% else  %}
+                <div class="col-md-4 banner__LoginAndCart"></div>
+                <div class="col-md-4 banner__LoginAndCart banner__Login">
+                    <i class="col-md-6 banner__signin fas fa-sign-in-alt fa-3x"></i>
+                    <button class=" banner__LoginAndCar banner__button" type="button" onclick="location.href='{% url 'login' %}'">Innskráning</button>
+                </div>
+
+                <div class="col-md-4 banner__LoginAndCart banner__Cart">
+                    <i class="col-md-6 banner__shoppingcart fas fa-shopping-cart fa-3x"></i>
+                    <button class=" col-md-6 banner__LoginAndCar banner__button" type="button" onclick="location.href='{% url 'CartView' %}'">Karfa</button>
+                </div>
+
+            {% endif  %}
+
         </div>
     </div>
 
