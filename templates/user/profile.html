@@ -10,7 +10,7 @@
                     <img src="{% static '/layoutPictures/Logo.png' %}" alt="Logo" class="header__logo">
                 </div>
                 <div class="col-md-4 header__column header__column-title">
-                    <h1 class="header__title">Mínar Síður</h1>
+                    <button class="header__button button__red" onclick="location.href='{% url 'home' %}'">Fara aftur á forsíðu</button>
                 </div>
                 <div class="col-md-4 header__column header__column-button">
                     <button class="header__button button__red" onclick="location.href='{% url 'home' %}'">Fara aftur á forsíðu</button>

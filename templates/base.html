@@ -11,32 +11,7 @@
     <link rel="stylesheet" href="{% static '/css/banner.css' %}">
 </head>
 <body>
-    <div class="col-md-13 row banner">
-        <div class="col-md-4 banner__column banner__logoBox">
-            <img src="{% static 'layoutPictures/logo.png' %}" onclick="location.href='{% url 'home' %}'" class="banner__logoImage col-md-12">
-            <i class="col-md-12 banner__logoText">Mesta úrval morgunkorns á Íslandi</i>
-        </div>
-
-        <div class="col-md-6 banner__column banner__searchColumn">
-            <form method="POST" action="{% url 'SearchBar' %}">
-            {% csrf_token %}
-            <input class="col-md-4" type="text" id="banner__searchbar" name="searched"  placeholder="Leitaðu að þínu uppáhalds morgunkorni hér">
-            <i type="button" class="col-md-2 banner__searchicon fas fa-search fa-2x"></i>
-            </form>
-        </div>
-
-        <div class="col-md-2 banner__column" id="banner__UserOptions">
-            <div class="col-md-6 banner__LoginAndCart banner__Login">
-                <i class="col-md-6 banner__signin fas fa-sign-in-alt fa-3x"></i>
-                <button class=" banner__LoginAndCar banner__button" type="button" onclick="location.href='{% url 'login' %}'">Innskráning</button>
-            </div>
-
-            <div class="col-md-6 banner__LoginAndCart banner__Cart">
-                <i class="col-md-6 banner__shoppingcart fas fa-shopping-cart fa-3x"></i>
-                <button class=" col-md-6 banner__LoginAndCar banner__button" type="button" onclick="location.href='{% url 'CartView' %}'">Karfa</button>
-            </div>
-        </div>
-    </div>
+    {% include 'banner.html' %}
     {% block content %}
 
     {% endblock %}
