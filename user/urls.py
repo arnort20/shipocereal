@@ -13,6 +13,6 @@ urlpatterns = [
     path('user/',views.user_view,name="UserView"),
     path('creditcard/',views.creditcard,name="CreditcardView"),
     path('address/', views.address, name="AddressView"),
-    path('profile/',views.user_profile,name="userprofileView"),
+    path('profile/',views.user_profile,name="userprofielView"),
     path('carttest/', views.new_cart_test,name="CartTest"),
 ]
