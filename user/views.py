@@ -48,7 +48,10 @@ def register(request):
         form = SignupForm(data=request.POST)
         if form.is_valid():
             form.save()
+            print(1)
             return redirect('login')
+        else:
+            print(2)
     return render(request, 'user/register.html', {
         'form': SignupForm()
     })
