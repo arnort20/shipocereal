@@ -70,16 +70,20 @@ def register(request):
 
 
 def address(request):
+    address = Addresses.objects.filter(userId_id=request.user.id).first()
     if request.method == 'POST':
         form = address_form.AddressCreateForm(data=request.POST)
-        if form.is_valid:
-            addr = form.save(commit=False)
-            addr.userId_id = request.user.id
-            addr = form.save()
-            return redirect('userprofielView')
-    else:
-        form = address_form.AddressCreateForm()
-    return render(request, 'user/address.html', {'form': form})
+        if form.is_valid():
+            address.address = request.POST['address']
+            address.apt_num = request.POST['apt_num']
+            address.zip = request.POST['zip']
+            address.country = request.POST['country']
+            address.town = request.POST['town']
+            address.save()
+            return redirect('AddressView')
+    form = address_form.AddressCreateForm()
+    context = {'form': form, 'address': address}
+    return render(request, 'user/address.html', context)
 
 
 
