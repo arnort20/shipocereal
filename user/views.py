@@ -115,6 +115,10 @@ def addToCart(request, productId, amount):
     return render(request, 'store/add_to_cart.html', {'form': form})
 
 
+def makeOrder(request):
+    pass
+
+
 def newCart(request, userId):
     form = add_to_cart.AddCart(data=request.POST)
     cart = form.save(commit=False)
