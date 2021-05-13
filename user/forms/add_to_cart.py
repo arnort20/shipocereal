@@ -1,4 +1,7 @@
+# búið að yfirgefa þennan kóða
+# add_to_cart_test er sanni kóðinn
 from django.forms import ModelForm, widgets
+
 from ship_o_cereal.models import Carts, CartRows
 
 
