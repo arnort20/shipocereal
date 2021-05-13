@@ -19,7 +19,7 @@
         <div class="row cart__left-row container__item-cart" >
             <div class="col-md-3 cart__column" >
                 <div class="img__container" >
-                    <img src="{% static '/layoutPictures/kaffi_bolli.jpg' %}" alt="coffee" class="cart__img">
+                    <img src="{% static 'product' %}" alt="coffee" class="cart__img">
                 </div>
             </div>
             <div class="col-md-6" >
@@ -33,7 +33,25 @@
                 <button class="cart__button button__blue">Setja á óskalista</button>
             </div>
         </div>
-
+        {% for item in cart %}
+        <div class="row cart__left-row container__item-cart" >
+            <div class="col-md-3 cart__column" >
+                <div class="img__container" >
+                    <img src="{% static 'productPictures/'%}" class="cart__img">
+                </div>
+            </div>
+            <div class="col-md-6" >
+                <h2 class="cart__product-text">Glútenlaust Special-K</h2>
+                <label for="product-quantity" class="cart__label">Magn:</label>
+                <input type="text" class="cart__input" id="product-quantity">
+                <h2 class="cart__product-text">2100kr</h2>
+            </div>
+            <div class="col-md-3 cart__column cart__column-buttons">
+                <button class="cart__button button__red cart__button-top">Fjarlægja úr körfu</button>
+                <button class="cart__button button__blue">Setja á óskalista</button>
+            </div>
+        </div>
+        {% endfor %}
         <div class="row cart__left-row container__item-cart" >
             <div class="col-md-3 cart__column" >
                 <div class="img__container" >

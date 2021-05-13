@@ -1,5 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
+
+import ship_o_cereal.models
 from user.forms import credit_card_form, address_form, add_to_cart, add_to_cart_test
 from user.forms import *
 from user.forms.user_create_form import SignupForm
@@ -29,7 +31,9 @@ def new_cart_test(request):
 
 
 def cart_view(request):
-    return render(request, 'user/cart.html')
+    customer = request.user
+    cart = {'cart': ship_o_cereal.models.CartFolio.objects.filter(userId=customer)}
+    return render(request, 'user/cart.html', context=cart)
 
 
 def checkout_view(request):
