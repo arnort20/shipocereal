@@ -37,9 +37,11 @@ def cart_view(request):
 
 def checkout_view(request):
     customer = request.user
+    credits = ship_o_cereal.models.Creditcards.objects.filter(userId=customer)
+    addressers = ship_o_cereal.models.Addresses.objects.filter(userId=customer)
     context = {'cart': ship_o_cereal.models.CartFolio.objects.filter(userId=customer),
-            'creditcards': ship_o_cereal.models.Creditcards.objects.filter(userId=customer),
-            'addresses': ship_o_cereal.models.Addresses.objects.filter(userId=customer)}
+            'creditcards': credits[:1],
+            'addresses': addressers[:1]}
     return render(request, 'user/checkout.html', context=context)
 
 
