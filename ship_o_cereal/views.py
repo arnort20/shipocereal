@@ -59,13 +59,7 @@ def merch_view(request):
     bowls = Products.objects.filter(typeId=2)
     spoons = Products.objects.filter(typeId=3)
     mugs = Products.objects.filter(typeId=4)
-    tshirt = Products.objects.filter(typeId=5)
-    milkproduct = Products.objects.filter(typeId=5)
-    context = {'bowls': bowls[:5],
-    'spoons': spoons[:5],
-    'mug': mugs[:5],
-    't-shirt': tshirt[:5],
-    'milkproduct': milkproduct[:5]}
+    context = {'bowls': bowls[:5],'spoons': spoons[:5], 'mugs': mugs[:5]}
     return render(request, 'store/merch.html', context=context)
 
 

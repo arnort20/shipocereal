@@ -67,17 +67,17 @@
 
             <!--SETJA INN FOR LOOP FYRIR BOLLA -->
                     <div class="row container__items-row">
-                        {% for bowl in bowls %}
+                        {% for mug in mugs %}
                         <div class="col-md-2 container__items-column">
-                            <img src="{% static 'productPictures/'%}{{ bowl.image }}" alt="skal" class="container__item-image">
+                            <img src="{% static 'productPictures/'%}{{ mug.image }}" alt="skal" class="container__item-image">
                             <div class="container__item-description">
-                                <p>{{ bowl.name }}</p>
+                                <p>{{ mug.name }}</p>
                             </div>
                         </div>
                         {% endfor %}
                     </div>
 
-        </div>
+            </div>
 
     <!-- SKEIÐAR -->
             <div class="row container">
