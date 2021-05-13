@@ -111,8 +111,9 @@ class CartFolio(models.Model):
 
 
 class Orders(models.Model):
-    cartId = models.OneToOneField(Carts, on_delete=models.CASCADE, primary_key=True)
-    date = models.DateField()
+    orderId = models.BigAutoField(primary_key=True)
+    userId = models.ForeignKey(User, on_delete=models.CASCADE)
+    date = models.DateField(auto_now=True)
     cardId = models.ForeignKey(Creditcards, on_delete=models.SET_NULL, null=True)
     addrId = models.ForeignKey(Addresses, on_delete=models.SET_NULL, null=True)
 
