@@ -24,9 +24,10 @@
 
         </div>
 
+
+<!-- SKÁLAR -->
         <div class="row container">
             <div class="row container__header">
-
                 <div class="col-md-6 container__header-column">
                     <h2 class="container__header-text">Skálar</h2>
                 </div>
@@ -43,20 +44,17 @@
                         <div class="col-md-2 container__items-column">
                             <img src="{% static 'productPictures/'%}{{ bowl.image }}" alt="skal" class="container__item-image">
                             <div class="container__item-description">
-                                <p>{{ bowl.name }} {{ bowl.price }}</p>
+                                <p>{{ bowl.name }}</p>
                             </div>
                         </div>
                         {% endfor %}
-                        <div class="col-md-1 container__items-column container__items-arrow">
-                            <i class="fas fa-angle-right"></i>
-                        </div>
                     </div>
 
         </div>
 
+<!-- BOLLAR -->
         <div class="row container">
             <div class="row container__header">
-
                 <div class="col-md-6 container__header-column">
                     <h2 class="container__header-text">Bollar</h2>
                 </div>
@@ -67,50 +65,21 @@
 
             </div>
 
-
-            <div class="row container__items-row">
-                <div class="col-md-2 container__items-column">
-                    <img src="{% static '/productPictures/rut_kaffi_bolli.jpg'%}" alt="Bolli" class="container__item-image">
-                    <div class="container__item-description">
-                        <p>Vöruheiti - Verð</p>
+            <!--SETJA INN FOR LOOP FYRIR BOLLA -->
+                    <div class="row container__items-row">
+                        {% for bowl in bowls %}
+                        <div class="col-md-2 container__items-column">
+                            <img src="{% static 'productPictures/'%}{{ bowl.image }}" alt="skal" class="container__item-image">
+                            <div class="container__item-description">
+                                <p>{{ bowl.name }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
                     </div>
-                </div>
 
-                <div class="col-md-2 container__items-column">
-                    <img src="{% static '/productPictures/rut_kaffi_bolli.jpg'%}" alt="Bolli" class="container__item-image">
-                    <div class="container__item-description">
-                        <p>Vöruheiti - Verð</p>
-                    </div>
-                </div>
-
-                <div class="col-md-2 container__items-column">
-                    <img src="{% static '/productPictures/rut_kaffi_bolli.jpg'%}" alt="Bolli" class="container__item-image">
-                    <div class="container__item-description">
-                        <p>Vöruheiti - Verð</p>
-                    </div>
-                </div>
-
-                <div class="col-md-2 container__items-column">
-                    <img src="{% static '/productPictures/rut_kaffi_bolli.jpg'%}" alt="Bolli" class="container__item-image">
-                    <div class="container__item-description">
-                        <p>Vöruheiti - Verð</p>
-                    </div>
-                </div>
-
-                <div class="col-md-2 container__items-column">
-                    <img src="{% static '/productPictures/rut_kaffi_bolli.jpg'%}" alt="Bolli" class="container__item-image">
-                    <div class="container__item-description">
-                        <p>Vöruheiti - Verð</p>
-                    </div>
-                </div>
-
-                <div class="col-md-1 container__items-column container__items-arrow">
-                    <i class="fas fa-angle-right"></i>
-                </div>
-
-            </div>
         </div>
 
+    <!-- SKEIÐAR -->
             <div class="row container">
             <div class="row container__header">
 
@@ -124,27 +93,22 @@
 
             </div>
 
-                {% for spoon in spoons %}
+            <!--SETJA INN FOR LOOP FYRIR BOLLA -->
                     <div class="row container__items-row">
+                        {% for spoon in spoons %}
                         <div class="col-md-2 container__items-column">
                             <img src="{% static 'productPictures/'%}{{ spoon.image }}" alt="skal" class="container__item-image">
                             <div class="container__item-description">
                                 <p>{{ spoon.name }}</p>
                             </div>
                         </div>
-                        <div class="col-md-1 container__items-column container__items-arrow">
-                            <i class="fas fa-angle-right"></i>
-                        </div>
+                        {% endfor %}
                     </div>
-            {% endfor %}
 
-                <div class="col-md-1 container__items-column container__items-arrow">
-                    <i class="fas fa-angle-right"></i>
-                </div>
-
-            </div>
         </div>
 
+
+    <!-- BOLIR -->
                 <div class="row container">
             <div class="row container__header">
 
@@ -158,104 +122,45 @@
 
             </div>
 
-
-            <div class="row container__items-row">
-                <div class="col-md-2 container__items-column">
-                    <img src="{% static '/productPictures/rut_kaffi_bolli.jpg'%}" alt="Bolli" class="container__item-image">
-                    <div class="container__item-description">
-                        <p>Vöruheiti - Verð</p>
+            <!--SETJA INN FOR LOOP FYRIR BOLI -->
+                    <div class="row container__items-row">
+                        {% for bowl in bowls %}
+                        <div class="col-md-2 container__items-column">
+                            <img src="{% static 'productPictures/'%}{{ bowl.image }}" alt="skal" class="container__item-image">
+                            <div class="container__item-description">
+                                <p>{{ bowl.name }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
                     </div>
-                </div>
 
-                <div class="col-md-2 container__items-column">
-                    <img src="{% static '/productPictures/rut_kaffi_bolli.jpg'%}" alt="Bolli" class="container__item-image">
-                    <div class="container__item-description">
-                        <p>Vöruheiti - Verð</p>
-                    </div>
-                </div>
-
-                <div class="col-md-2 container__items-column">
-                    <img src="{% static '/productPictures/rut_kaffi_bolli.jpg'%}" alt="Bolli" class="container__item-image">
-                    <div class="container__item-description">
-                        <p>Vöruheiti - Verð</p>
-                    </div>
-                </div>
-
-                <div class="col-md-2 container__items-column">
-                    <img src="{% static '/productPictures/rut_kaffi_bolli.jpg'%}" alt="Bolli" class="container__item-image">
-                    <div class="container__item-description">
-                        <p>Vöruheiti - Verð</p>
-                    </div>
-                </div>
-
-                <div class="col-md-2 container__items-column">
-                    <img src="{% static '/productPictures/rut_kaffi_bolli.jpg'%}" alt="Bolli" class="container__item-image">
-                    <div class="container__item-description">
-                        <p>Vöruheiti - Verð</p>
-                    </div>
-                </div>
-
-                <div class="col-md-1 container__items-column container__items-arrow">
-                    <i class="fas fa-angle-right"></i>
-                </div>
-
-            </div>
         </div>
-                <div class="row container">
-            <div class="row container__header">
 
-                <div class="col-md-6 container__header-column">
-                    <h2 class="container__header-text">Mjólkurvörur</h2>
-                </div>
-
-                <div class="col-md-6 container__header-column">
-                    <button class="container__header-button">Skoða Meira</button>
-                </div>
-
+<!-- MJÓLKURVÖRUR -->
+    <div class="row container">
+        <div class="row container__header">
+            <div class="col-md-6 container__header-column">
+                <h2 class="container__header-text">Mjólkurvörur</h2>
             </div>
 
-
-            <div class="row container__items-row">
-                <div class="col-md-2 container__items-column">
-                    <img src="{% static '/productPictures/rut_kaffi_bolli.jpg'%}" alt="Bolli" class="container__item-image">
-                    <div class="container__item-description">
-                        <p>Vöruheiti - Verð</p>
-                    </div>
-                </div>
-
-                <div class="col-md-2 container__items-column">
-                    <img src="{% static '/productPictures/rut_kaffi_bolli.jpg'%}" alt="Bolli" class="container__item-image">
-                    <div class="container__item-description">
-                        <p>Vöruheiti - Verð</p>
-                    </div>
-                </div>
-
-                <div class="col-md-2 container__items-column">
-                    <img src="{% static '/productPictures/rut_kaffi_bolli.jpg'%}" alt="Bolli" class="container__item-image">
-                    <div class="container__item-description">
-                        <p>Vöruheiti - Verð</p>
-                    </div>
-                </div>
-
-                <div class="col-md-2 container__items-column">
-                    <img src="{% static '/productPictures/rut_kaffi_bolli.jpg'%}" alt="Bolli" class="container__item-image">
-                    <div class="container__item-description">
-                        <p>Vöruheiti - Verð</p>
-                    </div>
-                </div>
-
-                <div class="col-md-2 container__items-column">
-                    <img src="{% static '/productPictures/rut_kaffi_bolli.jpg'%}" alt="Bolli" class="container__item-image">
-                    <div class="container__item-description">
-                        <p>Vöruheiti - Verð</p>
-                    </div>
-                </div>
-
-                <div class="col-md-1 container__items-column container__items-arrow">
-                    <i class="fas fa-angle-right"></i>
-                </div>
-
+            <div class="col-md-6 container__header-column">
+                <button class="container__header-button">Skoða Meira</button>
             </div>
+
         </div>
-    {% endblock %}
+
+            <!--SETJA INN FOR LOOP FYRIR BOLI -->
+                    <div class="row container__items-row">
+                        {% for bowl in bowls %}
+                        <div class="col-md-2 container__items-column">
+                            <img src="{% static 'productPictures/'%}{{ bowl.image }}" alt="skal" class="container__item-image">
+                            <div class="container__item-description">
+                                <p>{{ bowl.name }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+        </div>
+{% endblock %}
 
