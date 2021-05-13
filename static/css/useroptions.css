@@ -174,16 +174,13 @@
     background-color: #1c356e;
 }
 .existing_address-col{
+    margin-top: 2%;
     height: 100%;
-    display: flex;
-    flex-wrap: wrap;
 }
-.existing_address-row{
-    border: 1px solid black;
-    height: 50%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
+.existing_address-p{
+    font-size: 1.3vw;
+    margin-top: 2%;
+    margin-bottom: 0;
 }
 /*.address__content-text-col{
     height: 100%;
