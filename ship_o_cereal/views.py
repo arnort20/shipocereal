@@ -4,7 +4,7 @@ from ship_o_cereal.models import *
 
 def new_cart_test(request, productId):
     if not request.user.is_authenticated:
-        return redirect('Logi')
+        return redirect('login')
     cartRelation = CartFolio.objects.filter(productId=Products.objects.filter(pk=productId).first(), userId=request.user)
 
     if not cartRelation:
