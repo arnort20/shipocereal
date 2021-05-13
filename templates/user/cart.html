@@ -2,6 +2,12 @@
 {% load static %}
 {% block content %}
 
+    <script>
+    function mult(a,b) {
+        let c = parseInt(a) * parseInt(b);
+        return c;
+    }
+    </script>
     <link rel="stylesheet" href="{% static '/css/cart.css' %}">
     <title>Karfan Þín</title>
 
@@ -16,35 +22,21 @@
             </div>
         </div>
 
-        <div class="row cart__left-row container__item-cart" >
-            <div class="col-md-3 cart__column" >
-                <div class="img__container" >
-                    <img src="{% static 'product' %}" alt="coffee" class="cart__img">
-                </div>
-            </div>
-            <div class="col-md-6" >
-                <h2 class="cart__product-text">Glútenlaust Special-K</h2>
-                <label for="product-quantity" class="cart__label">Magn:</label>
-                <input type="text" class="cart__input" id="product-quantity">
-                <h2 class="cart__product-text">2100kr</h2>
-            </div>
-            <div class="col-md-3 cart__column cart__column-buttons">
-                <button class="cart__button button__red cart__button-top">Fjarlægja úr körfu</button>
-                <button class="cart__button button__blue">Setja á óskalista</button>
-            </div>
-        </div>
         {% for item in cart %}
+            <script>
+
+            </script>
         <div class="row cart__left-row container__item-cart" >
             <div class="col-md-3 cart__column" >
                 <div class="img__container" >
-                    <img src="{% static 'productPictures/'%}" class="cart__img">
+                    <img src="{% static 'productPictures/'%}{{ item.productId.image }}" class="cart__img">
                 </div>
             </div>
             <div class="col-md-6" >
-                <h2 class="cart__product-text">Glútenlaust Special-K</h2>
+                <h2 class="cart__product-text">{{ item.productId.name }}</h2>
                 <label for="product-quantity" class="cart__label">Magn:</label>
-                <input type="text" class="cart__input" id="product-quantity">
-                <h2 class="cart__product-text">2100kr</h2>
+                <p>{{ item.amount }}</p>
+                <h2 class="cart__product-text">funcction</h2>
             </div>
             <div class="col-md-3 cart__column cart__column-buttons">
                 <button class="cart__button button__red cart__button-top">Fjarlægja úr körfu</button>
@@ -52,62 +44,48 @@
             </div>
         </div>
         {% endfor %}
-        <div class="row cart__left-row container__item-cart" >
-            <div class="col-md-3 cart__column" >
-                <div class="img__container" >
-                    <img src="{% static '/layoutPictures/bolur.jpg' %}" alt="bolut" class="cart__img">
-                </div>
-            </div>
-            <div class="col-md-6" >
-                <h2 class="cart__product-text text__bold">Lucky Charms - Bolur</h2>
-                <label for="product-quantity" class="cart__label">Magn:</label>
-                <input type="text" class="cart__input" id="product-quantity">
 
-                <label for="clothing-size" class="cart__label cart__label-size">Stærð:</label>
-                <select name="clothing-size" id="clothing-size" class="cart__select">
-                    <option value="XS">XS</option>
-                    <option value="S">S</option>
-                    <option value="M">M</option>
-                    <option value="L">L</option>
-                    <option value="XL">XL</option>
-                </select>
-                <h2 class="cart__product-text text__bold">3500kr</h2>
-            </div>
-            <div class="col-md-3 cart__column cart__column-buttons">
-                <button class="cart__button button__red cart__button-top">Fjarlægja úr körfu</button>
-                <button class="cart__button button__blue">Setja á óskalista</button>
-            </div>
-        </div>
     </div>
-
-
 
     <div class="col-md-4 container__cart-right-col">
         <div class="row container__right-row cart__header-row">
             <h2 class="cart__text cart__title">Samtals</h2>
         </div>
 
+
+        {% for item in cart %}
         <div class="row container__right-row cart__items">
             <div class="col-md-8 product__description-col">
-                <p class="product-text product_name">Glútenlaust Special K</p>
-                <p class="product-text product Quantity">Magn: 2</p>
+                <p class="product-text product_name">{{ item.productId.name }}</p>
+                <p class="product-text product Quantity">Magn: {{ item.amount }}</p>
             </div>
 
             <div class="col-md-3 product__description-col">
-                <p class="product-text product-total  font__bold">2100 ISK</p>
+                <p class="product-text product-total  font__bold">þarf að útfæra math virkni</p>
             </div>
         </div>
-
-        <div class="row container__right-row cart__items">
-            <div class="col-md-8 product__description-col">
-                <p class="product-text product_name">Lucky Charms - Bolur</p>
-                <p class="product-text product Quantity">Magn: 1</p>
-            </div>
-
-            <div class="col-md-3 product__description-col">
-                <p class="product-text product-total  font__bold">3500 ISK</p>
-            </div>
-        </div>
+        {% endfor %}
+{#        <div class="row container__right-row cart__items">#}
+{#            <div class="col-md-8 product__description-col">#}
+{#                <p class="product-text product_name">Glútenlaust Special K</p>#}
+{#                <p class="product-text product Quantity">Magn: 2</p>#}
+{#            </div>#}
+{##}
+{#            <div class="col-md-3 product__description-col">#}
+{#                <p class="product-text product-total  font__bold">2100 ISK</p>#}
+{#            </div>#}
+{#        </div>#}
+{##}
+{#        <div class="row container__right-row cart__items">#}
+{#            <div class="col-md-8 product__description-col">#}
+{#                <p class="product-text product_name">Lucky Charms - Bolur</p>#}
+{#                <p class="product-text product Quantity">Magn: 1</p>#}
+{#            </div>#}
+{##}
+{#            <div class="col-md-3 product__description-col">#}
+{#                <p class="product-text product-total  font__bold">3500 ISK</p>#}
+{#            </div>#}
+{#        </div>#}
 
 
         <div class="row container__right-row cart__total">
@@ -116,7 +94,7 @@
             </div>
 
             <div class="col-md-3 product__description-col">
-                <p class="product-text font__bold" id="order-total" >9200 ISK</p>
+                <p class="product-text font__bold" id="order-total" >Þarf að útfæra math virkni</p>
             </div>
         </div>
 
