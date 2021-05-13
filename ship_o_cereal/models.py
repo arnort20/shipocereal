@@ -82,15 +82,7 @@ class Creditcards(models.Model):
     year = models.IntegerField()
     cvc = models.IntegerField()
 
-<<<<<<< HEAD
-=======
 
-class Countries(models.Model):
-    countyId = models.BigAutoField(primary_key=True)
-    country = CountryField()
-
-
->>>>>>> 3fdc08a06f95d0204fb4205f8ea45ed7176dc539
 class Addresses(models.Model):
     addrId = models.BigAutoField(primary_key=True)
     userId = models.ForeignKey(User, on_delete=models.CASCADE)
