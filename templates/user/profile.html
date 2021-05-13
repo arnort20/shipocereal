@@ -56,25 +56,35 @@
 
                     <div class="row optiondisplay__userinfo-content-row">
                         <div class="col-md-4 userinfo__column-profile">
-                            <!--{% static 'layoutPictures/bolur.png' %}-->
-                            <img src="" alt="profile pic" class="profile__img">
-                            <button class="userinfo__profile-button button__blue">Breyta mynd</button>
+                            <form class="form form-horizontal profile__form" method="post" name="Profile">
+                                {% csrf_token %}
+                                {% for field in updateProfile_form%}
+                                    <div class="img__container col-md-11">
+                                        <img src="{{ user.profile.profile_image }}" alt="" class="profile__img" onerror="this.style.display='none'">
+                                    </div>
+                                    <label class="profile__label" for="{{ field.auto_id }}">Settu inn link hér:</label>
+                                    {{ field }}
+                                {% endfor %}
+
+                                <input type="submit" class="btn btn-primary button__blue userinfo__profile" id="profileinfo" value="Breyta Mynd">
+                            </form>
                         </div>
 
                         <div class="col-md-6 userinfo__col">
                             <div class="row myinfo__header-row">
-                                <h2 class="myinfo__header-title font__italic" >JonJons</h2>
+                                <h2 class="myinfo__header-title font__italic" >{{ user.get_username }}</h2>
                                 <p class="myinfo__header-subtext">Hér geturu breytt öllum þínum upplýsingum</p>
                             </div>
 
+                            <!--<form class="form form-horizontal userinfo__form" method="post">
+                                {% csrf_token %}
+                                {% for field in updateUser_form %}
+                                    <label class="myinfo__label" for="{{ field.auto_id }}">{{ field.label}}</label>
+                                    {{ field}}
+                                {% endfor %}
+                                <input type="submit" class="btn btn-primary button__blue myinfo__button" id="userinfo" value="Breyta Upplýsingum">
+                            </form>-->
 
-                            <label for="user-firstname" class="myinfo__label">Fyrra Nafn:</label>
-                            <input type="text" id="user-firstname" class="myinfo__input"  value="Jón Jónsson">
-                            <label for="user-lastname" class="myinfo__label">Seinna Nafn:</label>
-                            <input type="text" id="user-lastname" class="myinfo__input"  value="Jón Jónsson">
-                            <label for="user-email" class="myinfo__label">Netfang:</label>
-                            <input type="text" id="user-email" class="myinfo__input"  value="jon@jon.is">
-                            <button class="myinfo__button button__blue">Breyta upplýsingum</button>
                         </div>
 
                     </div>
