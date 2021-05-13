@@ -55,11 +55,11 @@
 
                     <div class="div__address address__content-col col-md-11">
                         <div class="col-md-6 add_address">
-                            {% csrf_token %}
+                            <!--{% csrf_token %}
                             {% for x in allCountries %}
                                 <h1>{{ x.country}}</h1>
-                            {% endfor %}
-                            <!--<h1 class="address__info-title col-md-11">Add address</h1>
+                            {% endfor %}-->
+                            <h1 class="address__info-title col-md-11">Add address</h1>
                             <form class="form form-horizontal address__form col-md-11" method="post">
                                 {% csrf_token %}
                                 {% for field in form %}
@@ -74,7 +74,7 @@
                                     {{ field }}
                                 {% endfor %}
                                 <input type="submit" class="btn btn-primary button__blue address__button" value="add address">
-                            </form>-->
+                            </form>
                         </div>
 
                         <div class="col-md-6 existing_address-col">
