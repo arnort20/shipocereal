@@ -71,14 +71,14 @@
             </div>
             {% endfor %}
 
-            <div class="row checkout__leftcol-row">
-                <div class="row row__header">
-                    <h1 class="checkout__title" >Sendingarmáti</h1>
-                </div>
-
-                <div class="row checkout__delivery-row"></div>
-            </div>
-
+{#            <div class="row checkout__leftcol-row">#}
+{#                <div class="row row__header">#}
+{#                    <h1 class="checkout__title" >Sendingarmáti</h1>#}
+{#                </div>#}
+{##}
+{#                <div class="row checkout__delivery-row"></div>#}
+{#            </div>#}
+            {% for card in creditcards %}
             <div class="row checkout__leftcol-row">
                 <div class="row row__header">
                     <div class="col-md-6 checkout__column">
@@ -93,36 +93,53 @@
                 <div class="row checkout_row">
                     <div class="col-md-11 checkout__column">
                         <label for="card-name" class="checkout__label checkout__label-name">Nafn korthafa*</label>
-                        <input type="text" class="checkout__input checkout__input-name" id="card-name">
+{#                        <input type="text" class="checkout__input checkout__input-name" id="card-name">#}
+                        <h2>{{ card.cardname }}</h2>
                     </div>
                 </div>
 
                 <div class="row checkout_row">
                     <div class="col-md-11 checkout__column">
                         <label for="card-number" class="checkout__label checkout__label-name">Kortanúmer*</label>
-                        <input type="text" class="checkout__input checkout__input-name" id="card-number">
+{#                        <input type="text" class="checkout__input checkout__input-name" id="card-number">#}
+                        <h2>{{ card.cardNumber }}</h2>
                     </div>
                 </div>
 
                 <div class="row checkout_row">
                     <div class="col-md-4 checkout__column column__month">
                         <label for="card-month" class="checkout__label checkout__label-month">Mánuður*</label>
-                        <input type="text" class="checkout__input checkout__input-month" id="card-month">
+{#                        <input type="text" class="checkout__input checkout__input-month" id="card-month">#}
+                        <p>{{ card.month }}</p>
                     </div>
 
                     <div class="col-md-4 checkout__column column__year">
                         <label for="card-year" class="checkout__label checkout__label-year">Ár*</label>
-                        <input type="text" class="checkout__input checkout__input-year" id="card-year">
+{#                        <input type="text" class="checkout__input checkout__input-year" id="card-year">#}
+                        <p>{{ card.year }}</p>
                     </div>
 
                     <div class="col-md-4 checkout__column">
                         <label for="card-cvc" class="checkout__label checkout__label-cvc">CVC*</label>
-                        <input type="text" class="checkout__input checkout__input-cvc" id="card-cvc">
+{#                        <input type="text" class="checkout__input checkout__input-cvc" id="card-cvc">#}
+                        <p>{{ card.cvc }}</p>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="row checkout__leftcol-row">
+            <div class="row row__header">
+                <h1 class="checkout__title" >Sendingarmáti</h1>
+            </div>
 
+            <div class="row checkout__delivery-row">
+                <select name="delivery" class="checkout__select" id="user-country">
+                    <option value="heimsending">Iceland</option>
+                    <option value="Deluxe heimsending">Sweden</option>
+                    <option value="Samdægurs Deluxe">Denmark</option>
+                </select>
+            </div>
+        </div>
 
         <div class="col-md-4 container__right">
 
