@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="postgres@34.76.235.96" uuid="4e82833f-c8e7-4b80-abac-7acb31e245ad">
+    <data-source source="LOCAL" name="cereal_db" uuid="029a6b0f-c238-4b87-b67a-cb9a71bf200e">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
+      <remarks>eftir migrate fuckið</remarks>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://34.76.235.96:5432/store</jdbc-url>
-      <working-dir>$ProjectFileDir$</working-dir>
-    </data-source>
-    <data-source source="LOCAL" name="PostgreSQL - store@34.76.235.96" uuid="fddbd614-e126-4cf5-acd1-4788f6e951d6">
-      <driver-ref>postgresql</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://34.76.235.96:5432/store</jdbc-url>
+      <jdbc-url>jdbc:postgresql://34.76.235.96:5432/cereal_db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

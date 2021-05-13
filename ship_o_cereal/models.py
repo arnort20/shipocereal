@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator
-
+from django_countries.fields import CountryField
 
 '''class Users(models.Model):
      userId = models.BigAutoField(primary_key=True)
@@ -21,24 +21,14 @@ class DefaultFilters(models.Model):
     barley = models.BooleanField(default=False)
     peanut = models.BooleanField(default=False)
     soy = models.BooleanField(default=False)
-    sulphites = models.BooleanField(default=False)
-    sesame = models.BooleanField(default=False)
-    rice = models.BooleanField(default=False)
-    mustard = models.BooleanField(default=False)
-    milk = models.BooleanField(default=False)
     maize = models.BooleanField(default=False)
-    oats = models.BooleanField(default=False)
-    garlic = models.BooleanField(default=False)
-    kiwi = models.BooleanField(default=False)
-    mango = models.BooleanField(default=False)
-    strawberry = models.BooleanField(default=False)
-    banana = models.BooleanField(default=False)
-    avocado = models.BooleanField(default=False)
-    tomato = models.BooleanField(default=False)
-    egg = models.BooleanField(default=False)
-    celery = models.BooleanField(default=False)
-    pineapple = models.BooleanField(default=False)
+    sesame = models.BooleanField(default=False)
     buckwheat = models.BooleanField(default=False)
+    rice = models.BooleanField(default=False)
+    milk = models.BooleanField(default=False)
+    oats = models.BooleanField(default=False)
+    egg = models.BooleanField(default=False)
+    sulphites = models.BooleanField(default=False)
 
 
 class ProductTypes(models.Model):
@@ -72,24 +62,15 @@ class Nutrients(models.Model):
     barley = models.BooleanField(default=False)
     peanut = models.BooleanField(default=False)
     soy = models.BooleanField(default=False)
-    sulphites = models.BooleanField(default=False)
-    sesame = models.BooleanField(default=False)
-    rice = models.BooleanField(default=False)
-    mustard = models.BooleanField(default=False)
-    milk = models.BooleanField(default=False)
     maize = models.BooleanField(default=False)
-    oats = models.BooleanField(default=False)
-    garlic = models.BooleanField(default=False)
-    kiwi = models.BooleanField(default=False)
-    mango = models.BooleanField(default=False)
-    strawberry = models.BooleanField(default=False)
-    banana = models.BooleanField(default=False)
-    avocado = models.BooleanField(default=False)
-    tomato = models.BooleanField(default=False)
-    egg = models.BooleanField(default=False)
-    celery = models.BooleanField(default=False)
-    pineapple = models.BooleanField(default=False)
+    sesame = models.BooleanField(default=False)
     buckwheat = models.BooleanField(default=False)
+    rice = models.BooleanField(default=False)
+    milk = models.BooleanField(default=False)
+    oats = models.BooleanField(default=False)
+    egg = models.BooleanField(default=False)
+    sulphites = models.BooleanField(default=False)
+
 
 
 class Creditcards(models.Model):
@@ -101,6 +82,15 @@ class Creditcards(models.Model):
     year = models.IntegerField()
     cvc = models.IntegerField()
 
+<<<<<<< HEAD
+=======
+
+class Countries(models.Model):
+    countyId = models.BigAutoField(primary_key=True)
+    country = CountryField()
+
+
+>>>>>>> 3fdc08a06f95d0204fb4205f8ea45ed7176dc539
 class Addresses(models.Model):
     addrId = models.BigAutoField(primary_key=True)
     userId = models.ForeignKey(User, on_delete=models.CASCADE)
