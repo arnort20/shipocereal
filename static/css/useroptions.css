@@ -134,7 +134,9 @@
     display: inline;
     margin-left: 10%;
 }
-
+.country-select-flag{
+    display: none;
+}
 
 .address__button{
     width: 60%;

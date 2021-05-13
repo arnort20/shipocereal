@@ -63,13 +63,15 @@
                             <form class="form form-horizontal address__form col-md-11" method="post">
                                 {% csrf_token %}
                                 {% for field in form %}
-                                    {% if field.auto_id == "id_street" or field.auto_id == "id_country"%}
-                                        <label class="address__label" for="{{ field.auto_id }}">{{ field.label}}</label>
+                                    {% if field.auto_id == "id_address"%}
+                                        <label class="address__label" for="{{ field.auto_id }}">Street</label>
                                     {% elif  field.auto_id == "id_apt_num"%}
                                         <div class="div__label">
                                             <p class="address__p col-md-7">Aparment number</p>
                                             <p class="address__p col-md-5">Zip</p>
                                         </div>
+                                    {% elif field.auto_id == "id_country" %}
+                                        <label class="address__label" for="{{ field.auto_id }}">{{ field.label}}</label>
                                     {% endif %}
                                     {{ field }}
                                 {% endfor %}
