@@ -19,6 +19,23 @@ def new_cart_test(request, productId):
         theCart.save()
     return redirect('ProductView')
 
+def pop_cart(request, productId):
+    if not request.user.is_authenticated:
+        return redirect('login')
+    cartRelation = CartFolio.objects.filter(productId=Products.objects.filter(pk=productId).first(), userId=request.user)
+
+    if not cartRelation:
+        cart = CartFolio()
+        cart.productId = Products.objects.filter(pk=productId).first()
+        cart.userId = request.user
+        cart.amount = 1
+        cart.save()
+    else:
+        theCart = cartRelation.first()
+        theCart.amount += 1
+        theCart.save()
+    return redirect('Popularitem')
+
 
 
 
@@ -26,6 +43,11 @@ def prod_view(request):
     # allProducts = Products.objects.all()
     allProducts = {'products': Products.objects.all()}
     return render(request, 'store/store.html', context=allProducts)
+
+def popularitem(request):
+    allProducts = {'product3': Products.objects.filter(pk=3), 'product4': Products.objects.filter(pk=4),
+                   'product6': Products.objects.filter(pk=6), 'product11': Products.objects.filter(pk=11)}
+    return render(request, 'store/popularitems.html', context=allProducts)
 
 
 def prod_by_id(request, productId):
