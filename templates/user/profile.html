@@ -56,16 +56,15 @@
 
                     <div class="row optiondisplay__userinfo-content-row">
                         <div class="col-md-4 userinfo__column-profile">
+                            <div class="img__container col-md-11">
+                                 <img src="{{ user.profile.profileImage }}" alt="Profile Image" class="profile__img">
+                            </div>
                             <form class="form form-horizontal profile__form" method="post" name="Profile">
                                 {% csrf_token %}
                                 {% for field in updateProfile_form%}
-                                    <div class="img__container col-md-11">
-                                        <img src="{{ user.profile.profile_image }}" alt="" class="profile__img" onerror="this.style.display='none'">
-                                    </div>
                                     <label class="profile__label" for="{{ field.auto_id }}">Settu inn link hér:</label>
                                     {{ field }}
                                 {% endfor %}
-
                                 <input type="submit" class="btn btn-primary button__blue userinfo__profile" id="profileinfo" value="Breyta Mynd">
                             </form>
                         </div>
@@ -84,7 +83,6 @@
                                 {% endfor %}
                                 <input type="submit" class="btn btn-primary button__blue myinfo__button" id="userinfo" value="Breyta Upplýsingum">
                             </form>
-
                         </div>
 
                     </div>

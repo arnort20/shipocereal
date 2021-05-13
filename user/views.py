@@ -90,20 +90,6 @@ def address(request):
     return render(request, 'user/address.html', context)
 
 
-
-"""def address(request):
-    if request.method == 'POST':
-        form = drasl.CountrySelect(data=request.POST)
-        if form.is_valid:
-            addr = form.save()
-            return redirect('userprofielView')
-    else:
-        form = drasl.CountrySelect()
-    return render(request, 'user/address.html', {'form': form})"""
-
-
-
-
 def addToCart(request, productId, amount):
     form = add_to_cart.AddToCart(data=request.POST)
     userId = request.user.id
@@ -149,31 +135,42 @@ def newCart(request, userId):
 
 
 def creditcard(request):
+    card = Creditcards.objects.filter(userId_id=request.user.id).first()
+    exp_date = "({}/{})".format(card.month,card.year)
+    card_num = "****-****-****-"+card.cardNumber[12:]
     if request.method == 'POST':
         form = credit_card_form.CreditcardCreateForm(data=request.POST)
         if form.is_valid:
-            card = form.save(commit=False)
-            card.userId_id = request.user.id
-            card = form.save()
-            return redirect('userprofielView')
-    else:
-        form = credit_card_form.CreditcardCreateForm()
-    return render(request, 'user/creditcard.html', {'form': form})
+            card = Creditcards.objects.filter(userId_id=request.user.id).first()
+            card.cardname = request.POST['cardname']
+            card.cardNumber = request.POST['cardNumber']
+            card.month = request.POST['month']
+            card.year = request.POST['year']
+            card.cvc = request.POST['cvc']
+            card.save()
+            return redirect('CreditcardView')
+
+    form = credit_card_form.CreditcardCreateForm()
+    context = {'form': form,'card_num':card_num,'name':card.cardname,'exp_date':exp_date}
+    return render(request, 'user/creditcard.html',context)
 
 
 def user_profile(request):
-    """profile = Profile.objects.filter(user=request.user).first()
+    profile = Profile.objects.filter(user=request.user).first()
+    print(profile.profileImage)
     if request.method == 'POST':
         form = profile_form.ProfileForm(instance=profile, data=request.POST)
         if form.is_valid():
             profile = form.save(commit=False)
             profile.user = request.user
             profile.save()
-            return redirect('profile')
-    context = {'updateProfile_form':profile_form.ProfileForm(instance=profile)}
-    return render(request, 'user/profile.html', context)"""
+            return redirect('userprofielView')
+    context = {'updateProfile_form':profile_form.ProfileForm(instance=profile),
+               'profile':profile}
 
-    if request.method == 'POST':
+    return render(request, 'user/profile.html', context)
+
+    """if request.method == 'POST':
         updateUser_form = user_update_info.UpdateUserForm(data=request.POST)
         if updateUser_form.is_valid():
             user = User.objects.filter(pk=request.user.id).first()
@@ -185,7 +182,7 @@ def user_profile(request):
     else:
         updateUser_form = user_update_info.UpdateUserForm(instance=request.user)
     context = {'updateUser_form':updateUser_form}
-    return render(request, 'user/profile.html',context)
+    return render(request, 'user/profile.html',context)"""
 
 """def profile(request):
     profile = Profile.objects.filter(user=request.user).first()
