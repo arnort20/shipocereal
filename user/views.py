@@ -31,14 +31,16 @@ def new_cart_test(request):
 
 def cart_view(request):
     customer = request.user
-    cart = {'cart': ship_o_cereal.models.CartFolio.objects.filter(userId=customer)}
-    return render(request, 'user/cart.html', context=cart)
+    context = {'cart': ship_o_cereal.models.CartFolio.objects.filter(userId=customer)}
+    return render(request, 'user/cart.html', context=context)
 
 
 def checkout_view(request):
     customer = request.user
-    cart = {'cart': ship_o_cereal.models.CartFolio.objects.filter(userId=customer)}
-    return render(request, 'user/checkout.html', context=cart)
+    context = {'cart': ship_o_cereal.models.CartFolio.objects.filter(userId=customer),
+            'creditcards': ship_o_cereal.models.Creditcards.objects.filter(userId=customer),
+            'addresses': ship_o_cereal.models.Addresses.objects.filter(userId=customer)}
+    return render(request, 'user/checkout.html', context=context)
 
 
 def signup_view(request):

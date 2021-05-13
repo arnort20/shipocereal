@@ -10,7 +10,7 @@
     <div class="col-md-11 container__checkout">
 
         <div class="col-md-6 checkout__leftcol">
-
+            {% for address in addresses %}
             <div class="row checkout__leftcol-row">
                 <div class="row row__header">
                     <div class="col-md-6 checkout__column">
@@ -24,45 +24,52 @@
 
                 <div class="row checkout_row">
                     <div class="col-md-11 column__left">
-                        <label for="user-fullname" class="checkout__label checkout__label-name">Nafn*</label>
-                        <input type="text" class="checkout__input checkout__input-name" id="user-fullname">
+                        <label for="user-fullname" class="checkout__label checkout__label-name">Nafn</label>
+{#                        <input type="text" class="checkout__input checkout__input-name" id="user-fullname">#}
+                        <h2>{{ address.userId.first_name }} {{ address.userId.last_name }}</h2>
                     </div>
                 </div>
 
                 <div class="row checkout_row">
                     <div class="col-md-5 checkout__column">
                         <label for="user-street" class="checkout__label checkout__label-street">Götuheiti*</label>
-                        <input type="text" class="checkout__input checkout__input-street" id="user-street">
+{#                        <input type="text" class="checkout__input checkout__input-street" id="user-street">#}
+                        <h2>{{ address.address }}</h2>
                     </div>
 
                     <div class="col-md-3 checkout__column">
                         <label for="user-apt_num" class="checkout__label checkout__label-address">Íbúðar Númer</label>
-                        <input type="text" class="checkout__input checkout__input-address" id="user-apt_num">
+{#                        <input type="text" class="checkout__input checkout__input-address" id="user-apt_num">#}
+                        <h2>{{ address.apt_num }}</h2>
                     </div>
 
                     <div class="col-md-3 checkout__column">
                         <label for="user-post_num" class="checkout__label checkout__label-address">Póstnúmer*</label>
-                        <input type="text" class="checkout__input checkout__input-address" id="user-post_num">
+{#                        <input type="text" class="checkout__input checkout__input-address" id="user-post_num">#}
+                        <h2>{{ address.zip }}</h2>
                     </div>
                 </div>
 
                 <div class="row checkout_row">
-                    <div class="col-md-6 checkout__column">
-                        <label for="user-town" class="checkout__label checkout__label-town">Kaupstaður*</label>
-                        <input type="text" class="checkout__input checkout__input-town" id="user-town">
-                    </div>
+{#                    <div class="col-md-6 checkout__column">#}
+{#                        <label for="user-town" class="checkout__label checkout__label-town">Kaupstaður*</label>#}
+{#                        <input type="text" class="checkout__input checkout__input-town" id="user-town">#}
+{#                        <h2></h2>#}
+{#                    </div>#}
 
                     <div class="col-md-6 checkout__column">
                         <label for="user-country" class="checkout__label checkout__label-country">Land*</label>
-                        <select name="country" class="checkout__select" id="user-country">
-                            <option value="Iceland">Iceland</option>
-                            <option value="Sweden">Sweden</option>
-                            <option value="Denmark">Denmark</option>
-                            <option value="Finnland">Finnland</option>
-                        </select>
+{#                        <select name="country" class="checkout__select" id="user-country">#}
+{#                            <option value="Iceland">Iceland</option>#}
+{#                            <option value="Sweden">Sweden</option>#}
+{#                            <option value="Denmark">Denmark</option>#}
+{#                            <option value="Finnland">Finnland</option>#}
+{#                        </select>#}
+                        <h2>{{ address.country }}</h2>
                     </div>
                 </div>
             </div>
+            {% endfor %}
 
             <div class="row checkout__leftcol-row">
                 <div class="row row__header">
