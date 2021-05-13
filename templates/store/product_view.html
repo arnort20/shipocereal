@@ -4,6 +4,7 @@
 
 
         <link rel="stylesheet" href=" {% static 'css/product_view.css' %} ">
+
 <div>
         <div class="col-md-8 content__product" >
             <div class="row product__row">
@@ -53,11 +54,13 @@
             </div>
         </div>
 
-        <div class="col-md-3 content__price">
+        <div class="col-md-3 content__price " >
             <div class="row product__row-price">
                 <h1 class="col-md-4 h1__text font__bold price__text a" >Verð:</h1>
-                <h1 class="col-md-5 h1__text a">{{ product.price }}</h1>
-                <button class="col-md-9 product__button button__green">Setja í körfu</button>
+                <h1 class="col-md-5 h1__text a"> {{ product.price }}</h1>
+                <a class="btn btn-success btn-sm add" type="submit" href="{{ product.productId }}/addtocart">Setja í körfu</a>
+
+
             </div>
 
             <div class="row product__row-review">
@@ -65,7 +68,6 @@
                 <input type="text" class="col-md-12 product__input" placeholder="Hvað fannst þér um þessa vöru?">
                 <button class="col-md-9 product__button button__blue">Senda</button>
             </div>
-
         </div>
 </div>
         <script src="https://kit.fontawesome.com/59dedd510d.js" crossorigin="anonymous"></script>
