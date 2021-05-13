@@ -978,3 +978,36 @@ VALUES (
         14,
         1
        );
+
+insert into ship_o_cereal_products
+(name, description, price, image, stock, "isFood")
+VALUES (
+        'polar bear bowl',
+        'Sæt og flott skál',
+        1000,
+        'bowl-matinal-bol.png',
+        5,
+        False
+       ),
+       (
+        'gler skál',
+        'Búin til úr tempruðu gleri',
+        1500,
+        'glerskal.jpg',
+        10,
+        False
+       ),
+       (
+        'Gýró skál',
+        'Fullkomið fyrir smábörn og til að borða morgunkorn í sófanum!',
+        7000,
+        'gyro_bowl.jpg',
+        30,
+        False
+       );
+
+insert into "ship_o_cereal_products_typeId" (products_id, producttypes_id)
+values (15,2),(16,2),(17,2);
+
+insert into "ship_o_cereal_products_manId" (products_id, manufacturers_id)
+VALUES (15,3),(16,3),(17,3);

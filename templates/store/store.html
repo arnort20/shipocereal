@@ -81,12 +81,9 @@
         </a>
             <form method="post" >
             {% csrf_token %}
-                <input >
                 <div class="bottom d-flex flex-row justify-content-center">
-                    <div class="input-group mb-3">
-
-                        <span class="input-group-text">+</span> <input type="text" class="form-control" value="1"><span class="input-group-text">-</span></div><a class="btn btn-success btn-sm add" type="submit" href="{{ product.productId }}/addtocart">Setja í körfu {{ product.price }}</a>
-                    </div>
+                    <a class="btn btn-success btn-sm add" type="submit" href="{{ product.productId }}/addtocart">Setja í körfu {{ product.price }}</a>
+                </div>
                 </div>
             </form>
     {% endfor %}

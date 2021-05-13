@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href=" {% static 'css/allitems.css' %} ">
+
+    {% for product in product3 %}
+        <a href="/store/{{ product.productId }}">
+            <div class="card col-sm-4" id="{{ product }}">
+                <div class="middle"> <img src="{% static 'productPictures/'%}{{ product.image }}" width="300" height="300">
+                    <h5>{{ product.name }}</h5>
+                </div>
+        </a>
+            <form method="post" >
+            {% csrf_token %}
+                <div class="bottom d-flex flex-row justify-content-center">
+                    <a class="btn btn-success btn-sm add" type="submit" href="{{ product.productId }}/addtocart">Setja í körfu {{ product.price }}</a>
+                </div>
+            </div>
+            </form>
+    {% endfor %}
+
+        {% for product in product4 %}
+        <a href="/store/{{ product.productId }}">
+            <div class="card col-sm-4" id="{{ product }}">
+                <div class="middle"> <img src="{% static 'productPictures/'%}{{ product.image }}" width="300" height="300">
+                    <h5>{{ product.name }}</h5>
+                </div>
+        </a>
+            <form method="post" >
+            {% csrf_token %}
+                <div class="bottom d-flex flex-row justify-content-center">
+                    <a class="btn btn-success btn-sm add" type="submit" href="{{ product.productId }}/addtocart">Setja í körfu {{ product.price }}</a>
+                </div>
+            </div>
+            </form>
+    {% endfor %}
+
+        {% for product in product6 %}
+        <a href="/store/{{ product.productId }}">
+            <div class="card col-sm-4" id="{{ product }}">
+                <div class="middle"> <img src="{% static 'productPictures/'%}{{ product.image }}" width="300" height="300">
+                    <h5>{{ product.name }}</h5>
+                </div>
+        </a>
+            <form method="post" >
+            {% csrf_token %}
+                <div class="bottom d-flex flex-row justify-content-center">
+                    <a class="btn btn-success btn-sm add" type="submit" href="{{ product.productId }}/addtocart">Setja í körfu {{ product.price }}</a>
+                </div>
+            </div>
+            </form>
+    {% endfor %}
+
+        {% for product in product11 %}
+        <a href="/store/{{ product.productId }}">
+            <div class="card col-sm-4" id="{{ product }}">
+                <div class="middle"> <img src="{% static 'productPictures/'%}{{ product.image }}" width="300" height="300">
+                    <h5>{{ product.name }}</h5>
+                </div>
+        </a>
+            <form method="post" >
+            {% csrf_token %}
+                <div class="bottom d-flex flex-row justify-content-center">
+                    <a class="btn btn-success btn-sm add" type="submit" href="{{ product.productId }}/addtocart">Setja í körfu {{ product.price }}</a>
+                </div>
+            </div>
+            </form>
+    {% endfor %}
+
+{% endblock %}

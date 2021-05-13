@@ -2,12 +2,7 @@
 {% load static %}
 {% block content %}
 
-    <script>
-    function mult(a,b) {
-        let c = parseInt(a) * parseInt(b);
-        return c;
-    }
-    </script>
+
     <link rel="stylesheet" href="{% static '/css/cart.css' %}">
     <title>Karfan Þín</title>
 
@@ -17,32 +12,40 @@
             <div class="col-md-6 cart__column" >
                 <h1 class="cart__title">Karfan Þín</h1>
             </div>
-            <div class="col-md-6 cart__column" >
-                <p class="cart__text">Vörur eru geymdar í körfu í 60mín</p>
-            </div>
+{#            <div class="col-md-6 cart__column" >#}
+{#                <p class="cart__text">Vörur eru geymdar í körfu í 60mín</p>#}
+{#            </div>#}
         </div>
 
         {% for item in cart %}
-            <script>
-
-            </script>
         <div class="row cart__left-row container__item-cart" >
             <div class="col-md-3 cart__column" >
                 <div class="img__container" >
-                    <img src="{% static 'productPictures/'%}{{ item.productId.image }}" class="cart__img">
+                    <img src="{% static 'productPictures/'%}{{ item.productId.image }}" class="cart__img" alt="mynd">
                 </div>
             </div>
-            <div class="col-md-6" >
+            <div class="col-md-6" id="{{ item.folioId }}" >
                 <h2 class="cart__product-text">{{ item.productId.name }}</h2>
                 <label for="product-quantity" class="cart__label">Magn:</label>
                 <p>{{ item.amount }}</p>
-                <h2 class="cart__product-text">funcction</h2>
+                <h2 class="cart__product-text" id="subtotal{{ item.folioId }}"></h2>
+
             </div>
-            <div class="col-md-3 cart__column cart__column-buttons">
-                <button class="cart__button button__red cart__button-top">Fjarlægja úr körfu</button>
-                <button class="cart__button button__blue">Setja á óskalista</button>
+            <div class="col-md-3 cart__column cart__column-buttons" >
+                <button class="cart__button button__red cart__button-top" >Fjarlægja úr körfu</button>
+{#                <button class="cart__button button__blue">Setja á óskalista</button>#}
             </div>
         </div>
+        <script>
+            function myFunction() {
+                let c = parseInt({{ item.amount }}) * parseInt({{ item.productId.price }});
+                {#document.getElementById("subtotal{{ item.folioId }}").innerHTML = "aaa";#}
+                {#console.log('aaa')#}
+                document.getElementById("subtotal{{ item.folioId }}").innerHTML = c.toString();
+            }
+            myFunction()
+        </script>
+
         {% endfor %}
 
     </div>
@@ -61,31 +64,17 @@
             </div>
 
             <div class="col-md-3 product__description-col">
-                <p class="product-text product-total  font__bold">þarf að útfæra math virkni</p>
+                <p class="product-text product-total  font__bold" id="carttotal{{ item.folioId }}" ></p>
             </div>
         </div>
+        <script>
+            function subtotal() {
+                let c = parseInt({{ item.amount }}) * parseInt({{ item.productId.price }});
+                document.getElementById("carttotal{{ item.folioId }}").innerHTML = c.toString();
+            }
+            subtotal()
+        </script>
         {% endfor %}
-{#        <div class="row container__right-row cart__items">#}
-{#            <div class="col-md-8 product__description-col">#}
-{#                <p class="product-text product_name">Glútenlaust Special K</p>#}
-{#                <p class="product-text product Quantity">Magn: 2</p>#}
-{#            </div>#}
-{##}
-{#            <div class="col-md-3 product__description-col">#}
-{#                <p class="product-text product-total  font__bold">2100 ISK</p>#}
-{#            </div>#}
-{#        </div>#}
-{##}
-{#        <div class="row container__right-row cart__items">#}
-{#            <div class="col-md-8 product__description-col">#}
-{#                <p class="product-text product_name">Lucky Charms - Bolur</p>#}
-{#                <p class="product-text product Quantity">Magn: 1</p>#}
-{#            </div>#}
-{##}
-{#            <div class="col-md-3 product__description-col">#}
-{#                <p class="product-text product-total  font__bold">3500 ISK</p>#}
-{#            </div>#}
-{#        </div>#}
 
 
         <div class="row container__right-row cart__total">
@@ -96,6 +85,18 @@
             <div class="col-md-3 product__description-col">
                 <p class="product-text font__bold" id="order-total" >Þarf að útfæra math virkni</p>
             </div>
+            <script>
+                function getTotal() {
+                    let subtotals = document.getElementsByClassName("product-text product-total  font__bold");
+                    var summa = 0;
+                    var i;
+                    for (i = 0; i < subtotals.length; i++) {
+                        summa += parseInt(subtotals[i].innerHTML);
+                    }
+                    document.getElementById("order-total").innerHTML = summa.toString();
+                }
+                getTotal();
+            </script>
         </div>
 
         <div class="row container__right-row">
@@ -103,5 +104,7 @@
         </div>
 
     </div>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
 {% endblock %}

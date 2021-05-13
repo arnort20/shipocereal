@@ -118,35 +118,57 @@
 
 
         <div class="col-md-4 container__right">
+
             <div class="row checkout_row row__header-right">
                 <h1 class="checkout__title" >Samantekt:</h1>
             </div>
-
+            {% for item in cart %}
             <div class="row checkout_row checkout__row-item">
                 <div class="col-md-8 product__description-col">
-                    <p class="checkout__product-text product_name">Glútenlaust Special K</p>
-                    <p class="checkout__product-text product Quantity">Magn: 2</p>
+                    <p class="checkout__product-text product_name">{{ item.productId.name }}</p>
+                    <p class="checkout__product-text product Quantity">Magn: {{ item.amount }}</p>
                 </div>
                 <div class="col-md-3 product__description-col">
-                    <p class="checkout__product-text product-total  font__bold">4200 ISK</p>
+                    <p class="checkout__product-text product-total  font__bold" id="subtotal{{ item.folioId }}"></p>
                 </div>
+                <script>
+                    function myFunction() {
+                        let c = parseInt({{ item.amount }}) * parseInt({{ item.productId.price }});
+                        {#document.getElementById("subtotal{{ item.folioId }}").innerHTML = "aaa";#}
+                        {#console.log('aaa')#}
+                        document.getElementById("subtotal{{ item.folioId }}").innerHTML = c.toString()+" ISK";
+                    }
+                    myFunction()
+                </script>
             </div>
-
-            <div class="row checkout_row">
-                <div class="col-md-8 product__description-col">
-                    <p class="checkout__product-text" id="delivery-type">Hraðsending</p>
-                </div>
-                <div class="col-md-3 product__description-col">
-                    <p class="checkout__product-text font__bold" id="delivery-price">1500 ISK</p>
-                </div>
-            </div>
-            <div class="row checkout_row">
+            {% endfor %}
+{#            <div class="row checkout_row">#}
+{#                <div class="col-md-8 product__description-col">#}
+{#                    <p class="checkout__product-text" id="delivery-type">Hraðsending</p>#}
+{#                </div>#}
+{#                <div class="col-md-3 product__description-col">#}
+{#                    <p class="checkout__product-text font__bold" id="delivery-price">1500 ISK</p>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="row checkout_row">#}
                 <div class="col-md-8 product__description-col">
                     <p class="checkout__product-text product__text-total"> Heildarupphæð:</p>
                 </div>
                 <div class="col-md-3 product__description-col">
-                    <p class="checkout__product-text product__text-total" id="order-total" >9200 ISK</p>
+                    <p class="checkout__product-text product__text-total" id="order-total" ></p>
                 </div>
+                <script>
+                    function getTotal() {
+                        let subtotals = document.getElementsByClassName("checkout__product-text product-total  font__bold");
+                        var summa = 0;
+                        var i;
+                        for (i = 0; i < subtotals.length; i++) {
+                            summa += parseInt(subtotals[i].innerHTML);
+                        }
+                        document.getElementById("order-total").innerHTML = summa.toString();
+                    }
+                    getTotal();
+                </script>
             </div>
             <div class="row checkout_row">
                 <button class="checkout__button-confirm" id="confirm-order-button">Staðfesta Pöntun</button>
