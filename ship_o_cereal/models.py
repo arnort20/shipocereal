@@ -90,6 +90,8 @@ class Addresses(models.Model):
     apt_num = models.IntegerField(null=True)
     zip = models.IntegerField()
     country = CountryField(null=True)
+    town = models.CharField(max_length=255)
+
 
 class Carts(models.Model):
     cartId = models.BigAutoField(primary_key=True)
