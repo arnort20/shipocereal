@@ -4,11 +4,10 @@ from user.forms import credit_card_form, address_form, add_to_cart, add_to_cart_
 from user.forms import *
 from user.forms.user_create_form import SignupForm
 from django.contrib.auth import get_user_model
-from ship_o_cereal.models import Carts, Addresses, CartRows, Orders, Creditcards, Comments,Countries
+from ship_o_cereal.models import Carts, Addresses, CartRows, Orders, Creditcards, Comments
 from user.models import Profile
 
 
-from user.forms.drasl import CountrySelect
 from django.views.generic import ListView
 
 
@@ -56,18 +55,16 @@ def register(request):
 
 
 def address(request):
-    allCountries = {'country': Countries.objects.all()}
-    return render(request, 'user/address.html', allCountries)
-    """if request.method == 'POST':
+    if request.method == 'POST':
         form = address_form.AddressCreateForm(data=request.POST)
         if form.is_valid:
             addr = form.save(commit=False)
             addr.userId_id = request.user.id
             addr = form.save()
-            return redirect('userprofielView')
+            return redirect('userprofileView')
     else:
         form = address_form.AddressCreateForm()
-    return render(request, 'user/address.html', {'form': form})"""
+    return render(request, 'user/address.html', {'form': form})
 
 
 
@@ -118,7 +115,7 @@ def creditcard(request):
             card = form.save(commit=False)
             card.userId_id = request.user.id
             card = form.save()
-            return redirect('userprofielView')
+            return redirect('userprofileView')
     else:
         form = credit_card_form.CreditcardCreateForm()
     return render(request, 'user/creditcard.html', {'form': form})

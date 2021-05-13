@@ -101,18 +101,13 @@ class Creditcards(models.Model):
     year = models.IntegerField()
     cvc = models.IntegerField()
 
-class Countries(models.Model):
-    countyId = models.BigAutoField(primary_key=True)
-    country = models.CharField(max_length=255)
-
 class Addresses(models.Model):
     addrId = models.BigAutoField(primary_key=True)
     userId = models.ForeignKey(User, on_delete=models.CASCADE)
-    street = models.CharField(max_length=255)
+    address = models.CharField(max_length=255)
     apt_num = models.IntegerField(null=True)
     zip = models.IntegerField()
-    countryId = models.ForeignKey(Countries, on_delete=models.CASCADE)
-
+    country = models.CharField(max_length=255,null=True)
 
 class Carts(models.Model):
     cartId = models.BigAutoField(primary_key=True)
