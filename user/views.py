@@ -141,7 +141,7 @@ def creditcard(request):
 
 
 def user_profile(request):
-    profile = Profile.objects.filter(user=request.user).first()
+    """profile = Profile.objects.filter(user=request.user).first()
     if request.method == 'POST':
         form = profile_form.ProfileForm(instance=profile, data=request.POST)
         if form.is_valid():
@@ -150,8 +150,8 @@ def user_profile(request):
             profile.save()
             return redirect('profile')
     context = {'updateProfile_form':profile_form.ProfileForm(instance=profile)}
-    return render(request, 'user/profile.html', context)
-    """
+    return render(request, 'user/profile.html', context)"""
+
     if request.method == 'POST':
         updateUser_form = user_update_info.UpdateUserForm(data=request.POST)
         if updateUser_form.is_valid():
@@ -164,7 +164,7 @@ def user_profile(request):
     else:
         updateUser_form = user_update_info.UpdateUserForm(instance=request.user)
     context = {'updateUser_form':updateUser_form}
-    return render(request, 'user/profile.html',context)"""
+    return render(request, 'user/profile.html',context)
 
 """def profile(request):
     profile = Profile.objects.filter(user=request.user).first()
