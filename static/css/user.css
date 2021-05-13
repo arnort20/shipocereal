@@ -186,26 +186,11 @@ button{
     font-size: 2.5vw;
 }
 
-
-
-/*.div__myinfo,
-.div__address,
-.div__cardinfo,
-.div__changepw,
-.div__wishlist,
-.div__myorders{
-    height: 85%;
-    display: none;
-}
-.active__option{
-    display: flex;
-    align-items: flex-start;
-}*/
 .optiondisplay__container{
     height: 85%;
     background-color: #3B8905;
 }
-.TAKA,.TAKA:hover{
+.HIDDEN,.HIDDEN:hover{
     background-color: transparent;
     box-shadow: none;
     border: 0;

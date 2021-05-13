@@ -13,7 +13,10 @@ urlpatterns = [
     path('user/',views.user_view,name="UserView"),
     path('creditcard/',views.creditcard,name="CreditcardView"),
     path('address/', views.address, name="AddressView"),
+    path('changePW/', views.Changepw_view, name="ChangepwView"),
     path('profile/',views.user_profile,name="userprofielView"),
+    path('profile/updateUser',views.update_user_view,name="UpdateUser"),
+    path('profile/updateProfile',views.update_profile_view,name="UpdateProfile"),
     path('carttest/', views.new_cart_test,name="CartTest"),
     path('checkout/makeorder', views.makeOrder,name="ConfirmOrder")
 ]

@@ -32,13 +32,13 @@
                             <li class="menubar__li" onclick="location.href='{% url 'CreditcardView' %}'" value="cardinfo">
                                 <p class="col-md-10 menubar__p">Korta Upplýsingar</p>
                             </li>
-                            <li class="menubar__li TAKA" onclick="location.href='{% url 'userprofielView' %}'" id="changepw" value="changepw">
+                            <li class="menubar__li" onclick="location.href='{% url 'ChangepwView' %}'" id="changepw" value="changepw">
                                 <p class="col-md-10 menubar__p">Breyta um Lykilorð</p>
                             </li>
-                            <li class="menubar__li TAKA" onclick="location.href='{% url 'userprofielView' %}'" value="wishlist">
+                            <li class="menubar__li HIDDEN" value="wishlist">
                                 <p class="col-md-10 menubar__p">Óskalistinn Minn</p>
                             </li>
-                            <li class="menubar__li TAKA" onclick="location.href='{% url 'userprofielView' %}'" value="myorders">
+                            <li class="menubar__li HIDDEN" value="myorders">
                                 <p class="col-md-10 menubar__p">Mínar Pantanir</p>
                             </li>
                         </ul>
@@ -59,7 +59,7 @@
                             <div class="img__container col-md-11">
                                  <img src="{{ user.profile.profileImage }}" alt="Profile Image" class="profile__img">
                             </div>
-                            <form class="form form-horizontal profile__form" method="post" name="Profile">
+                            <form class="form form-horizontal profile__form" method="post" action="{% url 'UpdateProfile' %}">
                                 {% csrf_token %}
                                 {% for field in updateProfile_form%}
                                     <label class="profile__label" for="{{ field.auto_id }}">Settu inn link hér:</label>
@@ -75,10 +75,16 @@
                                 <p class="myinfo__header-subtext">Hér geturu breytt öllum þínum upplýsingum</p>
                             </div>
 
-                            <form class="form form-horizontal userinfo__form" method="post">
+                            <form class="form form-horizontal userinfo__form" method="post" action="{% url 'UpdateUser' %}">
                                 {% csrf_token %}
                                 {% for field in updateUser_form %}
-                                    <label class="myinfo__label" for="{{ field.auto_id }}">{{ field.label}}</label>
+                                    {% if field.auto_id == 'id_first_name' %}
+                                        <label class="myinfo__label" for="{{ field.auto_id }}">Fyrra nafn</label>
+                                    {% elif field.auto_id == 'id_last_name' %}
+                                        <label class="myinfo__label" for="{{ field.auto_id }}">Eftir nafn</label>
+                                    {% elif field.auto_id == 'id_email' %}
+                                        <label class="myinfo__label" for="{{ field.auto_id }}">Netfang</label>
+                                    {% endif %}
                                     {{ field}}
                                 {% endfor %}
                                 <input type="submit" class="btn btn-primary button__blue myinfo__button" id="userinfo" value="Breyta Upplýsingum">

@@ -25,20 +25,20 @@
                             <li class="menubar__li menubar__topli" onclick="location.href='{% url 'userprofielView' %}'" value="myinfo">
                                 <p class="col-md-10 menubar__p">Mínar Upplýsingar</p>
                             </li>
-                            <li class="menubar__li active__menubar" onclick="location.href='{% url 'AddressView' %}'" value="address">
+                            <li class="menubar__li active__menubar" value="address">
                                 <p class="col-md-10 menubar__p">Heimilisfang</p>
                                 <i class="arrow">&rarr;</i>
                             </li>
                             <li class="menubar__li"  onclick="location.href='{% url 'CreditcardView' %}'" value="cardinfo">
                                 <p class="col-md-10 menubar__p">Korta Upplýsingar</p>
                             </li>
-                            <li class="menubar__li TAKA" onclick="location.href='{% url 'AddressView' %}'"  value="changepw">
+                            <li class="menubar__li" onclick="location.href='{% url 'ChangepwView' %}'"  value="changepw">
                                 <p class="col-md-10 menubar__p">Breyta um Lykilorð</p>
                             </li>
-                            <li class="menubar__li TAKA" onclick="location.href='{% url 'AddressView' %}'" value="wishlist">
+                            <li class="menubar__li HIDDEN" onclick="location.href='{% url 'AddressView' %}'" value="wishlist">
                                 <p class="col-md-10 menubar__p">Óskalistinn Minn</p>
                             </li>
-                            <li class="menubar__li TAKA" onclick="location.href='{% url 'AddressView' %}'" value="myorders">
+                            <li class="menubar__li HIDDEN" onclick="location.href='{% url 'AddressView' %}'" value="myorders">
                                 <p class="col-md-10 menubar__p">Mínar Pantanir</p>
                             </li>
                         </ul>
@@ -60,15 +60,17 @@
                                 {% csrf_token %}
                                 {% for field in form %}
                                     {% if field.auto_id == "id_address"%}
-                                        <label class="address__label" for="{{ field.auto_id }}">Street</label>
+                                        <label class="address__label" for="{{ field.auto_id }}">Götuheiti</label>
                                     {% elif  field.auto_id == "id_apt_num"%}
                                         <div class="div__label">
-                                            <p class="address__p col-md-7">Aparment number</p>
-                                            <p class="address__p col-md-5">Zip</p>
+                                            <p class="address__p col-md-7">Íbúðar númber</p>
+                                            <p class="address__p col-md-5">Póstfang</p>
                                         </div>
 
-                                    {% elif field.auto_id == "id_country" or field.auto_id == "id_town"%}
-                                        <label class="address__label" for="{{ field.auto_id }}">{{ field.label}}</label>
+                                    {% elif field.auto_id == "id_country"%}
+                                        <label class="address__label" for="{{ field.auto_id }}">Land</label>
+                                    {% elif field.auto_id == "id_town"%}
+                                        <label class="address__label" for="{{ field.auto_id }}">Kaupfélag</label>
                                     {% endif %}
                                     {{field}}
                                 {% endfor %}
@@ -78,15 +80,15 @@
 
                         <div class="col-md-6 existing_address-col">
                             <h1 class="address__info-title existing_address-title col-md-11">Current Address</h1>
-                            <p class="existing_address-p"><b>Street:</b> {{ address.address }}</p>
-                            <p class="existing_address-p"><b>Town:</b> {{ address.town }}</p>
+                            <p class="existing_address-p"><b>Götuheiti:</b> {{ address.address }}</p>
+                            <p class="existing_address-p"><b>Kaupfélag:</b> {{ address.town }}</p>
                             <p class="existing_address-p">
                                 {% if address.apt_num%}
-                                    <b>Aparment Number:</b> {{ address.apt_num }}
+                                    <b>Íbúðar Númer:</b> {{ address.apt_num }}
                                 {% endif %}
                             </p>
-                            <p class="existing_address-p"><b>Zip:</b> {{ address.zip }}</p>
-                            <p class="existing_address-p"><b>Country:</b> {{ address.country.name }}</p>
+                            <p class="existing_address-p"><b>Póstfang:</b> {{ address.zip }}</p>
+                            <p class="existing_address-p"><b>Land:</b> {{ address.country.name }}</p>
                         </div>
                     </div>
 
