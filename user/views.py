@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 
 import ship_o_cereal.models
-from user.forms import credit_card_form, address_form, add_to_cart, add_to_cart_test, user_update_info, profile_form
+from user.forms import credit_card_form, address_form, add_to_cart, add_to_cart_test, user_update_info, profile_form, order_form
 from user.forms import *
 from user.forms.user_create_form import SignupForm
 from django.contrib.auth import get_user_model
@@ -124,7 +124,20 @@ def addToCart(request, productId, amount):
 
 
 def makeOrder(request):
-    pass
+    form = order_form.OrderForm(data=request.POST)
+    userId = request.user.id
+    print(userId)
+    if userId:
+        currentCart = Carts.objects.get(userId_id=userId)
+        if not currentCart:
+            return redirect('home')
+        print(cart_view(currentCart))
+        theOrder = form.save(commit=False)
+        theOrder.addrId = Addresses.objects.filter(userId=userId)
+        theOrder.cardId = Creditcards.objects.filter(userId=userId)
+        theOrder.userId = request.user
+        theOrder.save()
+    return redirect('userprofielView')
 
 
 def newCart(request, userId):
