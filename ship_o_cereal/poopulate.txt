@@ -1005,3 +1005,9 @@ VALUES (
         30,
         False
        );
+
+insert into "ship_o_cereal_products_typeId" (products_id, producttypes_id)
+values (15,2),(16,2),(17,2);
+
+insert into "ship_o_cereal_products_manId" (products_id, manufacturers_id)
+VALUES (15,3),(16,3),(17,3);
