@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator
-
+from django_countries.fields import CountryField
 
 '''class Users(models.Model):
      userId = models.BigAutoField(primary_key=True)
@@ -82,9 +82,11 @@ class Creditcards(models.Model):
     year = models.IntegerField()
     cvc = models.IntegerField()
 
+
 class Countries(models.Model):
     countyId = models.BigAutoField(primary_key=True)
-    country = models.CharField(max_length=255)
+    country = CountryField()
+
 
 class Addresses(models.Model):
     addrId = models.BigAutoField(primary_key=True)
