@@ -37,47 +37,21 @@
 
             </div>
 
-            <div class="row container__items-row">
-                <div class="col-md-2 container__items-column">
-                    <img src="{% static '/productPictures/rut_skal.jpg'%}" alt="skal" class="container__item-image">
-                    <div class="container__item-description">
-                        <p>Vöruheiti - Verð</p>
+            <!--SETJA INN FOR LOOP FYRIR SKÁLAR -->
+                    <div class="row container__items-row">
+                        {% for bowl in bowls %}
+                        <div class="col-md-2 container__items-column">
+                            <img src="{% static 'productPictures/'%}{{ bowl.image }}" alt="skal" class="container__item-image">
+                            <div class="container__item-description">
+                                <p>{{ bowl.name }} {{ bowl.price }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <div class="col-md-1 container__items-column container__items-arrow">
+                            <i class="fas fa-angle-right"></i>
+                        </div>
                     </div>
-                </div>
 
-                <div class="col-md-2 container__items-column">
-                    <img src="{% static '/productPictures/rut_skal_2.jpg'%}" alt="skal" class="container__item-image">
-                    <div class="container__item-description">
-                        <p>Vöruheiti - Verð</p>
-                    </div>
-                </div>
-
-                <div class="col-md-2 container__items-column">
-                    <img src="{% static '/productPictures/rut_skal_3.png'%}" alt="skal" class="container__item-image">
-                    <div class="container__item-description">
-                        <p>Vöruheiti - Verð</p>
-                    </div>
-                </div>
-
-                <div class="col-md-2 container__items-column">
-                    <img src="{% static '/productPictures/rut_skal.jpg'%}" alt="skal" class="container__item-image">
-                    <div class="container__item-description">
-                        <p>Vöruheiti - Verð</p>
-                    </div>
-                </div>
-
-                <div class="col-md-2 container__items-column">
-                    <img src="{% static '/productPictures/rut_skal.jpg'%}" alt="skal" class="container__item-image">
-                    <div class="container__item-description">
-                        <p>Vöruheiti - Verð</p>
-                    </div>
-                </div>
-
-                <div class="col-md-1 container__items-column container__items-arrow">
-                    <i class="fas fa-angle-right"></i>
-                </div>
-
-            </div>
         </div>
 
         <div class="row container">
@@ -150,42 +124,19 @@
 
             </div>
 
-
-            <div class="row container__items-row">
-                <div class="col-md-2 container__items-column">
-                    <img src="{% static '/productPictures/rut_spoon_blue.png'%}" alt="Bolli" class="container__item-image">
-                    <div class="container__item-description">
-                        <p>Vöruheiti - Verð</p>
+                {% for spoon in spoons %}
+                    <div class="row container__items-row">
+                        <div class="col-md-2 container__items-column">
+                            <img src="{% static 'productPictures/'%}{{ spoon.image }}" alt="skal" class="container__item-image">
+                            <div class="container__item-description">
+                                <p>{{ spoon.name }}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-1 container__items-column container__items-arrow">
+                            <i class="fas fa-angle-right"></i>
+                        </div>
                     </div>
-                </div>
-
-                <div class="col-md-2 container__items-column">
-                    <img src="{% static '/productPictures/rut_kaffi_bolli.jpg'%}" alt="Bolli" class="container__item-image">
-                    <div class="container__item-description">
-                        <p>Vöruheiti - Verð</p>
-                    </div>
-                </div>
-
-                <div class="col-md-2 container__items-column">
-                    <img src="{% static '/productPictures/rut_kaffi_bolli.jpg'%}" alt="Bolli" class="container__item-image">
-                    <div class="container__item-description">
-                        <p>Vöruheiti - Verð</p>
-                    </div>
-                </div>
-
-                <div class="col-md-2 container__items-column">
-                    <img src="{% static '/productPictures/rut_kaffi_bolli.jpg'%}" alt="Bolli" class="container__item-image">
-                    <div class="container__item-description">
-                        <p>Vöruheiti - Verð</p>
-                    </div>
-                </div>
-
-                <div class="col-md-2 container__items-column">
-                    <img src="{% static '/productPictures/rut_kaffi_bolli.jpg'%}" alt="Bolli" class="container__item-image">
-                    <div class="container__item-description">
-                        <p>Vöruheiti - Verð</p>
-                    </div>
-                </div>
+            {% endfor %}
 
                 <div class="col-md-1 container__items-column container__items-arrow">
                     <i class="fas fa-angle-right"></i>
