@@ -55,11 +55,7 @@
 
                     <div class="div__address address__content-col col-md-11">
                         <div class="col-md-6 add_address">
-                            <!--{% csrf_token %}
-                            {% for x in allCountries %}
-                                <h1>{{ x.country}}</h1>
-                            {% endfor %}-->
-                            <h1 class="address__info-title col-md-11">Add address</h1>
+                            <h1 class="address__info-title col-md-11">Change address</h1>
                             <form class="form form-horizontal address__form col-md-11" method="post">
                                 {% csrf_token %}
                                 {% for field in form %}
@@ -70,18 +66,23 @@
                                             <p class="address__p col-md-7">Aparment number</p>
                                             <p class="address__p col-md-5">Zip</p>
                                         </div>
-                                    {% elif field.auto_id == "id_country" %}
+
+                                    {% elif field.auto_id == "id_country" or field.auto_id == "id_town"%}
                                         <label class="address__label" for="{{ field.auto_id }}">{{ field.label}}</label>
                                     {% endif %}
-                                    {{ field }}
+                                    {{field}}
                                 {% endfor %}
                                 <input type="submit" class="btn btn-primary button__blue address__button" value="add address">
                             </form>
                         </div>
 
                         <div class="col-md-6 existing_address-col">
-                            <div class="row existing_address-row"></div>
-                            <div class="row existing_address-row"></div>
+                            <h1 class="address__info-title existing_address-title col-md-11">Existing Address</h1>
+                            <p class="existing_address-p"><b>Street:</b> {{ address.address }}</p>
+                            <p class="existing_address-p"><b>Town:</b> {{ address.town }}</p>
+                            <p class="existing_address-p"><b>Aparment Number:</b> {{ address.apt_num }}</p>
+                            <p class="existing_address-p"><b>Zip:</b> {{ address.zip }}</p>
+                            <p class="existing_address-p"><b>Country:</b> {{ address.country }}</p>
                         </div>
                     </div>
 
