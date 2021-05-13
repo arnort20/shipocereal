@@ -68,7 +68,7 @@ def address(request):
             addr = form.save(commit=False)
             addr.userId_id = request.user.id
             addr = form.save()
-            return redirect('userprofileView')
+            return redirect('userprofielView')
     else:
         form = address_form.AddressCreateForm()
     return render(request, 'user/address.html', {'form': form})
@@ -122,7 +122,7 @@ def creditcard(request):
             card = form.save(commit=False)
             card.userId_id = request.user.id
             card = form.save()
-            return redirect('userprofileView')
+            return redirect('userprofielView')
     else:
         form = credit_card_form.CreditcardCreateForm()
     return render(request, 'user/creditcard.html', {'form': form})
