@@ -6,7 +6,7 @@ from user.forms import credit_card_form, address_form, add_to_cart, add_to_cart_
 from user.forms import *
 from user.forms.user_create_form import SignupForm
 from django.contrib.auth import get_user_model
-from ship_o_cereal.models import Carts, Addresses, CartRows, Creditcards, Comments
+from ship_o_cereal.models import Carts, Orders, Addresses, CartRows, Creditcards, Comments
 from user.models import Profile
 
 
@@ -36,7 +36,10 @@ def cart_view(request):
 
 
 def checkout_view(request):
-    return render(request, 'user/checkout.html')
+    customer = request.user
+    cart = {'cart': ship_o_cereal.models.CartFolio.objects.filter(userId=customer)}
+    return render(request, 'user/checkout.html', context=cart)
+
 
 def signup_view(request):
     return render(request, 'user/signup.html')
