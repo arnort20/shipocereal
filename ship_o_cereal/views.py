@@ -34,7 +34,11 @@ def prod_by_id(request, productId):
 
 
 def merch_view(request):
-    return render(request, 'store/merch.html')
+    bowls = Products.objects.filter(typeId=2)
+    spoons = Products.objects.filter(typeId=3)
+    context = {'bowls': bowls[:5],
+    'spoons': spoons[:5]}
+    return render(request, 'store/merch.html', context=context)
 
 
 def bowl_view(request):
