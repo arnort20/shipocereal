@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-        <title>Ship O' Cereal</title>
+    <link rel="stylesheet" href=" {% static 'css/allitems.css' %} ">
+            <title>Ship O' Cereal</title>
         <link rel="stylesheet" href=" {% static 'css/subcategory.css' %} ">
 
         <div class="row" id="Image__imageContainer">
@@ -76,78 +77,22 @@
 
             </div>
         </div>
-
-        <div class="row" id="container">
-            <div class="row container__row" id="container__topRow">
-                <div class="col-md-3 container__item">
-                    <img src="{% static 'productPictures/rut_skal.jpg' %} " alt="skal" class="container__itemImage">
-                    <div class="contaier__itemDescription">
-                        <p>Harley Quinn Bowl - 2300 ISK</p>
-                    </div>
-                    <button type="button" class="container__itemButton button__red">Setja í körfu</button>
+        {% for bowl in bowls %}
+        <a href="/store/{{ product.productId }}">
+            <div class="card col-sm-4" id="{{ bowls.typleId }}">
+                <div class="middle"><img src="{% static 'productPictures/' %}{{ bowl.image }}" alt="skal" width="300" height="250">
+                    <h5>{{ bowl.name }} - {{ bowl.price }}</h5>
                 </div>
-
-                <div class="col-md-3 container__item">
-                    <img src="{% static 'productPictures/rut_skal_2.jpg' %}" alt="skal" class="container__itemImage">
-                    <div class="contaier__itemDescription">
-                        <p>Joker Bowl - 2000 ISK</p>
-                    </div>
-                    <button type="button" class="container__itemButton button__red">Setja í körfu</button>
+        </a>
+            <form action="post">
+                {% csrf_token %}
+                <div class="bottom d-flex flex-row justify-content-center">
+                    <a type="submit" class="btn btn-success btn-sm add container__itemButton button__red" href="{{ bowl.typeId }}/addtocart">Setja í körfu </a>
                 </div>
-
-                <div class="col-md-3 container__item">
-                    <img src="{% static 'productPictures/rut_skal_3.png' %}" alt="skal" class="container__itemImage">
-                    <div class="contaier__itemDescription">
-                        <p>Tony the Tiger Bowl - 2300 ISK</p>
-                    </div>
-                    <button type="button" class="container__itemButton button__red">Setja í körfu</button>
-                </div>
-
-                <div class="col-md-3 container__item">
-                    <img src="" alt="skal" class="container__itemImage">
-                    <div class="contaier__itemDescription">
-                        <p>Vöruheiti - Verð</p>
-                    </div>
-                    <button type="button" class="container__itemButton button__red">Setja í körfu</button>
-                </div>
-            </div>
-
-
-            <div class="row container__row" >
-                <div class="col-md-3 container__item amma" onclick="location.href=location.href='{% url 'ProductView' %}'">
-                    <img src="" alt="skal" class="container__itemImage">
-                    <div class="contaier__itemDescription">
-                        <p>Vöruheiti - Verð</p>
-                    </div>
-                    <button type="button" class="container__itemButton button__red">Setja í körfu</button>
-                </div>
-
-                <div class="col-md-3 container__item">
-                    <img src="" alt="skal" class="container__itemImage">
-                    <div class="contaier__itemDescription">
-                        <p>Vöruheiti - Verð</p>
-                    </div>
-                    <button type="button" class="container__itemButton button__red">Setja í körfu</button>
-                </div>
-
-                <div class="col-md-3 container__item">
-                    <img src="" alt="skal" class="container__itemImage">
-                    <div class="contaier__itemDescription">
-                        <p>Vöruheiti - Verð</p>
-                    </div>
-                    <button type="button" class="container__itemButton button__red">Setja í körfu</button>
-                </div>
-
-                <div class="col-md-3 container__item">
-                    <img src="" alt="skal" class="container__itemImage">
-                    <div class="contaier__itemDescription">
-                        <p>Vöruheiti - Verð</p>
-                    </div>
-                    <button type="button" class="container__itemButton button__red">Setja í körfu</button>
-                </div>
-            </div>
-
+            </form>
         </div>
+
+        {% endfor %}
 
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>

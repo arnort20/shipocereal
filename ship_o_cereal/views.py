@@ -70,7 +70,9 @@ def merch_view(request):
 
 
 def bowl_view(request):
-    return render(request, 'store/subcategory.html')
+    bowls = Products.objects.filter(typeId=2)
+    context = {'bowls': bowls[:5]}
+    return render(request, 'store/subcategory.html', context=context)
 
 
 def frontPage(request):

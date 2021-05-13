@@ -10,6 +10,6 @@ urlpatterns = [
     path('search/',views.searchbar,name="SearchBar"),
     path('<int:productId>/addtocart/', views.new_cart_test, name="addToCart"),
     path('popular/<int:productId>/addtocart', views.pop_cart, name="addToCart"),
-    path('store/<int:productId>/addtocart', views.new_cart_test, name="addToCart")
+    path('store/<int:productId>/addtocart', views.new_cart_test, name="addToCart"),
 
 ]
