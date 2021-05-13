@@ -11,9 +11,9 @@ class AddressCreateForm(ModelForm):
         exclude = ['addrId', 'userId']
         widgets = {
             'address': widgets.TextInput(attrs={'class': 'form-control address__input'}),
-            'apt_num': widgets.NumberInput(attrs={'class': 'form-control address__input-small'}),
-            'zip': widgets.NumberInput(attrs={'class': 'form-control address__input-small'}),
-            #'country' : CountrySelectWidget()
+            'town': widgets.TextInput(attrs={'class': 'form-control address__input'}),
+            'apt_num': widgets.NumberInput(attrs={'class': 'form-control address__input-small','use_required_attribute':'None'}),
+            'zip': widgets.NumberInput(attrs={'class': 'form-control address__input-small'})
         }
 
 

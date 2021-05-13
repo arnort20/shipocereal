@@ -10,7 +10,7 @@
     <div class="col-md-11 container__checkout">
 
         <div class="col-md-6 checkout__leftcol">
-
+            {% for address in addresses %}
             <div class="row checkout__leftcol-row">
                 <div class="row row__header">
                     <div class="col-md-6 checkout__column">
@@ -24,54 +24,61 @@
 
                 <div class="row checkout_row">
                     <div class="col-md-11 column__left">
-                        <label for="user-fullname" class="checkout__label checkout__label-name">Nafn*</label>
-                        <input type="text" class="checkout__input checkout__input-name" id="user-fullname">
+                        <label for="user-fullname" class="checkout__label checkout__label-name">Nafn</label>
+{#                        <input type="text" class="checkout__input checkout__input-name" id="user-fullname">#}
+                        <h2>{{ address.userId.first_name }} {{ address.userId.last_name }}</h2>
                     </div>
                 </div>
 
                 <div class="row checkout_row">
                     <div class="col-md-5 checkout__column">
                         <label for="user-street" class="checkout__label checkout__label-street">Götuheiti*</label>
-                        <input type="text" class="checkout__input checkout__input-street" id="user-street">
+{#                        <input type="text" class="checkout__input checkout__input-street" id="user-street">#}
+                        <h2>{{ address.address }}</h2>
                     </div>
 
                     <div class="col-md-3 checkout__column">
                         <label for="user-apt_num" class="checkout__label checkout__label-address">Íbúðar Númer</label>
-                        <input type="text" class="checkout__input checkout__input-address" id="user-apt_num">
+{#                        <input type="text" class="checkout__input checkout__input-address" id="user-apt_num">#}
+                        <h2>{{ address.apt_num }}</h2>
                     </div>
 
                     <div class="col-md-3 checkout__column">
                         <label for="user-post_num" class="checkout__label checkout__label-address">Póstnúmer*</label>
-                        <input type="text" class="checkout__input checkout__input-address" id="user-post_num">
+{#                        <input type="text" class="checkout__input checkout__input-address" id="user-post_num">#}
+                        <h2>{{ address.zip }}</h2>
                     </div>
                 </div>
 
                 <div class="row checkout_row">
-                    <div class="col-md-6 checkout__column">
-                        <label for="user-town" class="checkout__label checkout__label-town">Kaupstaður*</label>
-                        <input type="text" class="checkout__input checkout__input-town" id="user-town">
-                    </div>
+{#                    <div class="col-md-6 checkout__column">#}
+{#                        <label for="user-town" class="checkout__label checkout__label-town">Kaupstaður*</label>#}
+{#                        <input type="text" class="checkout__input checkout__input-town" id="user-town">#}
+{#                        <h2></h2>#}
+{#                    </div>#}
 
                     <div class="col-md-6 checkout__column">
                         <label for="user-country" class="checkout__label checkout__label-country">Land*</label>
-                        <select name="country" class="checkout__select" id="user-country">
-                            <option value="Iceland">Iceland</option>
-                            <option value="Sweden">Sweden</option>
-                            <option value="Denmark">Denmark</option>
-                            <option value="Finnland">Finnland</option>
-                        </select>
+{#                        <select name="country" class="checkout__select" id="user-country">#}
+{#                            <option value="Iceland">Iceland</option>#}
+{#                            <option value="Sweden">Sweden</option>#}
+{#                            <option value="Denmark">Denmark</option>#}
+{#                            <option value="Finnland">Finnland</option>#}
+{#                        </select>#}
+                        <h2>{{ address.country }}</h2>
                     </div>
                 </div>
             </div>
+            {% endfor %}
 
-            <div class="row checkout__leftcol-row">
-                <div class="row row__header">
-                    <h1 class="checkout__title" >Sendingarmáti</h1>
-                </div>
-
-                <div class="row checkout__delivery-row"></div>
-            </div>
-
+{#            <div class="row checkout__leftcol-row">#}
+{#                <div class="row row__header">#}
+{#                    <h1 class="checkout__title" >Sendingarmáti</h1>#}
+{#                </div>#}
+{##}
+{#                <div class="row checkout__delivery-row"></div>#}
+{#            </div>#}
+            {% for card in creditcards %}
             <div class="row checkout__leftcol-row">
                 <div class="row row__header">
                     <div class="col-md-6 checkout__column">
@@ -86,67 +93,107 @@
                 <div class="row checkout_row">
                     <div class="col-md-11 checkout__column">
                         <label for="card-name" class="checkout__label checkout__label-name">Nafn korthafa*</label>
-                        <input type="text" class="checkout__input checkout__input-name" id="card-name">
+{#                        <input type="text" class="checkout__input checkout__input-name" id="card-name">#}
+                        <h2>{{ card.cardname }}</h2>
                     </div>
                 </div>
 
                 <div class="row checkout_row">
                     <div class="col-md-11 checkout__column">
                         <label for="card-number" class="checkout__label checkout__label-name">Kortanúmer*</label>
-                        <input type="text" class="checkout__input checkout__input-name" id="card-number">
+{#                        <input type="text" class="checkout__input checkout__input-name" id="card-number">#}
+                        <h2>{{ card.cardNumber }}</h2>
                     </div>
                 </div>
 
                 <div class="row checkout_row">
                     <div class="col-md-4 checkout__column column__month">
                         <label for="card-month" class="checkout__label checkout__label-month">Mánuður*</label>
-                        <input type="text" class="checkout__input checkout__input-month" id="card-month">
+{#                        <input type="text" class="checkout__input checkout__input-month" id="card-month">#}
+                        <p>{{ card.month }}</p>
                     </div>
 
                     <div class="col-md-4 checkout__column column__year">
                         <label for="card-year" class="checkout__label checkout__label-year">Ár*</label>
-                        <input type="text" class="checkout__input checkout__input-year" id="card-year">
+{#                        <input type="text" class="checkout__input checkout__input-year" id="card-year">#}
+                        <p>{{ card.year }}</p>
                     </div>
 
                     <div class="col-md-4 checkout__column">
                         <label for="card-cvc" class="checkout__label checkout__label-cvc">CVC*</label>
-                        <input type="text" class="checkout__input checkout__input-cvc" id="card-cvc">
+{#                        <input type="text" class="checkout__input checkout__input-cvc" id="card-cvc">#}
+                        <p>{{ card.cvc }}</p>
                     </div>
                 </div>
             </div>
+            {% endfor %}
+        </div>
+        <div class="row checkout__leftcol-row">
+            <div class="row row__header">
+                <h1 class="checkout__title" >Sendingarmáti</h1>
+            </div>
+
+            <div class="row checkout__delivery-row">
+                <select name="delivery" class="checkout__select" id="user-country">
+                    <option value="heimsending">heimsending</option>
+                    <option value="Deluxe heimsending">Deluxe heimsending</option>
+                    <option value="Samdægurs Deluxe">Samdægurs Deluxe</option>
+                </select>
+            </div>
         </div>
 
-
         <div class="col-md-4 container__right">
+
             <div class="row checkout_row row__header-right">
                 <h1 class="checkout__title" >Samantekt:</h1>
             </div>
-
+            {% for item in cart %}
             <div class="row checkout_row checkout__row-item">
                 <div class="col-md-8 product__description-col">
-                    <p class="checkout__product-text product_name">Glútenlaust Special K</p>
-                    <p class="checkout__product-text product Quantity">Magn: 2</p>
+                    <p class="checkout__product-text product_name">{{ item.productId.name }}</p>
+                    <p class="checkout__product-text product Quantity">Magn: {{ item.amount }}</p>
                 </div>
                 <div class="col-md-3 product__description-col">
-                    <p class="checkout__product-text product-total  font__bold">4200 ISK</p>
+                    <p class="checkout__product-text product-total  font__bold" id="subtotal{{ item.folioId }}"></p>
                 </div>
+                <script>
+                    function myFunction() {
+                        let c = parseInt({{ item.amount }}) * parseInt({{ item.productId.price }});
+                        {#document.getElementById("subtotal{{ item.folioId }}").innerHTML = "aaa";#}
+                        {#console.log('aaa')#}
+                        document.getElementById("subtotal{{ item.folioId }}").innerHTML = c.toString()+" ISK";
+                    }
+                    myFunction()
+                </script>
             </div>
-
-            <div class="row checkout_row">
-                <div class="col-md-8 product__description-col">
-                    <p class="checkout__product-text" id="delivery-type">Hraðsending</p>
-                </div>
-                <div class="col-md-3 product__description-col">
-                    <p class="checkout__product-text font__bold" id="delivery-price">1500 ISK</p>
-                </div>
-            </div>
-            <div class="row checkout_row">
+            {% endfor %}
+{#            <div class="row checkout_row">#}
+{#                <div class="col-md-8 product__description-col">#}
+{#                    <p class="checkout__product-text" id="delivery-type">Hraðsending</p>#}
+{#                </div>#}
+{#                <div class="col-md-3 product__description-col">#}
+{#                    <p class="checkout__product-text font__bold" id="delivery-price">1500 ISK</p>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="row checkout_row">#}
                 <div class="col-md-8 product__description-col">
                     <p class="checkout__product-text product__text-total"> Heildarupphæð:</p>
                 </div>
                 <div class="col-md-3 product__description-col">
-                    <p class="checkout__product-text product__text-total" id="order-total" >9200 ISK</p>
+                    <p class="checkout__product-text product__text-total" id="order-total" ></p>
                 </div>
+                <script>
+                    function getTotal() {
+                        let subtotals = document.getElementsByClassName("checkout__product-text product-total  font__bold");
+                        var summa = 0;
+                        var i;
+                        for (i = 0; i < subtotals.length; i++) {
+                            summa += parseInt(subtotals[i].innerHTML);
+                        }
+                        document.getElementById("order-total").innerHTML = summa.toString();
+                    }
+                    getTotal();
+                </script>
             </div>
             <div class="row checkout_row">
                 <button class="checkout__button-confirm" id="confirm-order-button">Staðfesta Pöntun</button>
