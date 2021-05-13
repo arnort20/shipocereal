@@ -1,17 +1,16 @@
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm,PasswordChangeForm
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 
 import ship_o_cereal.models
-from user.forms import credit_card_form, address_form, add_to_cart, add_to_cart_test, user_update_info, profile_form, order_form
+from user.forms import credit_card_form, address_form, add_to_cart, add_to_cart_test, user_update_info, profile_form, \
+    order_form, change_pw
 from user.forms import *
 from user.forms.user_create_form import SignupForm
 from django.contrib.auth import get_user_model
 from ship_o_cereal.models import Carts, Orders, Addresses, CartRows, Creditcards, Comments
 from user.models import Profile
 
-
-from django.views.generic import ListView
 
 
 def new_cart_test(request):
@@ -75,7 +74,11 @@ def address(request):
         form = address_form.AddressCreateForm(data=request.POST)
         if form.is_valid():
             address.address = request.POST['address']
-            address.apt_num = request.POST['apt_num']
+            apt_num = request.POST['apt_num']
+            if apt_num == '':
+                address.apt_num = None
+            else:
+                address.apt_num = int(apt_num)
             address.zip = request.POST['zip']
             address.country = request.POST['country']
             address.town = request.POST['town']
@@ -84,20 +87,6 @@ def address(request):
     form = address_form.AddressCreateForm()
     context = {'form': form, 'address': address}
     return render(request, 'user/address.html', context)
-
-
-
-"""def address(request):
-    if request.method == 'POST':
-        form = drasl.CountrySelect(data=request.POST)
-        if form.is_valid:
-            addr = form.save()
-            return redirect('userprofielView')
-    else:
-        form = drasl.CountrySelect()
-    return render(request, 'user/address.html', {'form': form})"""
-
-
 
 
 def addToCart(request, productId, amount):
@@ -145,30 +134,34 @@ def newCart(request, userId):
 
 
 def creditcard(request):
+    card = Creditcards.objects.filter(userId_id=request.user.id).first()
+    exp_date = "({}/{})".format(card.month,card.year)
+    card_num = "****-****-****-"+card.cardNumber[12:]
     if request.method == 'POST':
         form = credit_card_form.CreditcardCreateForm(data=request.POST)
         if form.is_valid:
-            card = form.save(commit=False)
-            card.userId_id = request.user.id
-            card = form.save()
-            return redirect('userprofielView')
-    else:
-        form = credit_card_form.CreditcardCreateForm()
-    return render(request, 'user/creditcard.html', {'form': form})
+            card = Creditcards.objects.filter(userId_id=request.user.id).first()
+            card.cardname = request.POST['cardname']
+            card.cardNumber = request.POST['cardNumber']
+            card.month = request.POST['month']
+            card.year = request.POST['year']
+            card.cvc = request.POST['cvc']
+            card.save()
+            return redirect('CreditcardView')
+
+    form = credit_card_form.CreditcardCreateForm()
+    context = {'form': form,'card_num':card_num,'name':card.cardname,'exp_date':exp_date}
+    return render(request, 'user/creditcard.html',context)
 
 
 def user_profile(request):
-    """profile = Profile.objects.filter(user=request.user).first()
-    if request.method == 'POST':
-        form = profile_form.ProfileForm(instance=profile, data=request.POST)
-        if form.is_valid():
-            profile = form.save(commit=False)
-            profile.user = request.user
-            profile.save()
-            return redirect('profile')
-    context = {'updateProfile_form':profile_form.ProfileForm(instance=profile)}
-    return render(request, 'user/profile.html', context)"""
+    profile = Profile.objects.filter(user=request.user).first()
+    updateUser_form = user_update_info.UpdateUserForm(instance=request.user)
+    updateProfile_form = profile_form.ProfileForm(instance=profile)
+    context = {'updateUser_form':updateUser_form,'updateProfile_form':updateProfile_form}
+    return render(request, 'user/profile.html',context)
 
+def update_user_view(request):
     if request.method == 'POST':
         updateUser_form = user_update_info.UpdateUserForm(data=request.POST)
         if updateUser_form.is_valid():
@@ -178,26 +171,31 @@ def user_profile(request):
             user.email = request.POST['email']
             user.save()
             return redirect('userprofielView')
-    else:
-        updateUser_form = user_update_info.UpdateUserForm(instance=request.user)
-    context = {'updateUser_form':updateUser_form}
+    updateUser_form = user_update_info.UpdateUserForm(instance=request.user)
+    context = {'updateUser_form':updateUser_form,}
     return render(request, 'user/profile.html',context)
 
-"""def profile(request):
+def update_profile_view(request):
     profile = Profile.objects.filter(user=request.user).first()
-     if request.method == 'POST':
-         form = ProfileForm(instance=profile, data=request.POST)
-         if form.is_valid():
-             profile = form.save(commit=False)
-             profile.user = request.user
-             profile.save()
-             return redirect('profile')
-     return render(request, 'user/profile.html', {
-         'form': 
-     })"""
+    if request.method == 'POST':
+        updateProfile_form = profile_form.ProfileForm(instance=profile, data=request.POST)
+        if updateProfile_form.is_valid():
+            profile = updateProfile_form.save(commit=False)
+            profile.user = request.user
+            profile.save()
+            return redirect('userprofielView')
+    context = {'updateProfile_form':profile_form.ProfileForm(instance=profile)}
+    return render(request, 'user/profile.html', context)
 
-
-
+def Changepw_view(request):
+    if request.method == 'POST':
+        changepw_form = PasswordChangeForm(request.user,data=request.POST)
+        if changepw_form.is_valid():
+            print(changepw_form.new_password)
+            return redirect('ChangepwView')
+    changepw_form = PasswordChangeForm(request.user)
+    context = {'form':changepw_form}
+    return render(request, 'user/changepw.html',context)
 
 
 

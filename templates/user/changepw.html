@@ -28,12 +28,12 @@
                             <li class="menubar__li " onclick="location.href='{% url 'AddressView' %}'" value="address">
                                 <p class="col-md-10 menubar__p">Heimilisfang</p>
                             </li>
-                            <li class="menubar__li active__menubar" id="cardinfo" value="cardinfo">
+                            <li class="menubar__li" onclick="location.href='{% url 'CreditcardView' %}'" id="cardinfo" value="cardinfo">
                                 <p class="col-md-10 menubar__p">Korta Upplýsingar</p>
-                                <i class="arrow">&rarr;</i>
                             </li>
-                            <li class="menubar__li" onclick="location.href='{% url 'ChangepwView' %}'"  value="changepw">
+                            <li class="menubar__li active__menubar"  value="changepw">
                                 <p class="col-md-10 menubar__p">Breyta um Lykilorð</p>
+                                <i class="arrow">&rarr;</i>
                             </li>
                             <li class="menubar__li HIDDEN" value="wishlist">
                                 <p class="col-md-10 menubar__p">Óskalistinn Minn</p>
@@ -50,39 +50,28 @@
                 <div class="col-md-8 useroptions__optiondisplay-col">
                     <div class="row optiondisplay__header-row">
                         <div class="col-md-10 optiondisplay__header-col">
-                            <h2 class="optiondisplay__header-title">Korta Upplýsingar</h2>
+                            <h2 class="optiondisplay__header-title">Breyta Lykilorði</h2>
                         </div>
                     </div>
 
-                    <div class="col-md-11 cardinfo__content-col active__option">
-                        <div class="col-md-6 add_card">
-                            <h2 class="card__info-title col-md-11">Bæta við Korti</h2>
-                            <form class="form form-horizontal cardinfo__content-form" method="post">
-                                {% csrf_token %}
-                                {% for field in form %}
-                                    {% if field.auto_id == "id_cardname" %}
-                                        <label class="cardinfo__label" for="{{ field.auto_id }}">Nafn á korti</label>
-                                    {% elif field.auto_id == "id_cardNumber" %}
-                                        <label class="cardinfo__label" for="{{ field.auto_id }}">Kortanúmer</label>
-                                    {% elif field.auto_id == "id_month"%}
-                                        <div class="cardinfo__select-labels">
-                                            <p class="col-md-4 select__label">Mánuður</p>
-                                            <p class="col-md-4 select__label">Ár</p>
-                                            <p class="col-md-4 select__label">CVC</p>
-                                        </div>
-                                    {% endif %}
-                                    {{ field }}
-                                {% endfor %}
-                                <input type="submit" class="btn btn-primary cardinfo__button button__blue" value="Bæta við Greiðslumáta">
-                            </form>
-                        </div>
+                    <div class="col-md-6 changepw__content-col">
+                        <form class="form form-horizontal changepw__form col-md-12" method="post">
+                            {% csrf_token %}
+                            {{ form }}
+                            <!--{% for field in form %}
+                                {% if field.auto_id == 'id_old_password' %}
+                                    <label class="changepw__label col-md-11" for="{{ field.auto_id}}">Gamla Lykilorðið</label>
+                                {% elif field.auto_id == 'id_new_password1' %}
+                                    <label class="changepw__label col-md-11" for="{{ field.auto_id}}">Nýja lykilorðið</label>
+                                {% elif  field.auto_id == 'id_new_password2' %}
+                                    <label class="changepw__label col-md-11" for="{{ field.auto_id}}">Staðfesta nýja lykilorðið</label>
+                                {% endif %}
+                                {{ field }}
+                            {% endfor %}-->
 
-                        <div class="col-md-6 existing_cards-col">
-                            <h1 class="card__info-title col-md-11">Núverandi Kort</h1>
-                            <p class="existing_address-p"><b>Nafn á Korti:</b> {{ name }}</p>
-                            <p class="existing_address-p"><b>Kort:</b> {{ card_num }}</p>
-                            <p class="existing_address-p"><b>Gildistími:</b> {{ exp_date }}</p>
-                        </div>
+
+                            <input type="submit" class="btn btn-primary cardinfo__button button__blue" value="Breyta lykilorði">
+                        </form>
                     </div>
 
                 </div>
