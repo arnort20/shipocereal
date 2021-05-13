@@ -77,10 +77,14 @@
                         </div>
 
                         <div class="col-md-6 existing_address-col">
-                            <h1 class="address__info-title existing_address-title col-md-11">Existing Address</h1>
+                            <h1 class="address__info-title existing_address-title col-md-11">Current Address</h1>
                             <p class="existing_address-p"><b>Street:</b> {{ address.address }}</p>
                             <p class="existing_address-p"><b>Town:</b> {{ address.town }}</p>
-                            <p class="existing_address-p"><b>Aparment Number:</b> {{ address.apt_num }}</p>
+                            <p class="existing_address-p">
+                                {% if address.apt_num%}
+                                    <b>Aparment Number:</b> {{ address.apt_num }}
+                                {% endif %}
+                            </p>
                             <p class="existing_address-p"><b>Zip:</b> {{ address.zip }}</p>
                             <p class="existing_address-p"><b>Country:</b> {{ address.country }}</p>
                         </div>

@@ -75,7 +75,11 @@ def address(request):
         form = address_form.AddressCreateForm(data=request.POST)
         if form.is_valid():
             address.address = request.POST['address']
-            address.apt_num = request.POST['apt_num']
+            apt_num = request.POST['apt_num']
+            if apt_num == '':
+                address.apt_num = None
+            else:
+                address.apt_num = int(apt_num)
             address.zip = request.POST['zip']
             address.country = request.POST['country']
             address.town = request.POST['town']
