@@ -79,7 +79,7 @@
         </div>
         {% for bowl in bowls %}
         <a href="/store/{{ bowl.productId }}" >
-            <div class="card col-sm-4" id="{{ bowls.typleId }}">
+            <div class="card col-sm-4" id="{{ bowls.productId }}">
                 <div class="middle"><img src="{% static 'productPictures/' %}{{ bowl.image }}" alt="skal" width="300" height="250">
                     <h5>{{ bowl.name }} - {{ bowl.price }}</h5>
                 </div>
@@ -87,7 +87,7 @@
             <form method="post">
                 {% csrf_token %}
                 <div class="bottom d-flex flex-row justify-content-center">
-                    <a type="submit" class="btn btn-success btn-sm add container__itemButton button__red" href="{{ bowl.typeId }}/addtocart">Setja í körfu </a>
+                    <a type="submit" class="btn btn-success btn-sm add container__itemButton button__red" href="{{ bowl.productId }}/addtocart">Setja í körfu </a>
                 </div>
             </form>
         </div>

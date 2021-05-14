@@ -6,7 +6,7 @@
 
     {% for spoon in spoons %}
         <a href="/store/{{ spoon.productId }}">
-            <div class="card col-sm-4" id="{{ spoons.typeId }}">
+            <div class="card col-sm-4" id="{{ spoons.productId }}">
                 <div class="middle"><img src="{% static 'productPictures/' %}{{ spoon.image }}" alt="skal" width="300" height="250">
                     <h5>{{ spoon.name }} - {{ spoon.price }}</h5>
                 </div>
@@ -14,7 +14,7 @@
             <form action="post">
                 {% csrf_token %}
                 <div class="bottom d-flex flex-row justify-content-center">
-                    <a type="submit" class="btn btn-success btn-sm add container__itemButton button__red" href="{{ spoon.typeId }}/addtocart">Setja í körfu </a>
+                    <a type="submit" class="btn btn-success btn-sm add container__itemButton button__red" href="{{ spoon.productId }}/addtocart">Setja í körfu </a>
                 </div>
             </form>
         </div>

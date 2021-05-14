@@ -36,6 +36,22 @@ def pop_cart(request, productId):
         theCart.save()
     return redirect('Popularitem')
 
+def merch_cart(request, productId):
+    if not request.user.is_authenticated:
+        return redirect('login')
+    cartRelation = CartFolio.objects.filter(productId=Products.objects.filter(pk=productId).first(), userId=request.user)
+
+    if not cartRelation:
+        cart = CartFolio()
+        cart.productId = Products.objects.filter(pk=productId).first()
+        cart.userId = request.user
+        cart.amount = 1
+        cart.save()
+    else:
+        theCart = cartRelation.first()
+        theCart.amount += 1
+        theCart.save()
+    return redirect('MerchView')
 
 
 
@@ -68,8 +84,6 @@ def merch_view(request):
 def bowl_view(request):
     bowls = Products.objects.filter(typeId=2)
     context = {'bowls': bowls[:5]}
-    if request == 'POST':
-        return redirect('ProductPage')
     return render(request, 'store/subcategory.html', context=context)
 
 
