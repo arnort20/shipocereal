@@ -170,7 +170,6 @@ def makeOrder(request,user_address,user_card):
         new_order.addrId_id = user_address.addrId
         new_order.cardId_id = user_card.cardId
         new_order.save()
-        currentCart.remove()
         return redirect('home')
     return redirect('userprofielView')
 
