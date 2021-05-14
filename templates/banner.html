@@ -18,15 +18,14 @@
             <i class="col-md-12 banner__logoText">Mesta úrval morgunkorns á Íslandi</i>
         </div>
 
-        <div class="col-md-5 banner__column banner__searchColumn">
+        <div class="col-md-4 banner__column banner__searchColumn">
         <form method="POST" action="{% url 'SearchBar' %}">
             {% csrf_token %}
-            <input class="col-md-4" type="text" id="banner__searchbar" name="searched"  placeholder="Leitaðu að þínu uppáhalds morgunkorni hér">
-            <i type="button" class="col-md-2 banner__searchicon fas fa-search fa-2x" ></i>
+            <input type="text" class="col-md-4 form-control rounded" id="banner__searchbar" name="searched" placeholder="Leita" aria-label="Search" aria-describedby="search-addon" />
         </form>
         </div>
 
-        <div class="col-md-3 banner__column" id="banner__UserOptions">
+        <div class="col-md-4 banner__column" id="banner__UserOptions">
             {% if user.is_authenticated %}
                 <div class="col-md-4 banner__LoginAndCart banner__Login">
                     <i class="col-md-6 banner__signin fas fa-sign-in-alt fa-3x"></i>
