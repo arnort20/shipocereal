@@ -1,3 +1,4 @@
+from django.http import JsonResponse
 from django.shortcuts import render, redirect,get_object_or_404
 from ship_o_cereal.models import *
 
@@ -138,18 +139,13 @@ def searchbar(request):
         return render(request, 'SearchSite.html')
 
 
-def index(request):
-    if 'search_filter' in request.GET:
-        search_filter = request.GET['search_filter']
-        products = [{
-            'id': x.id,
-            'name': x.name,
-            'description': x.description,
-            'firstimage': x.product.object.filter.first().image
-        } for x in product.objects.filter(name__icontaints=search_filter) ]
-        return jsonResponse({'data': products})
-        context = {'products': product.objects.all().order_by('name')}
-        return render(request, 'products/filter.html', context)
+# def index(request):
+#     if request.method == 'POST':
+#         searched = request.POST['searched']
+#         products = Products.objects.filter(name__icontains=searched)
+#         return render(request, 'filter_search.html', {'searched': searched, 'products': products})
+#     else:
+#         return render(request, 'store/filter_search.html')
 
 
 
