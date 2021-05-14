@@ -68,7 +68,10 @@ def merch_view(request):
 def bowl_view(request):
     bowls = Products.objects.filter(typeId=2)
     context = {'bowls': bowls[:5]}
+    if request == 'POST':
+        return redirect('ProductPage')
     return render(request, 'store/subcategory.html', context=context)
+
 
 def spoon_view(request):
     spoons = Products.objects.filter(typeId=3)
