@@ -1,4 +1,4 @@
-def checkout_view(request):
+"""def checkout_view(request):
     print('nanna')
     customer = request.user
     user_form = user_update_info.UpdateUserForm(instance=request.user)
@@ -18,4 +18,7 @@ def checkout_view(request):
             'user_address_form': user_address_form,
             'user_card_form': user_card_form,
             'user_form':user_form}
-    return render(request, 'user/checkout_overview.html', context=context)
+    return render(request, 'user/checkout_overview.html', context=context)"""
+from datetime import datetime
+print('NANNA')
+print(datetime.now())

@@ -1,10 +1,11 @@
+from datetime import datetime
+
 from django.contrib.auth.forms import UserCreationForm,PasswordChangeForm
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 
 import ship_o_cereal.models
-from user.forms import credit_card_form, address_form, add_to_cart, add_to_cart_test, user_update_info, profile_form, \
-    order_form, change_pw
+from user.forms import credit_card_form, address_form, add_to_cart, add_to_cart_test, user_update_info, profile_form
 from user.forms import *
 from user.forms.user_create_form import SignupForm
 from django.contrib.auth import get_user_model
@@ -56,6 +57,8 @@ def checkout_view(request):
                        'user_card':user_card,
                        'customer':customer,
                        'cart': ship_o_cereal.models.CartFolio.objects.filter(userId=customer)}
+            if request.method == 'POST':
+                makeOrder(request,user_address,user_card)
             return render(request, 'user/checkout_overview.html',context)
         else:
             return checkout_card(request)
@@ -69,7 +72,8 @@ def checkout_address(request):
             new_address = form.save(commit=False)
             new_address.userId = request.user
             new_address.save()
-            return redirect('CartView')
+            print('IM HERE')
+            return checkout_view(request)
 
     user_address_form = address_form.AddressCreateForm()
     context = {'form':user_address_form}
@@ -140,37 +144,34 @@ def address(request):
 def addToCart(request, productId, amount):
     form = add_to_cart.AddToCart(data=request.POST)
     userId = request.user.id
-    print('USER',userId)
     if userId:
-        print('In IF')
         currentCart = Carts.objects.get(userId_id=userId)
         if not currentCart:
             newCart(request, userId)
             currentCart = Carts.objects.get(userId_id=userId)
-        print(cart_view(currentCart))
         cartRow = form.save(commit=False)
         cartRow.amount = amount
         cartRow.productId_id = productId
         cartRow.cartId_id = currentCart.cartId
         cartRow = form.save()
-    print(productId)
     return render(request, 'store/add_to_cart.html', {'form': form})
 
 
-def makeOrder(request):
-    form = order_form.OrderForm(data=request.POST)
+def makeOrder(request,user_address,user_card):
     userId = request.user.id
-    print('USER',request.user.id)
-    """if userId:
-        currentCart = Carts.objects.get(userId_id=userId)
+    if userId:
+        currentCart = CartFolio.objects.get(userId_id=userId)
         if not currentCart:
             return redirect('home')
-        print(cart_view(currentCart))
-        theOrder = form.save(commit=False)
-        theOrder.addrId = Addresses.objects.filter(userId=userId)
-        theOrder.cardId = Creditcards.objects.filter(userId=userId)
-        theOrder.userId = request.user
-        theOrder.save()"""
+        print(request.user.id)
+        new_order = Orders()
+        new_order.userId = request.user
+        new_order.date = datetime.now()
+        new_order.addrId_id = user_address.addrId
+        new_order.cardId_id = user_card.cardId
+        new_order.save()
+        currentCart.remove()
+        return redirect('home')
     return redirect('userprofielView')
 
 

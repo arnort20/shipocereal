@@ -21,7 +21,7 @@
                         <h2 class="custinfo__text " id="name">{{ customer.first_name}} {{ customer.last_name}}</h2>
                     <label class="address__label col-md-12" for="street">Götuheiti:</label>
                         <h2 class="custinfo__text " id="street">{{ user_address.address}}</h2>
-                    {% if user_address.apt_num != 'None' %}
+                    {% if user_address.apt_num != None %}
                         <h2 class="white_space col-md-12 "></h2>
                         <label class="address__label-small col-md-5" for="apt_num">Íbúðar númber:</label>
                         <label class="address__label-small col-md-5" for="zip">Póstfang:</label>
