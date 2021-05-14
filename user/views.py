@@ -162,7 +162,7 @@ def newCart(request, userId):
 def creditcard(request):
     card = Creditcards.objects.filter(userId_id=request.user.id).first()
     if card:
-        exp_date = "({}/{})".format(card.month,card.year)
+        exp_date = "({}/{})".format(card.month, card.year)
         card_num = "****-****-****-"+card.cardNumber[12:]
         cardname = card.cardname
     else:
@@ -182,16 +182,16 @@ def creditcard(request):
             return redirect('CreditcardView')
 
     form = credit_card_form.CreditcardCreateForm()
-    context = {'form': form ,'card_num':card_num,'name':cardname,'exp_date':exp_date}
-    return render(request, 'user/creditcard.html',context)
+    context = {'form': form, 'card_num': card_num, 'name': cardname, 'exp_date': exp_date}
+    return render(request, 'user/creditcard.html', context)
 
 
 def user_profile(request):
     profile = Profile.objects.filter(user=request.user).first()
     updateUser_form = user_update_info.UpdateUserForm(instance=request.user)
     updateProfile_form = profile_form.ProfileForm(instance=profile)
-    context = {'updateUser_form':updateUser_form,'updateProfile_form':updateProfile_form}
-    return render(request, 'user/profile.html',context)
+    context = {'updateUser_form': updateUser_form, 'updateProfile_form':updateProfile_form}
+    return render(request, 'user/profile.html', context)
 
 def update_user_view(request):
     if request.method == 'POST':
@@ -204,8 +204,8 @@ def update_user_view(request):
             user.save()
             return redirect('userprofielView')
     updateUser_form = user_update_info.UpdateUserForm(instance=request.user)
-    context = {'updateUser_form':updateUser_form,}
-    return render(request, 'user/profile.html',context)
+    context = {'updateUser_form':updateUser_form}
+    return render(request, 'user/profile.html', context)
 
 def update_profile_view(request):
     profile = Profile.objects.filter(user=request.user).first()
@@ -226,8 +226,8 @@ def Changepw_view(request):
             print(changepw_form.new_password)
             return redirect('ChangepwView')
     changepw_form = PasswordChangeForm(request.user)
-    context = {'form':changepw_form}
-    return render(request, 'user/changepw.html',context)
+    context = {'form': changepw_form}
+    return render(request, 'user/changepw.html', context)
 
 
 
