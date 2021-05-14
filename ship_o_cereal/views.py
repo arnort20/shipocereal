@@ -53,6 +53,23 @@ def merch_cart(request, productId):
         theCart.save()
     return redirect('MerchView')
 
+def search_cart(request, productId):
+    if not request.user.is_authenticated:
+        return redirect('login')
+    cartRelation = CartFolio.objects.filter(productId=Products.objects.filter(pk=productId).first(), userId=request.user)
+
+    if not cartRelation:
+        cart = CartFolio()
+        cart.productId = Products.objects.filter(pk=productId).first()
+        cart.userId = request.user
+        cart.amount = 1
+        cart.save()
+    else:
+        theCart = cartRelation.first()
+        theCart.amount += 1
+        theCart.save()
+    return redirect('home')
+
 
 def prod_view(request):
     # allProducts = Products.objects.all()
