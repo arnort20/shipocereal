@@ -50,9 +50,9 @@ def popularitem(request):
     return render(request, 'store/popularitems.html', context=allProducts)
 
 
-def prod_by_id(request, productId):
+def prod_by_id(request,productId):
     context = {'product': Products.objects.get(pk=productId)}
-    return render(request, 'store/product_view.html', context=context)
+    return render(request, 'store/product_view.html',context)
 
 
 def merch_view(request):

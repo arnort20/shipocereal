@@ -5,7 +5,7 @@
             <title>Ship O' Cereal</title>
 
     {% for tshirt in tshirts %}
-        <a href="/store/{{ product.productId }}">
+        <a href="/store/{{ tshirt.productId }}">
             <div class="card col-sm-4" id="{{ tshirts.typeId }}">
                 <div class="middle"><img src="{% static 'productPictures/' %}{{ tshirt.image }}" alt="skal" width="300" height="250">
                     <h5>{{ tshirt.name }} - {{ tshirt.price }}</h5>

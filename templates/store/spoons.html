@@ -5,7 +5,7 @@
             <title>Ship O' Cereal</title>
 
     {% for spoon in spoons %}
-        <a href="/store/{{ product.productId }}">
+        <a href="/store/{{ spoon.productId }}">
             <div class="card col-sm-4" id="{{ spoons.typeId }}">
                 <div class="middle"><img src="{% static 'productPictures/' %}{{ spoon.image }}" alt="skal" width="300" height="250">
                     <h5>{{ spoon.name }} - {{ spoon.price }}</h5>
