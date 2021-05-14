@@ -45,14 +45,30 @@ def cart_view(request):
 
     return render(request, 'user/cart.html', context=context)
 
+    """credits = ship_o_cereal.models.Creditcards.objects.filter(userId=customer).first()
+    addressers = ship_o_cereal.models.Addresses.objects.filter(userId=customer)
+    if not credits:
+        credits = ''
+        new_card = credit_card_form.CreditcardCreateForm()
+    if not addressers:
+        addressers = ''
+        new_address = address_form.AddressCreateForm()"""
 
 def checkout_view(request):
     customer = request.user
-    credits = ship_o_cereal.models.Creditcards.objects.filter(userId=customer)
-    addressers = ship_o_cereal.models.Addresses.objects.filter(userId=customer)
+    user_form = user_update_info.UpdateUserForm(instance=request.user)
+    user_card = ship_o_cereal.models.Creditcards.objects.filter(userId=customer).first()
+    user_address = ship_o_cereal.models.Addresses.objects.filter(userId=customer).first()
+    if request.method == 'POST':
+        print('HAHAH')
+
+    user_form = user_update_info.UpdateUserForm(instance=request.user)
+    user_card_form = credit_card_form.CreditcardCreateForm(instance=user_card)
+    user_address_form = address_form.AddressCreateForm(instance=user_address)
     context = {'cart': ship_o_cereal.models.CartFolio.objects.filter(userId=customer),
-            'creditcards': credits[:1],
-            'addresses': addressers[:1]}
+            'user_address_form': user_address_form,
+            'user_card_form': user_card_form,
+            'user_form':user_form}
     return render(request, 'user/checkout.html', context=context)
 
 
@@ -122,7 +138,6 @@ def addToCart(request, productId, amount):
 def makeOrder(request):
     form = order_form.OrderForm(data=request.POST)
     userId = request.user.id
-    print(userId)
     if userId:
         currentCart = Carts.objects.get(userId_id=userId)
         if not currentCart:
@@ -146,8 +161,14 @@ def newCart(request, userId):
 
 def creditcard(request):
     card = Creditcards.objects.filter(userId_id=request.user.id).first()
-    exp_date = "({}/{})".format(card.month,card.year)
-    card_num = "****-****-****-"+card.cardNumber[12:]
+    if card:
+        exp_date = "({}/{})".format(card.month,card.year)
+        card_num = "****-****-****-"+card.cardNumber[12:]
+        cardname = card.cardname
+    else:
+        card_num = ''
+        exp_date = ''
+        cardname = ''
     if request.method == 'POST':
         form = credit_card_form.CreditcardCreateForm(data=request.POST)
         if form.is_valid:
@@ -161,7 +182,7 @@ def creditcard(request):
             return redirect('CreditcardView')
 
     form = credit_card_form.CreditcardCreateForm()
-    context = {'form': form,'card_num':card_num,'name':card.cardname,'exp_date':exp_date}
+    context = {'form': form ,'card_num':card_num,'name':cardname,'exp_date':exp_date}
     return render(request, 'user/creditcard.html',context)
 
 

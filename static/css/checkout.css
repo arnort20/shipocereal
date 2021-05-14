@@ -1,3 +1,6 @@
+body,html{
+    background-color: #FFF7DF;
+}
 .container__left{
     height: 200%;
     margin-top: 3%;
@@ -5,7 +8,6 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    background-color: orange;
 }
 .checkout_row{
     margin: 0;
@@ -16,103 +18,12 @@
     width: 100%;
 }
 
-.register__form{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .checkout__column{
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-}
-.column__year{
-    justify-content: center;
-}
-.column__month{
-    justify-content: flex-end;
-}
-
-.checkout__title{
-    margin:2% 0 0 5%;
-}
-.checkout__button{
-    height: 65%;
-    width: 50%;
-    border: 0;
-    border-radius: 5%;
-    margin:3% 0 0 42%;
-    background-color: #89053B;
-    color: white;
-    font-size: 1.3vw;
-}
-.checkout__label{
-    font-size: 1.5vw;
-    height: 20%;
-}
-.checkout__label-name{
-    margin: 5% 0 0 0;
-}
-.checkout__label-street{
-    margin:7% 0 0 0;
-}
-.checkout__label-address{
-    margin: 10% 0 0 0;
-}
-.checkout__label-town{
-    margin: 5% 0 0 10%;
-}
-.checkout__label-country{
-    margin: 5% 0 0 10%;
-}
-.checkout__label-year,
-.checkout__label-month,
-.checkout__label-cvc{
-    width: 85%;
-    height: 30%;
-    margin: 10% 0 0 0;
-}
-
-.checkout__input,.checkout__select{
-    background-color: #EEEEEE;
-    color: #030303;
-    border: 0;
-}
-.checkout__input-name{
-    margin: 0 0 5% 0;
-    width: 100%;
-    height: 30%;
-}
-.checkout__input-street{
-    margin: 0 0 10% 0;
-    width: 90%;
-    height: 30%;
-}
-.checkout__input-address{
-    margin: 0 0 16% 0;
-    width: 90%;
-    height: 30%;
-}
-.checkout__input-town{
-    margin: 0 0 10% 10%;
-    width: 80%;
-    height: 30%;
-}
-.checkout__input-year,
-.checkout__input-month,
-.checkout__input-cvc{
-    width: 85%;
-    height: 30%;
-    margin: 0 0 10% 0;
-}
-
-.checkout__select{
-    width: 80%;
-    height: 30%;
-    margin: 0 0 10% 10%;
 }
 
 .checkout__leftcol{
@@ -124,11 +35,9 @@
     justify-content: flex-start;
 }
 .checkout__leftcol-row{
-    height: 30%;
     width: 100%;
     margin: 0;
     padding: 0;
-    background-color: white;
     border: 1px solid black;
 }
 .row__header{
@@ -136,13 +45,135 @@
     margin: 0;
     padding: 0;
 }
+.checkout__title{
+    margin-left: 5%;
+}
+
+.customerinfo__container{
+    height: 35%;
+    display: flex;
+    align-items: flex-start;
+}
+
+/*ADDRESS*/
+.newAddress__container{
+    height: 85%;
+}
+.address__form{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+}
+.address__input,
+.myinfo__input{
+    width: 80%;
+    margin-left: 10%;
+}
+.address__input-small,
+#id_first_name,
+#id_last_name{
+    width: 35%;
+    display: inline;
+    margin-left: 10%;
+}
+.div__label{
+    width: 80%;
+    display: flex;
+    flex-wrap: nowrap;
+    margin-left:10%;
+
+}
+.address__p{
+    font-size: 1.5vw;
+    margin: 0;
+}
+.address__label,
+.myinfo__label{
+    font-size: 1.5rem;
+    margin-left:10%;
+}
+.country-select-flag{
+    display: none;
+}
+
+
+
+/*CARD*/
+.cardinfo__container{
+    height: 25%;
+    display: flex;
+    align-items: flex-start;
+}
+.newCard__container{
+    height: 85%;
+}
+.newCard__form{
+    height: 100%;
+    margin: auto;
+    padding-top: 2%;
+
+}
+.cardinfo__label{
+    font-size: 1.2vw;
+    margin-left: 10%;
+    margin-bottom: 2%;
+}
+.select__label{
+    height: 100%;
+}
+.cardinfo__select-labels{
+    width: 80%;
+    height: 6%;
+    margin-left: 10%;
+    margin-bottom: 2%;
+    display: flex;
+    font-size: 1.2vw;
+}
+.cardinfo__input{
+    width: 80%;
+    margin: auto auto 3% auto;
+}
+.cardinfo__select{
+    width: 26%;
+    margin: auto auto 2% auto;
+    display: inline;
+}
+.cardinfo__month{
+    margin-left: 10%;
+}
+.cardinfo__button{
+    width: 60%;
+    margin: 2% auto 2% 20%;
+}
+
+
+.delivery__container{
+    height: 20%;
+}
 .checkout__delivery-row{
     height: 85%;
     padding:0;
     margin: 0;
-    border: 1px solid black;
+    display: flex;
+    justify-content: center;
 }
 
+.delivery__select{
+    margin-top: 2%;
+    height: 20%;
+
+}
+
+.dropdown-menu{
+    height: 60%;
+}
+.delivery__li{
+    height: 33.33%;
+    margin-top:0.5% ;
+}
+.dropdown-item{
+    height: 100%;
+}
 
 .container__right{
     position: absolute;
@@ -152,9 +183,7 @@
     display: flex;
     flex-wrap: wrap;
 }
-.amma{
-    background-color: black;
-}
+
 .row__header-right{
     padding: 0 0 2% 0;
 }
@@ -180,4 +209,17 @@
     padding: 3% 0 3% 0;
     margin-top: 2%;
     margin-bottom: 2%;
+    text-align: center;
+    text-decoration: none;
 }
+.checkout__button-confirm:hover{
+    background-color: #1b3f02;
+    color: white;
+}
+
+.register__form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
