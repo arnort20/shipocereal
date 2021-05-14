@@ -221,7 +221,7 @@ def update_profile_view(request):
 
 def Changepw_view(request):
     if request.method == 'POST':
-        changepw_form = PasswordChangeForm(request.user,data=request.POST)
+        changepw_form = PasswordChangeForm(request.user, data=request.POST)
         if changepw_form.is_valid():
             print(changepw_form.new_password)
             return redirect('ChangepwView')
