@@ -21,6 +21,7 @@ urlpatterns = [
     path('mug/<int:productId>/addtocart', views.merch_cart, name='addtocart'),
     path('spoon/<int:productId>/addtocart', views.merch_cart, name='addtocart'),
     path('tshirt/<int:productId>/addtocart', views.merch_cart, name='addtocart'),
-    path('milk/<int:productId>/addtocart', views.merch_cart, name='addtocart')
+    path('milk/<int:productId>/addtocart', views.merch_cart, name='addtocart'),
+    path('search/<int:productId>/addtocart', views.search_cart, name="addToCart"),
 
 ]
