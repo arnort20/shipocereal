@@ -28,6 +28,7 @@ div{
     height: 95%;
     margin-left: 2%;
     margin-bottom: 2%;
+    cursor: pointer;
 }
 .banner__logoText{
     position: absolute;

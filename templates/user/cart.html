@@ -36,22 +36,21 @@
                 </div>
                 <div class="col-md-6" id="{{ item.folioId }}" >
                     <h2 class="cart__product-text">{{ item.productId.name }}</h2>
-                    <label for="product-quantity" class="cart__label">Magn:</label>
-                    <p>{{ item.amount }}</p>
-                    <h2 class="cart__product-text" id="subtotal{{ item.folioId }}"></h2>
+                    <label for="product-quantity" class="cart__label">Magn: {{ item.amount }}</label>
+                    <h2 class="cart__product-text" id="subtotal{{ item.folioId }}">ISK</h2>
 
                 </div>
                 <div class="col-md-3 cart__column cart__column-buttons" >
                     <a class="cart__button button__red cart__button-top" href="removeitem/{{ item.productId.productId }}">Fjarlægja úr körfu</a>
                 </div>
             </div>
-<<<<<<< HEAD
+
             <script>
                 function myFunction() {
                     let c = parseInt({{ item.amount }}) * parseInt({{ item.productId.price }});
                     {#document.getElementById("subtotal{{ item.folioId }}").innerHTML = "aaa";#}
                     {#console.log('aaa')#}
-                    document.getElementById("subtotal{{ item.folioId }}").innerHTML = c.toString();
+                    document.getElementById("subtotal{{ item.folioId }}").innerHTML = c.toString()+" ISK";
                 }
                 myFunction()
             </script>
@@ -61,7 +60,7 @@
         </div>
 
         <div class="col-md-4 container__cart-right-col">
-            <div class="row container__right-row cart__header-row">
+            <div class="row container__right-row">
                 <h2 class="cart__text cart__title">Samtals</h2>
             </div>
 
