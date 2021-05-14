@@ -121,5 +121,18 @@ def searchbar(request):
         return render(request, 'SearchSite.html')
 
 
+def index(request):
+    if 'search_filter' in request.GET:
+        search_filter = request.GET['search_filter']
+        products = [{
+            'id': x.id,
+            'name': x.name,
+            'description': x.description,
+            'firstimage': x.product.object.filter.first().image
+        } for x in product.objects.filter(name__icontaints=search_filter) ]
+        return jsonResponse({'data': products})
+        context = {'products': product.objects.all().order_by('name')}
+        return render(request, 'products/filter.html', context)
+
 
 
