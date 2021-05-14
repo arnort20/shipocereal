@@ -68,6 +68,25 @@ def bowl_view(request):
     context = {'bowls': bowls[:5]}
     return render(request, 'store/subcategory.html', context=context)
 
+def spoon_view(request):
+    spoons = Products.objects.filter(typeId=3)
+    context = {'spoons': spoons[:5]}
+    return render(request, 'store/spoons.html', context=context)
+
+def mug_view(request):
+    mugs = Products.objects.filter(typeId=4)
+    context = {'mugs': mugs[:5]}
+    return render(request, 'store/mugs.html', context=context)
+
+def tshirt_view(request):
+    tshirts = Products.objects.filter(typeId=5)
+    context = {'tshirts': tshirts[:5]}
+    return render(request, 'store/tshirts.html', context=context)
+
+def milk_view(request):
+    milks = Products.objects.filter(typeId=6)
+    context = {'milks': milks[:5]}
+    return render(request, 'store/milks.html', context=context)
 
 def frontPage(request):
     return render(request, '')
