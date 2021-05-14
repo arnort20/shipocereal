@@ -1,31 +1,29 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+    <link rel="stylesheet" href=" {% static 'css/product_view.css' %} ">
+    <div class="product__content col-md-11">
+        <div class="col-md-6 content__product product_column" >
+            <div class="col-md-5 image__container prod">
+                <img class="col-md-10 product__image" src="{% static 'productPictures/'%}{{ product.image }}" alt="MYND">
+            </div>
 
+            <div class="col-md-7 productinfo__column product_column">
+                <h1 class="col-md-12 product__title" >{{ product.name }}</h1>
 
-        <link rel="stylesheet" href=" {% static 'css/product_view.css' %} ">
-
-<div>
-        <div class="col-md-8 content__product" >
-            <div class="row product__row">
-                <div class="col-md-4 product__column image__container">
-                    <img class="col-md-10 product__image" src="{% static 'productPictures/'%}{{ product.image }}" alt="MYND">
+                <div class="product__description ">
+                    <h2 class="h2__text">Lýsing:</h2>
+                    <p class="p__text product__subitem">{{ product.description }}</p>
                 </div>
 
-                <div class="col-md-7 product__column">
-                    <h1 class="col-md-12 h1__text" >{{ product.name }}</h1>
-
-                    <div class="product__description ">
-                        <h2 class="h2__text">Lýsing:</h2>
-                        <p class="p__text product__subitem">{{ product.description }}</p>
-                    </div>
-
+                {% if product.isFood %}
                     <div class="product__ingredients">
+
                         <h2 class="h2__text">Innihald:</h2>
-                        <p class="p__text product__subitem">Corn(91%),sugar,salt,vitamins,minerals</p>
+                        <p class="p__text product__subitem">{{ nutriens.ingredients }}</p>
                     </div>
 
-                    <div class="product__nutritions">
+                    <!--<div class="product__nutritions">
                         <h2 class="h2__text">Næringargildi:</h2>
                         <table class="product__nutritions-table product__subitem">
                             <thead>
@@ -49,26 +47,22 @@
                             </tr>
                             </tbody>
                         </table>
-                    </div>
-                </div>
+                    </div>-->
+                {% endif %}
             </div>
         </div>
 
-        <div class="col-md-3 content__price " >
+        <div class="col-md-4 content__price " >
             <div class="row product__row-price">
-                <h1 class="col-md-4 h1__text font__bold price__text a" >Verð:</h1>
-                <h1 class="col-md-5 h1__text a"> {{ product.price }}</h1>
-                <a class="btn btn-success btn-sm add" type="submit" href="{{ product.productId }}/addtocart">Setja í körfu</a>
-
-
+                <h1 class="col-md-4 price__text col-md-11" ><b>Verð:</b> {{ product.price }} ISK </h1>
+                <a class="btn btn-success btn-sm button__green button__addtocart col-md-11 " type="submit" href="{{ product.productId }}/addtocart">Setja í körfu</a>
             </div>
 
-            <div class="row product__row-review">
+            <!--<div class="row product__row-review">
                 <h1 class="col-md-12 h1__text" >Setja ummæli</h1>
                 <input type="text" class="col-md-12 product__input" placeholder="Hvað fannst þér um þessa vöru?">
                 <button class="col-md-9 product__button button__blue">Senda</button>
-            </div>
+            </div>-->
         </div>
-</div>
-        <script src="https://kit.fontawesome.com/59dedd510d.js" crossorigin="anonymous"></script>
+    </div>
 {% endblock %}

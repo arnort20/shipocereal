@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,get_object_or_404
 from ship_o_cereal.models import *
 
 
@@ -51,6 +51,9 @@ def popularitem(request):
 
 
 def prod_by_id(request,productId):
+    print("product",productId)
+    nutriens = Nutrients.objects.filter(notVegan=True)
+    print("nut", nutriens)
     context = {'product': Products.objects.get(pk=productId)}
     return render(request, 'store/product_view.html',context)
 

@@ -51,7 +51,12 @@ class Products(models.Model):
 class Nutrients(models.Model):
     # við ætluðum að hafa filtera eftir ofnæmisvöldum en tíminn gaf ekki leyfi til þess
     productId = models.OneToOneField(Products, on_delete=models.CASCADE, primary_key=True)
-    nutritionLabel = models.CharField(max_length=999, null=True)
+    calories = models.FloatField(null=True)
+    fat = models.FloatField(null=True)
+    carbs = models.FloatField(null=True)
+    protein = models.FloatField(null=True)
+    ingredients = models.CharField(max_length=9999, null=True)
+    """nutritionLabel = models.CharField(max_length=999, null=True)
     notVegan = models.BooleanField(default=False)
     gluten = models.BooleanField(default=False)
     wheat = models.BooleanField(default=False)
@@ -65,7 +70,7 @@ class Nutrients(models.Model):
     milk = models.BooleanField(default=False)
     oats = models.BooleanField(default=False)
     egg = models.BooleanField(default=False)
-    sulphites = models.BooleanField(default=False)
+    sulphites = models.BooleanField(default=False)"""
 
 
 
