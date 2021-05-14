@@ -27,6 +27,10 @@ def new_cart_test(request):
         'form': add_to_cart_test.FolioCreateForm()
 
     })
+def remove_from_cart(request):
+    print(1)
+    return
+
 
 
 def cart_view(request):

@@ -55,6 +55,8 @@ def merch_cart(request, productId):
 
 
 
+
+
 def prod_view(request):
     # allProducts = Products.objects.all()
     allProducts = {'products': Products.objects.all()}
