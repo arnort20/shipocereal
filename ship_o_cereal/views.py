@@ -54,9 +54,6 @@ def merch_cart(request, productId):
     return redirect('MerchView')
 
 
-
-
-
 def prod_view(request):
     # allProducts = Products.objects.all()
     allProducts = {'products': Products.objects.all()}
