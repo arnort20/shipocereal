@@ -3,6 +3,9 @@
 {% block content %}
     <link rel="stylesheet" href=" {% static 'css/allitems.css' %} ">
             <title>Ship O' Cereal</title>
+{#    {% include 'store/filter_search.html' %}#}
+
+
         <link rel="stylesheet" href=" {% static 'css/subcategory.css' %} ">
 
         <div class="row" id="filters">
@@ -20,7 +23,7 @@
                 <label for="filters__price" class="filters__labels">Verð</label>
                 <select name="filters__price" id="filters__price" class="filters__select">
                     <option value="filler">Velja:</option>
-                        <option value="HighestToLowest">Hæðsta til Lægsta</option>
+                    <a href="/store/{{ product.productId }}"><option value="HighestToLowest">Hæðsta til Lægsta</option> </a>
                         <option value="LowestToHighest">Lægsta til Hæðsta</option>
                         <option value="priceBar">Bæta við verðstilli??</option>
                 </select>
@@ -87,9 +90,10 @@
                 </div>
             </form>
     {% endfor %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
-    <script src="{% static 'js/products.js' %}" > </script>
 {% endblock %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" ></script>
+
+    <script src="{% static 'js/products.js' %}" > </script>
 
 
 
