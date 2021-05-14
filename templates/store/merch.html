@@ -49,7 +49,6 @@
                         </div>
                         {% endfor %}
                     </div>
-
         </div>
 
 <!-- BOLLAR -->
@@ -65,7 +64,6 @@
 
             </div>
 
-            <!--SETJA INN FOR LOOP FYRIR BOLLA -->
                     <div class="row container__items-row">
                         {% for mug in mugs %}
                         <div class="col-md-2 container__items-column">
@@ -93,7 +91,6 @@
 
             </div>
 
-
                     <div class="row container__items-row">
                         {% for spoon in spoons %}
                         <div class="col-md-2 container__items-column">
@@ -104,18 +101,15 @@
                         </div>
                         {% endfor %}
                     </div>
-
-        </div>
+            </div>
 
 
     <!-- BOLIR -->
-                <div class="row container">
+            <div class="row container">
             <div class="row container__header">
-
                 <div class="col-md-6 container__header-column">
                     <h2 class="container__header-text">Bolir</h2>
                 </div>
-
                 <div class="col-md-6 container__header-column">
                     <button class="container__header-button" onclick="location.href='{% url 'TShirtView' %}'" >Skoða Meira</button>
                 </div>
@@ -123,31 +117,28 @@
             </div>
 
                     <div class="row container__items-row">
-                         {% for tshirt in tshirts %}
+                        {% for tshirt in tshirts %}
                         <div class="col-md-2 container__items-column">
-                            <img src="{% static 'productPictures/'%}{{ tshirt.image }}" alt="skal" class="container__item-image">
+                            <img src="{% static 'productPictures/'%}{{ tshirt.image }}" alt="tshirt" class="container__item-image">
                             <div class="container__item-description">
                                 <p>{{ tshirt.name }}</p>
                             </div>
                         </div>
                         {% endfor %}
                     </div>
-
-        </div>
+            </div>
 
 <!-- MJÓLKURVÖRUR -->
-    <div class="row container">
-        <div class="row container__header">
-            <div class="col-md-6 container__header-column">
-                <h2 class="container__header-text">Mjólkurvörur</h2>
+            <div class="row container">
+            <div class="row container__header">
+                <div class="col-md-6 container__header-column">
+                    <h2 class="container__header-text">Mjólkurvörur</h2>
+                </div>
+                <div class="col-md-6 container__header-column">
+                    <button class="container__header-button" onclick="location.href='{% url 'MilkView' %}'" >Skoða Meira</button>
+                </div>
+
             </div>
-
-            <div class="col-md-6 container__header-column">
-                <button class="container__header-button" onclick="location.href='{% url 'MilkView' %}'" >Skoða Meira</button>
-            </div>
-
-        </div>
-
                     <div class="row container__items-row">
                         {% for milk in milks %}
                         <div class="col-md-2 container__items-column">
