@@ -17,5 +17,10 @@ urlpatterns = [
     path('<int:productId>/addtocart/', views.new_cart_test, name="addToCart"),
     path('popular/<int:productId>/addtocart', views.pop_cart, name="addToCart"),
     path('store/<int:productId>/addtocart', views.new_cart_test, name="addToCart"),
+    path('bowl/<int:productId>/addtocart', views.merch_cart, name='addtocart'),
+    path('mug/<int:productId>/addtocart', views.merch_cart, name='addtocart'),
+    path('spoon/<int:productId>/addtocart', views.merch_cart, name='addtocart'),
+    path('tshirt/<int:productId>/addtocart', views.merch_cart, name='addtocart'),
+    path('milk/<int:productId>/addtocart', views.merch_cart, name='addtocart')
 
 ]
