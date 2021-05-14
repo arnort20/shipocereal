@@ -47,6 +47,10 @@ body,html{
 }
 .product__subitem{
     margin-left: 5%;
+    width:90%;
+}
+.product__subitem-ingredients{
+    font-size: 0.6rem;
 }
 
 .product__nutritions-table{

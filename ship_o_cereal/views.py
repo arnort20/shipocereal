@@ -67,10 +67,9 @@ def popularitem(request):
 
 
 def prod_by_id(request,productId):
-    print("product",productId)
-    nutriens = Nutrients.objects.filter(notVegan=True)
-    print("nut", nutriens)
-    context = {'product': Products.objects.get(pk=productId)}
+    #nutriens = Nutrients.objects.filter(pk=productId).first()
+    context = {'product': Products.objects.get(pk=productId),
+               'nutriens':Nutrients.objects.filter(pk=productId).first()}
     return render(request, 'store/product_view.html',context)
 
 

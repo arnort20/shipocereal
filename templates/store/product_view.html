@@ -20,10 +20,10 @@
                     <div class="product__ingredients">
 
                         <h2 class="h2__text">Innihald:</h2>
-                        <p class="p__text product__subitem">{{ nutriens.ingredients }}</p>
+                        <p class="p__text product__subitem product__subitem-ingredients">{{ nutriens.ingredients }}</p>
                     </div>
 
-                    <!--<div class="product__nutritions">
+                    <div class="product__nutritions">
                         <h2 class="h2__text">Næringargildi:</h2>
                         <table class="product__nutritions-table product__subitem">
                             <thead>
@@ -39,15 +39,15 @@
                             <tbody>
                             <tr>
                                 <td scope="col" class="table__space"></td>
-                                <td class="product__nutritions-td">180 g</td>
-                                <td class="product__nutritions-td">1 g</td>
-                                <td class="product__nutritions-td">42 g</td>
-                                <td class="product__nutritions-td">3 g</td>
+                                <td class="product__nutritions-td">{{ nutriens.calories }} g</td>
+                                <td class="product__nutritions-td">{{ nutriens.fat }} g</td>
+                                <td class="product__nutritions-td">{{ nutriens.carbs }} g</td>
+                                <td class="product__nutritions-td">{{ nutriens.protein }} g</td>
                                 <td scope="col" class="table__space"></td>
                             </tr>
                             </tbody>
                         </table>
-                    </div>-->
+                    </div>
                 {% endif %}
             </div>
         </div>
