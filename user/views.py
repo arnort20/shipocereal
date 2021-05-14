@@ -45,31 +45,47 @@ def cart_view(request):
 
     return render(request, 'user/cart.html', context=context)
 
-    """credits = ship_o_cereal.models.Creditcards.objects.filter(userId=customer).first()
-    addressers = ship_o_cereal.models.Addresses.objects.filter(userId=customer)
-    if not credits:
-        credits = ''
-        new_card = credit_card_form.CreditcardCreateForm()
-    if not addressers:
-        addressers = ''
-        new_address = address_form.AddressCreateForm()"""
 
 def checkout_view(request):
     customer = request.user
-    user_form = user_update_info.UpdateUserForm(instance=request.user)
-    user_card = ship_o_cereal.models.Creditcards.objects.filter(userId=customer).first()
     user_address = ship_o_cereal.models.Addresses.objects.filter(userId=customer).first()
-    if request.method == 'POST':
-        print('HAHAH')
+    user_card = ship_o_cereal.models.Creditcards.objects.filter(userId=customer).first()
+    if user_address:
+        if user_card:
+            context = {'user_address':user_address,
+                       'user_card':user_card,
+                       'customer':customer,
+                       'cart': ship_o_cereal.models.CartFolio.objects.filter(userId=customer)}
+            return render(request, 'user/checkout_overview.html',context)
+        else:
+            return checkout_card(request)
+    else:
+        return checkout_address(request)
 
-    user_form = user_update_info.UpdateUserForm(instance=request.user)
-    user_card_form = credit_card_form.CreditcardCreateForm(instance=user_card)
-    user_address_form = address_form.AddressCreateForm(instance=user_address)
-    context = {'cart': ship_o_cereal.models.CartFolio.objects.filter(userId=customer),
-            'user_address_form': user_address_form,
-            'user_card_form': user_card_form,
-            'user_form':user_form}
-    return render(request, 'user/checkout.html', context=context)
+def checkout_address(request):
+    if request.method == 'POST':
+        form = address_form.AddressCreateForm(data=request.POST)
+        if form.is_valid():
+            new_address = form.save(commit=False)
+            new_address.userId = request.user
+            new_address.save()
+            return redirect('CartView')
+
+    user_address_form = address_form.AddressCreateForm()
+    context = {'form':user_address_form}
+    return render(request, 'user/checkout_address.html',context)
+
+def checkout_card(request):
+    if request.method == 'POST':
+        form = credit_card_form.CreditcardCreateForm(data=request.POST)
+        if form.is_valid():
+            new_card = form.save(commit=False)
+            new_card.userId = request.user
+            new_card.save()
+            return redirect('CheckoutView')
+    user_card_form = credit_card_form.CreditcardCreateForm()
+    context = {'form':user_card_form}
+    return render(request, 'user/checkout_card.html',context)
 
 
 def signup_view(request):
@@ -100,16 +116,21 @@ def address(request):
     if request.method == 'POST':
         form = address_form.AddressCreateForm(data=request.POST)
         if form.is_valid():
-            address.address = request.POST['address']
-            apt_num = request.POST['apt_num']
-            if apt_num == '':
-                address.apt_num = None
+            if address:
+                address.address = request.POST['address']
+                apt_num = request.POST['apt_num']
+                if apt_num == '':
+                    address.apt_num = None
+                else:
+                    address.apt_num = int(apt_num)
+                address.zip = request.POST['zip']
+                address.country = request.POST['country']
+                address.town = request.POST['town']
+                address.save()
             else:
-                address.apt_num = int(apt_num)
-            address.zip = request.POST['zip']
-            address.country = request.POST['country']
-            address.town = request.POST['town']
-            address.save()
+                new_address = form.save(commit=False)
+                new_address.userId = request.user
+                new_address.save()
             return redirect('AddressView')
     form = address_form.AddressCreateForm()
     context = {'form': form, 'address': address}
@@ -119,8 +140,9 @@ def address(request):
 def addToCart(request, productId, amount):
     form = add_to_cart.AddToCart(data=request.POST)
     userId = request.user.id
-    print(userId)
+    print('USER',userId)
     if userId:
+        print('In IF')
         currentCart = Carts.objects.get(userId_id=userId)
         if not currentCart:
             newCart(request, userId)
@@ -138,7 +160,8 @@ def addToCart(request, productId, amount):
 def makeOrder(request):
     form = order_form.OrderForm(data=request.POST)
     userId = request.user.id
-    if userId:
+    print('USER',request.user.id)
+    """if userId:
         currentCart = Carts.objects.get(userId_id=userId)
         if not currentCart:
             return redirect('home')
@@ -147,7 +170,7 @@ def makeOrder(request):
         theOrder.addrId = Addresses.objects.filter(userId=userId)
         theOrder.cardId = Creditcards.objects.filter(userId=userId)
         theOrder.userId = request.user
-        theOrder.save()
+        theOrder.save()"""
     return redirect('userprofielView')
 
 
@@ -159,7 +182,7 @@ def newCart(request, userId):
 
 
 
-def creditcard(request):
+def creditcard(request,chekout=False):
     card = Creditcards.objects.filter(userId_id=request.user.id).first()
     if card:
         exp_date = "({}/{})".format(card.month,card.year)
@@ -172,13 +195,18 @@ def creditcard(request):
     if request.method == 'POST':
         form = credit_card_form.CreditcardCreateForm(data=request.POST)
         if form.is_valid:
-            card = Creditcards.objects.filter(userId_id=request.user.id).first()
-            card.cardname = request.POST['cardname']
-            card.cardNumber = request.POST['cardNumber']
-            card.month = request.POST['month']
-            card.year = request.POST['year']
-            card.cvc = request.POST['cvc']
-            card.save()
+            if card:
+                card = Creditcards.objects.filter(userId_id=request.user.id).first()
+                card.cardname = request.POST['cardname']
+                card.cardNumber = request.POST['cardNumber']
+                card.month = request.POST['month']
+                card.year = request.POST['year']
+                card.cvc = request.POST['cvc']
+                card.save()
+            else:
+                new_card = form.save(commit=False)
+                new_card.userId = request.user
+                new_card.save()
             return redirect('CreditcardView')
 
     form = credit_card_form.CreditcardCreateForm()

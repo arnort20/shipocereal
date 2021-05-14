@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static '/css/checkout.css' %}">
+
+    <div class="checkoutstage col-md-4">
+        <div class="row row__header">
+            <h1 class="checkout__title checkoutstage__title" >Greiðslumáti: </h1>
+        </div>
+        <form class="newCard__form checkoutstage__new_cardform" method="post">
+            {% csrf_token %}
+            {% for field in form %}
+                {% if field.auto_id == "id_cardname" %}
+                    <label class="cardinfo__label" for="{{ field.auto_id }}">Nafn á korti</label>
+                {% elif field.auto_id == "id_cardNumber" %}
+                    <label class="cardinfo__label" for="{{ field.auto_id }}">Kortanúmer</label>
+                {% elif field.auto_id == "id_month"%}
+                    <div class="cardinfo__select-labels">
+                        <p class="col-md-4 select__label">Mánuður</p>
+                        <p class="col-md-4 select__label">Ár</p>
+                        <p class="col-md-4 select__label">CVC</p>
+                    </div>
+                {% endif %}
+                {{ field }}
+            {% endfor %}
+            <input type="submit" class="btn btn-primary button__green address__confirm col-md-8" value="Staðfesta Heimilisfang">
+        </form>
+    </div>
+{% endblock %}

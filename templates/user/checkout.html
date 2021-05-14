@@ -9,6 +9,8 @@
 
     <div class="col-md-6 container__left">
 
+        <form method="post">
+        {% csrf_token %}
         <div class="col-md-11 checkout__leftcol">
             <div class="row checkout__leftcol-row customerinfo__container">
                 <div class="row row__header customerinfo__header">
@@ -18,8 +20,8 @@
                 </div>
 
                     <div class="newAddress__container">
-                        <form method="post" class="address__form col-md-12">
-                            {% csrf_token %}
+                        <!--<form method="post" class="address__form col-md-12">-->
+
                             {% for field in user_form %}
                                 {% if field.auto_id == 'id_first_name' %}
                                     <div class="div__label col-md-12">
@@ -47,7 +49,7 @@
                                 {% endif %}
                                 {{field}}
                             {% endfor %}
-                        </form>
+                        <!--</form>-->
                     </div>
             </div>
 
@@ -78,8 +80,8 @@
                     </div>
                 </div>
                 <div class="newCard__container">
-                    <form method="post" class="newCard__form">
-                    {% csrf_token %}
+                    <!--<form method="post" class="newCard__form">-->
+
                     {% for field in user_card_form %}
                             {% if field.auto_id == "id_cardname" %}
                                 <label class="cardinfo__label" for="{{ field.auto_id }}">Nafn á korti</label>
@@ -94,7 +96,7 @@
                             {% endif %}
                             {{ field }}
                         {% endfor %}
-                    </form>
+                    <!--</form>-->
                 </div>
             </div>
         </div>
@@ -156,12 +158,10 @@
         </div>
 
         <div class="row checkout_row row__button">
-            <!--href="checkout/makeorder"-->
-            <form method="post" action="{% url 'CheckoutView' %}" >
-                <input type="button" class="checkout__button-confirm button__green" value="Staðfesta Pöntun">
-            </form>
+            <a></a></q>
+            <input type="button" class="checkout__button-confirm button__green" value="Staðfesta Pöntun">
         </div>
-
+        </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 {% endblock %}

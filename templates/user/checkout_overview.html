@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static '/css/checkout.css' %}">
+
+    <div class="col-md-6 container__left">
+
+        <div class="col-md-11 checkout__leftcol">
+            <div class="row checkout__leftcol-row customerinfo__container">
+                <div class="row row__header customerinfo__header">
+                    <div class="col-md-6 checkout__column">
+                        <h1 class="checkout__title" >Upplýsingar</h1>
+                    </div>
+                </div>
+
+                <div class="address_container col-md-10">
+                    <label class="address__label col-md-12" for="name">Nafn:</label>
+                        <h2 class="custinfo__text " id="name">{{ customer.first_name}} {{ customer.last_name}}</h2>
+                    <label class="address__label col-md-12" for="street">Götuheiti:</label>
+                        <h2 class="custinfo__text " id="street">{{ user_address.address}}</h2>
+                    {% if user_address.apt_num != 'None' %}
+                        <h2 class="white_space col-md-12 "></h2>
+                        <label class="address__label-small col-md-5" for="apt_num">Íbúðar númber:</label>
+                        <label class="address__label-small col-md-5" for="zip">Póstfang:</label>
+                            <h2 class="white_space col-md-12 "></h2>
+                            <h2 class="custinfo__text " id="apt_num">{{ user_address.apt_num}}</h2>
+                            <h2 class="custinfo__text extra_margin" id="zip">{{ user_address.zip}}</h2>
+                    {% else %}
+                        <h2 class="white_space col-md-12 "></h2>
+                        <label class="address__label-small col-md-6" for="zip">Póstfang:</label>
+                        <h2 class="white_space col-md-12 "></h2>
+                        <h2 class="custinfo__text " id="zip">{{ user_address.zip}}</h2>
+                    {% endif %}
+                    <label class="address__label col-md-12" for="town">Kaupstaður:</label>
+                        <h2 class="custinfo__text" id="town">{{ user_address.town}}</h2>
+                    <label class="address__label col-md-12" for="country">Land:</label>
+                        <h2 class="custinfo__text" id="country">{{ user_address.country.name}}</h2>
+                </div>
+            </div>
+
+
+            <div class="row checkout__leftcol-row delivery__container">
+
+                <h1 class="delivery__title col-md-11" >Sendingarmáti</h1>
+
+
+                <div class="dropdown checkout__delivery-row col-md-11">
+                    <button class="btn btn-secondary dropdown-toggle delivery__select col-md-12" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        Veldu sendingarmáta
+                    </button>
+
+                    <ul class="dropdown-menu col-md-12" aria-labelledby="dropdownMenuButton1">
+                        <li class="delivery__li"><a class="dropdown-item">Heimsending</a></li>
+                        <li class="delivery__li"><a class="dropdown-item">Delux Heimsending</a></li>
+                        <li class="delivery__li"><a class="dropdown-item">Túrbó Heimsending</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="row checkout__leftcol-row cardinfo__container">
+                <div class="row row__header">
+                    <h1 class="checkout__title" >Greiðslumáti: </h1>
+                </div>
+                <div class="card__container col-md-10">
+                    <label class="cardinfo__label col-md-12" for="cardname">Nafn Korthafa:</label>
+                        <h2 class="cardinfo__text " id="cardname">{{ user_card.cardname}}</h2>
+                    <label class="cardinfo__label col-md-4" for="expdate">Gildistími:</label>
+                        <h2 class="cardinfo__text col-md-4" id="expdate">{{ user_card.month}}/{{ user_card.year}}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 container__right">
+
+        <div class="row checkout_row row__header-right">
+            <h1 class="checkout__title" >Samantekt:</h1>
+        </div>
+        {% for item in cart %}
+            <div class="row checkout_row checkout__row-item">
+                <div class="col-md-8 product__description-col">
+                    <p class="checkout__product-text product_name">{{ item.productId.name }}</p>
+                    <p class="checkout__product-text product Quantity">Magn: {{ item.amount }}</p>
+                </div>
+                <div class="col-md-3 product__description-col">
+                    <p class="checkout__product-text product-total  font__bold" id="subtotal{{ item.folioId }}"></p>
+                </div>
+                <script>
+                    function myFunction() {
+                        let c = parseInt({{ item.amount }}) * parseInt({{ item.productId.price }});
+                        document.getElementById("subtotal{{ item.folioId }}").innerHTML = "aaa";
+                        console.log('aaa')
+                        document.getElementById("subtotal{{ item.folioId }}").innerHTML = c.toString()+" ISK";
+                    }
+                    myFunction()
+                </script>
+            </div>
+        {% endfor %}
+        <div class="row checkout_row">
+            <div class="col-md-8 product__description-col">
+                <p class="checkout__product-text" id="delivery-type">Heimsending</p>
+            </div>
+            <div class="col-md-3 product__description-col">
+                <p class="checkout__product-text font__bold" id="delivery-price">1500 ISK</p>
+            </div>
+        </div>
+
+        <div class="row checkout_row">
+            <div class="col-md-8 product__description-col">
+                <p class="checkout__product-text product__text-total"> Heildarupphæð:</p>
+            </div>
+            <div class="col-md-3 product__description-col">
+                <p class="checkout__product-text product__text-total" id="order-total" ></p>
+            </div>
+            <script>
+                function getTotal() {
+                    let subtotals = document.getElementsByClassName("checkout__product-text product-total  font__bold");
+                    var summa = 0;
+                    var i;
+                    for (i = 0; i < subtotals.length; i++) {
+                        summa += parseInt(subtotals[i].innerHTML);
+                    }
+                    document.getElementById("order-total").innerHTML = summa.toString();
+                }
+                getTotal();
+            </script>
+        </div>
+
+        <div class="row checkout_row row__button">
+
+            <form class="form form-horizontal register__form" method="post">
+                {% csrf_token %}
+                <input type="submit" class="checkout__button-confirm button__green" id="confirm-order-button" value="Staðfesta Pöntun" href="checkout/makeorder/">
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+{% endblock %}

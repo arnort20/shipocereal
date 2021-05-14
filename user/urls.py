@@ -19,5 +19,7 @@ urlpatterns = [
     path('profile/updateUser',views.update_user_view,name="UpdateUser"),
     path('profile/updateProfile',views.update_profile_view,name="UpdateProfile"),
     path('carttest/', views.new_cart_test,name="CartTest"),
-    path('checkout/makeorder', views.makeOrder,name="ConfirmOrder"),
+    path('checkout/address/', views.makeOrder,name="CheckoutAddress"),
+    path('checkout/cart/', views.makeOrder,name="CheckoutCard"),
+    path('checkout/makeorder/', views.makeOrder,name="ConfirmOrder")
 ]
