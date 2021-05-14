@@ -8,7 +8,7 @@ from user.forms import credit_card_form, address_form, add_to_cart, add_to_cart_
 from user.forms import *
 from user.forms.user_create_form import SignupForm
 from django.contrib.auth import get_user_model
-from ship_o_cereal.models import Carts, Orders, Addresses, CartRows, Creditcards, Comments
+from ship_o_cereal.models import Carts, Orders, Addresses, CartRows, Creditcards, Comments,CartFolio
 from user.models import Profile
 
 
@@ -27,15 +27,22 @@ def new_cart_test(request):
         'form': add_to_cart_test.FolioCreateForm()
 
     })
-def remove_from_cart(request):
-    print(1)
-    return
+
+def remove_from_cart(request,productId):
+    cart = CartFolio.objects.filter(userId=request.user,productId=productId).first()
+    cart.delete()
+    return redirect('CartView')
 
 
 
 def cart_view(request):
     customer = request.user
-    context = {'cart': ship_o_cereal.models.CartFolio.objects.filter(userId=customer)}
+    cart_items = ship_o_cereal.models.CartFolio.objects.filter(userId=customer)
+    if cart_items.exists():
+        context = {'cart': ship_o_cereal.models.CartFolio.objects.filter(userId=customer)}
+    else:
+        context = {'cart': ''}
+
     return render(request, 'user/cart.html', context=context)
 
 

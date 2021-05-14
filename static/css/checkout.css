@@ -1,16 +1,24 @@
-
-.container__checkout{
+.container__left{
     height: 200%;
     margin-top: 3%;
+    margin-left: 5%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    background-color: orange;
 }
 .checkout_row{
     margin: 0;
     padding: 0;
     height: 28.3%;
     display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.register__form{
+    display: flex;
+    align-items: center;
     justify-content: center;
 }
 
@@ -137,9 +145,15 @@
 
 
 .container__right{
-    margin: 0 auto auto auto;
-    padding: 0;
+    position: absolute;
+    right: 5%;
+    top:20%;
     border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+}
+.amma{
+    background-color: black;
 }
 .row__header-right{
     padding: 0 0 2% 0;
@@ -159,11 +173,11 @@
     border-top: 1px solid black;
 }
 .checkout__button-confirm{
-    background-color: #3B8905;
-    width: 80%;
     color: white;
+    width: 80%;
     border: 0;
     border-radius: 5px;
     padding: 3% 0 3% 0;
-    margin-bottom:5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
 }

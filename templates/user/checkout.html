@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="{% static '/css/checkout.css' %}">
 
 
-    <div class="col-md-11 container__checkout">
+    <div class="col-md-6 container__left">
 
-        <div class="col-md-6 checkout__leftcol">
+        <div class="col-md-11 checkout__leftcol">
             {% for address in addresses %}
             <div class="row checkout__leftcol-row">
                 <div class="row row__header">
@@ -25,59 +25,55 @@
                 <div class="row checkout_row">
                     <div class="col-md-11 column__left">
                         <label for="user-fullname" class="checkout__label checkout__label-name">Nafn</label>
-{#                        <input type="text" class="checkout__input checkout__input-name" id="user-fullname">#}
-                        <h2>{{ address.userId.first_name }} {{ address.userId.last_name }}</h2>
+                            <input type="text" class="checkout__input checkout__input-name" id="user-fullname" value="{{ address.userId.first_name }} {{ address.userId.last_name }}">
+                        <!--<h2>{{ address.userId.first_name }} {{ address.userId.last_name }}</h2>-->
                     </div>
                 </div>
 
                 <div class="row checkout_row">
                     <div class="col-md-5 checkout__column">
                         <label for="user-street" class="checkout__label checkout__label-street">Götuheiti*</label>
-{#                        <input type="text" class="checkout__input checkout__input-street" id="user-street">#}
-                        <h2>{{ address.address }}</h2>
+                            <input type="text" class="checkout__input checkout__input-street" id="user-street" value="{{ address.address }}">
                     </div>
 
                     <div class="col-md-3 checkout__column">
                         <label for="user-apt_num" class="checkout__label checkout__label-address">Íbúðar Númer</label>
-{#                        <input type="text" class="checkout__input checkout__input-address" id="user-apt_num">#}
-                        <h2>{{ address.apt_num }}</h2>
+                            <input type="text" class="checkout__input checkout__input-address" id="user-apt_num" value="{{ address.apt_num }}">
                     </div>
 
                     <div class="col-md-3 checkout__column">
                         <label for="user-post_num" class="checkout__label checkout__label-address">Póstnúmer*</label>
-{#                        <input type="text" class="checkout__input checkout__input-address" id="user-post_num">#}
-                        <h2>{{ address.zip }}</h2>
+                            <input type="text" class="checkout__input checkout__input-address" id="user-post_num" value="{{ address.zip }}">
                     </div>
                 </div>
 
                 <div class="row checkout_row">
-{#                    <div class="col-md-6 checkout__column">#}
-{#                        <label for="user-town" class="checkout__label checkout__label-town">Kaupstaður*</label>#}
-{#                        <input type="text" class="checkout__input checkout__input-town" id="user-town">#}
-{#                        <h2></h2>#}
-{#                    </div>#}
+                    <div class="col-md-6 checkout__column">
+                        <label for="user-town" class="checkout__label checkout__label-town">Kaupstaður*</label>
+                        <input type="text" class="checkout__input checkout__input-town" value="{{ address.town }}">
+                    </div>
 
                     <div class="col-md-6 checkout__column">
                         <label for="user-country" class="checkout__label checkout__label-country">Land*</label>
-{#                        <select name="country" class="checkout__select" id="user-country">#}
-{#                            <option value="Iceland">Iceland</option>#}
-{#                            <option value="Sweden">Sweden</option>#}
-{#                            <option value="Denmark">Denmark</option>#}
-{#                            <option value="Finnland">Finnland</option>#}
-{#                        </select>#}
-                        <h2>{{ address.country }}</h2>
+                        <input type="text" class="checkout__input checkout__input-town" value="{{ address.country.name }}">
                     </div>
                 </div>
             </div>
             {% endfor %}
 
-{#            <div class="row checkout__leftcol-row">#}
-{#                <div class="row row__header">#}
-{#                    <h1 class="checkout__title" >Sendingarmáti</h1>#}
-{#                </div>#}
-{##}
-{#                <div class="row checkout__delivery-row"></div>#}
-{#            </div>#}
+            <div class="row checkout__leftcol-row">
+                <div class="row row__header">
+                    <h1 class="checkout__title" >Sendingarmáti</h1>
+                </div>
+                <div class="row checkout__delivery-row">
+                    <select>
+                        <option>Venjuleg heimsending</option>
+                        <option>Delux heimsending</option>
+                        <option>Ultraboost heimsending</option>
+                    </select>
+                </div>
+            </div>
+
             {% for card in creditcards %}
             <div class="row checkout__leftcol-row">
                 <div class="row row__header">
@@ -93,61 +89,44 @@
                 <div class="row checkout_row">
                     <div class="col-md-11 checkout__column">
                         <label for="card-name" class="checkout__label checkout__label-name">Nafn korthafa*</label>
-{#                        <input type="text" class="checkout__input checkout__input-name" id="card-name">#}
-                        <h2>{{ card.cardname }}</h2>
+                        <input type="text" class="checkout__input checkout__input-name" value="{{ card.cardname }}">
                     </div>
                 </div>
 
                 <div class="row checkout_row">
                     <div class="col-md-11 checkout__column">
                         <label for="card-number" class="checkout__label checkout__label-name">Kortanúmer*</label>
-{#                        <input type="text" class="checkout__input checkout__input-name" id="card-number">#}
-                        <h2>{{ card.cardNumber }}</h2>
+                        <input type="text" class="checkout__input checkout__input-name" value="{{ card.cardNumber }}">
                     </div>
                 </div>
 
                 <div class="row checkout_row">
                     <div class="col-md-4 checkout__column column__month">
                         <label for="card-month" class="checkout__label checkout__label-month">Mánuður*</label>
-{#                        <input type="text" class="checkout__input checkout__input-month" id="card-month">#}
-                        <p>{{ card.month }}</p>
+                        <input type="text" class="checkout__input checkout__input-month" value="{{ card.month }}">
                     </div>
 
                     <div class="col-md-4 checkout__column column__year">
                         <label for="card-year" class="checkout__label checkout__label-year">Ár*</label>
-{#                        <input type="text" class="checkout__input checkout__input-year" id="card-year">#}
-                        <p>{{ card.year }}</p>
+                        <input type="text" class="checkout__input checkout__input-year" value="{{ card.year }}">
                     </div>
 
                     <div class="col-md-4 checkout__column">
                         <label for="card-cvc" class="checkout__label checkout__label-cvc">CVC*</label>
-{#                        <input type="text" class="checkout__input checkout__input-cvc" id="card-cvc">#}
-                        <p>{{ card.cvc }}</p>
+                        <input type="text" class="checkout__input checkout__input-cvc" value="{{ card.cvc }}">
                     </div>
                 </div>
             </div>
             {% endfor %}
         </div>
-        <div class="row checkout__leftcol-row">
-            <div class="row row__header">
-                <h1 class="checkout__title" >Sendingarmáti</h1>
-            </div>
+    </div>
 
-            <div class="row checkout__delivery-row">
-                <select name="delivery" class="checkout__select" id="user-country">
-                    <option value="heimsending">heimsending</option>
-                    <option value="Deluxe heimsending">Deluxe heimsending</option>
-                    <option value="Samdægurs Deluxe">Samdægurs Deluxe</option>
-                </select>
-            </div>
+    <div class="col-md-4 container__right">
+
+        <div class="row checkout_row row__header-right">
+            <h1 class="checkout__title" >Samantekt:</h1>
         </div>
-
-        <div class="col-md-4 container__right">
-
-            <div class="row checkout_row row__header-right">
-                <h1 class="checkout__title" >Samantekt:</h1>
-            </div>
-            {% for item in cart %}
+        {% for item in cart %}
             <div class="row checkout_row checkout__row-item">
                 <div class="col-md-8 product__description-col">
                     <p class="checkout__product-text product_name">{{ item.productId.name }}</p>
@@ -159,50 +138,49 @@
                 <script>
                     function myFunction() {
                         let c = parseInt({{ item.amount }}) * parseInt({{ item.productId.price }});
-                        {#document.getElementById("subtotal{{ item.folioId }}").innerHTML = "aaa";#}
-                        {#console.log('aaa')#}
+                        document.getElementById("subtotal{{ item.folioId }}").innerHTML = "aaa";
+                        console.log('aaa')
                         document.getElementById("subtotal{{ item.folioId }}").innerHTML = c.toString()+" ISK";
                     }
                     myFunction()
                 </script>
             </div>
-            {% endfor %}
-{#            <div class="row checkout_row">#}
-{#                <div class="col-md-8 product__description-col">#}
-{#                    <p class="checkout__product-text" id="delivery-type">Hraðsending</p>#}
-{#                </div>#}
-{#                <div class="col-md-3 product__description-col">#}
-{#                    <p class="checkout__product-text font__bold" id="delivery-price">1500 ISK</p>#}
-{#                </div>#}
-{#            </div>#}
-{#            <div class="row checkout_row">#}
-                <div class="col-md-8 product__description-col">
-                    <p class="checkout__product-text product__text-total"> Heildarupphæð:</p>
-                </div>
-                <div class="col-md-3 product__description-col">
-                    <p class="checkout__product-text product__text-total" id="order-total" ></p>
-                </div>
-                <script>
-                    function getTotal() {
-                        let subtotals = document.getElementsByClassName("checkout__product-text product-total  font__bold");
-                        var summa = 0;
-                        var i;
-                        for (i = 0; i < subtotals.length; i++) {
-                            summa += parseInt(subtotals[i].innerHTML);
-                        }
-                        document.getElementById("order-total").innerHTML = summa.toString();
-                    }
-                    getTotal();
-                </script>
+        {% endfor %}
+        <div class="row checkout_row">
+            <div class="col-md-8 product__description-col">
+                <p class="checkout__product-text" id="delivery-type">Hraðsending</p>
             </div>
-            <div class="row checkout_row">
-                <form class="form form-horizontal register__form" method="post">
-                    {% csrf_token %}
-                    {{ form }}
-                    <input type="submit" class="checkout__button-confirm" id="confirm-order-button" value="Staðfesta Pöntun" href="checkout/makeorder">
-                </form>
+            <div class="col-md-3 product__description-col">
+                <p class="checkout__product-text font__bold" id="delivery-price">1500 ISK</p>
             </div>
+        </div>
 
+        <div class="row checkout_row">
+            <div class="col-md-8 product__description-col">
+                <p class="checkout__product-text product__text-total"> Heildarupphæð:</p>
+            </div>
+            <div class="col-md-3 product__description-col">
+                <p class="checkout__product-text product__text-total" id="order-total" ></p>
+            </div>
+            <script>
+                function getTotal() {
+                    let subtotals = document.getElementsByClassName("checkout__product-text product-total  font__bold");
+                    var summa = 0;
+                    var i;
+                    for (i = 0; i < subtotals.length; i++) {
+                        summa += parseInt(subtotals[i].innerHTML);
+                    }
+                    document.getElementById("order-total").innerHTML = summa.toString();
+                }
+                getTotal();
+            </script>
+        </div>
+        <div class="row checkout_row row__button">
+            <form class="form form-horizontal register__form" method="post">
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" class="checkout__button-confirm button__green" id="confirm-order-button" value="Staðfesta Pöntun" href="checkout/makeorder">
+            </form>
         </div>
 
     </div>

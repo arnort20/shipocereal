@@ -6,6 +6,7 @@ from user import views
 urlpatterns = [
     path('register/', views.register, name='register'),
     path('cart/',views.cart_view,name="CartView"),
+    path('cart/removeitem/<int:productId>',views.remove_from_cart,name="RemoveFromCart"),
     path('checkout/',views.checkout_view,name="CheckoutView"),
     path('login/',LoginView.as_view(template_name='user/login.html'),name='login'),
     path('logout/',LogoutView.as_view(next_page='home'),name='logout'),
@@ -19,5 +20,4 @@ urlpatterns = [
     path('profile/updateProfile',views.update_profile_view,name="UpdateProfile"),
     path('carttest/', views.new_cart_test,name="CartTest"),
     path('checkout/makeorder', views.makeOrder,name="ConfirmOrder"),
-    path('removeitem',views.remove_from_cart,name="RemoveFromCart")
 ]
